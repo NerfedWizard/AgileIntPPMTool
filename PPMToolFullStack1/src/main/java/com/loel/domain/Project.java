@@ -13,7 +13,6 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -35,13 +34,13 @@ public class Project {
 	private String projectIdentifier;
 	@NotBlank(message = "Project description is required")
 	private String description;
-	@JsonFormat(pattern = "MM-dd-yyyy @ HH:mm:ss")
+	@JsonFormat(pattern = "MM-dd-yyyy @ HH:mm:ss", timezone = "GMT-6")
 	private Date startDate;
-	@JsonFormat(pattern = "MM-dd-yyyy @ HH:mm:ss")
+	@JsonFormat(pattern = "MM-dd-yyyy @ HH:mm:ss", timezone = "GMT-6")
 	private Date endDate;
-	@JsonFormat(pattern = "MM-dd-yyyy @ HH:mm:ss")
+	@JsonFormat(pattern = "MM-dd-yyyy @ HH:mm:ss", timezone = "GMT-6")
 	private Date createdAt;
-	@JsonFormat(pattern = "MM-dd-yyyy @ HH:mm:ss")
+	@JsonFormat(pattern = "MM-dd-yyyy @ HH:mm:ss", timezone = "GMT-6")
 	private Date updatedAt;
 
 	@PrePersist
