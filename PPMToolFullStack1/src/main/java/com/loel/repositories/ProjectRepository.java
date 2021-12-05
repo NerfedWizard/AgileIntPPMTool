@@ -1,8 +1,9 @@
 package com.loel.repositories;
 
-import com.loel.domain.Project;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
+
+import com.loel.domain.Project;
 
 @Repository
 public interface ProjectRepository extends CrudRepository<Project, Long> {
