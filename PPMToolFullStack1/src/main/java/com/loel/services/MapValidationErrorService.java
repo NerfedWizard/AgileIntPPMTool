@@ -17,7 +17,7 @@ import org.springframework.validation.FieldError;
  * values. This is because this validation goes first before the
  * projectController.
  */
-public class MapValidationErrorService { 
+public class MapValidationErrorService {
 
 	@Bean
 	public ResponseEntity<?> mapValidationService(BindingResult result) {

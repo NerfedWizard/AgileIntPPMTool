@@ -43,7 +43,8 @@ public class ProjectService {
 		Project project = projectRepository.findByProjectIdentifier(projectID.toUpperCase());
 
 		if (project == null) {
-			throw new ProjectIDException("Cannot delete Project with ID '" + projectID.toUpperCase() + "' it doesn't exist");
+			throw new ProjectIDException(
+					"Cannot delete Project with ID '" + projectID.toUpperCase() + "' it doesn't exist");
 		}
 		projectRepository.delete(project);
 	}
