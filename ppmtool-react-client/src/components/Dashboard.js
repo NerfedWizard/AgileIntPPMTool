@@ -6,9 +6,6 @@ class Dashboard extends Component {
     return (
       <div>
         <h1>Welcome to Loel's Dashboard</h1>
-
-        <ProjectItem />
-        <ProjectItem />
         <ProjectItem />
       </div>
     );
