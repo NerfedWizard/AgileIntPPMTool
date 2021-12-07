@@ -8,15 +8,19 @@ class Dashboard extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h1 className="display-4 text-center">Loels Projects</h1>
+              <h1
+                className="display-4 text-center"
+                style={{ color: "#ff00ff" }}
+              >
+                Projects
+              </h1>
               <br />
-              <a href="ProjectForm.html" className="btn btn-lg btn-info">
+              <a href="ProjectForm.html" className="btn btn-lg btn-danger">
                 Create a Project
               </a>
               <br />
               <hr />
               <ProjectItem />
-              {/* <!-- End of Project Item Component --> */}
             </div>
           </div>
         </div>
