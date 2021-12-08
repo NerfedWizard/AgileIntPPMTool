@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import CreateProjectButton from "./Project/CreateProjectButton";
 import ProjectItem from "./Project/ProjectItem";
 
 class Dashboard extends Component {
@@ -9,15 +10,15 @@ class Dashboard extends Component {
           <div className="row">
             <div className="col-md-12">
               <h1
+                font-weight="900"
+                font="sans-serif"
                 className="display-4 text-center"
-                style={{ color: "#ff00ff" }}
+                style={{ color: "#c71585" }}
               >
                 Projects
               </h1>
               <br />
-              <a href="ProjectForm.html" className="btn btn-lg btn-danger">
-                Create a Project
-              </a>
+              <CreateProjectButton />
               <br />
               <hr />
               <ProjectItem />

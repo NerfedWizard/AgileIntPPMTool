@@ -3,29 +3,31 @@ img {
 }
 
 .navbar {
-  background-color: #e3f2fd;
+  background-color: #708090;
 }
 .fa.fa-edit {
   color: #18a2b9;
 }
-
+.list-group-item.background {
+  color: rgb(63, 60, 60);
+}
 .list-group-item.delete:hover {
   cursor: -webkit-grab;
-  background-color: pink;
+  background-color: rgb(63, 60, 60);
 }
 
 .list-group-item.update:hover {
   cursor: -webkit-grab;
-  background-color: gainsboro;
+  background-color: rgb(63, 60, 60);
 }
 
 .list-group-item.board:hover {
   cursor: -webkit-grab;
-  background-color: gainsboro;
+  background-color: rgb(63, 60, 60);
 }
 
 .fa.fa-minus-circle {
-  color: red;
+  color: rgb(219, 33, 33);
 }
 
 .landing {
@@ -43,7 +45,7 @@ img {
 }
 
 .dark-overlay {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: #181a1b;
   position: absolute;
   top: 0;
   left: 0;

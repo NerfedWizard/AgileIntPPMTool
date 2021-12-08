@@ -7,13 +7,13 @@ class ProjectItem extends Component {
         <div className="card card-body bg-dark mb-3">
           <div className="row">
             <div className="col-2">
-              <span className="mx-auto" style={{ color: "#ff00ff" }}>
-                Easy SCRUM, Easy Go
+              <span className="mx-auto" style={{ color: "#dda0dd" }}>
+                Scrum-A-licious
               </span>
             </div>
             <div className="col-lg-6 col-md-4 col-8">
               <h3 style={{ color: "#ff00ff" }}>Spring / React Project</h3>
-              <p style={{ color: "#ff00ff" }}>
+              <p style={{ color: "#dda0dd" }}>
                 Project to create a Kanban Board with Spring Boot and React
               </p>
             </div>
@@ -21,12 +21,21 @@ class ProjectItem extends Component {
               <ul className="list-group">
                 <a href="#">
                   <li className="list-group-item board">
-                    <i className="fa fa-flag-checkered pr-1"> Project Board </i>
+                    <i
+                      className="fa fa-flag-checkered pr-1"
+                      style={{ color: "#ff69b4" }}
+                    >
+                      {" "}
+                      Project Board{" "}
+                    </i>
                   </li>
                 </a>
                 <a href="#">
                   <li className="list-group-item update">
-                    <i className="fa fa-edit pr-1"> Update Project Info</i>
+                    <i className="fa fa-edit pr-1" style={{ color: "#7cfc00" }}>
+                      {" "}
+                      Update Project Info
+                    </i>
                   </li>
                 </a>
                 <a href="#">
