@@ -34,13 +34,13 @@ public class Project {
 	private String projectIdentifier;
 	@NotBlank(message = "Project description is required")
 	private String description;
-	@JsonFormat(pattern = "MM-dd-yyyy @ HH:mm:ss", timezone = "GMT-6")
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date startDate;
-	@JsonFormat(pattern = "MM-dd-yyyy @ HH:mm:ss", timezone = "GMT-6")
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date endDate;
-	@JsonFormat(pattern = "MM-dd-yyyy @ HH:mm:ss", timezone = "GMT-6")
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date createdAt;
-	@JsonFormat(pattern = "MM-dd-yyyy @ HH:mm:ss", timezone = "GMT-6")
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date updatedAt;
 
 	@PrePersist
