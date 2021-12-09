@@ -40,10 +40,7 @@ class AddProject extends Component {
           <div className="container">
             <div className="row">
               <div className="col-md-8 m-auto">
-                <h5
-                  className="display-4 text-center"
-                  style={{ color: "#ff00ff" }}
-                >
+                <h5 className="display-4 text-center scrumMainFont">
                   Create Project form
                 </h5>
                 <hr />
@@ -77,7 +74,7 @@ class AddProject extends Component {
                       onChange={this.onChange}
                     ></textarea>
                   </div>
-                  <h6>Start Date</h6>
+                  <h6 className="scrumMainFont">Start Date</h6>
                   <div className="form-group">
                     <input
                       type="date"
@@ -87,7 +84,7 @@ class AddProject extends Component {
                       onChange={this.onChange}
                     />
                   </div>
-                  <h6>Estimated End Date</h6>
+                  <h6 className="scrumMainFont">Estimated End Date</h6>
                   <div className="form-group">
                     <input
                       type="date"
@@ -100,7 +97,7 @@ class AddProject extends Component {
 
                   <input
                     type="submit"
-                    className="btn btn-danger btn-block mt-4"
+                    className="btn bg-scrumDelete btn-block mt-4"
                   />
                 </form>
               </div>

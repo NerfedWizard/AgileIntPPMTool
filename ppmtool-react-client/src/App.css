@@ -9,25 +9,25 @@ img {
   color: #18a2b9;
 }
 .list-group-item.background {
-  color: rgb(63, 60, 60);
+  color: rgb(63, 60, 60) !important;
 }
 .list-group-item.delete:hover {
   cursor: -webkit-grab;
-  background-color: rgb(63, 60, 60);
+  background-color: #b53fa5 !important;
 }
 
 .list-group-item.update:hover {
   cursor: -webkit-grab;
-  background-color: rgb(63, 60, 60);
+  background-color: #4a148c I !important;
 }
 
 .list-group-item.board:hover {
   cursor: -webkit-grab;
-  background-color: rgb(63, 60, 60);
+  background-color: #6f71e6 !important;
 }
 
 .fa.fa-minus-circle {
-  color: rgb(219, 33, 33);
+  color: #f50057;
 }
 
 .landing {
@@ -45,7 +45,7 @@ img {
 }
 
 .dark-overlay {
-  background-color: #181a1b;
+  background-color: #4a148c;
   position: absolute;
   top: 0;
   left: 0;
@@ -56,6 +56,24 @@ img {
 .card-form {
   opacity: 0.9;
 }
+.bg-scrummaster {
+  background-color: #1a237e !important;
+}
+.bg-scrumProjectBoard {
+  background-color: #9575cd !important;
+}
+.bg-scrumUpdate {
+  background-color: #448aff !important;
+}
+.bg-scrumDelete {
+  background-color: #ff80ab !important;
+}
+.bg-scrumlord {
+  background-color: #4a148c !important;
+}
+.bg-scrumButton {
+  background-color: #3d5afe !important;
+}
 
 .latest-profiles-img {
   width: 40px;
@@ -64,4 +82,17 @@ img {
 
 .form-control::placeholder {
   color: #bbb !important;
+}
+.scrumMainFont {
+  font-weight: normal !important;
+  font-family: fantasy !important;
+  color: #03a9f4 !important;
+}
+.scrumFancyFont {
+  font-family: Brush Script MT, Brush Script Std, cursive !important;
+  font-size: 24px;
+  color: #b39ddb !important;
+}
+.whatever {
+  color: #311b92;
 }

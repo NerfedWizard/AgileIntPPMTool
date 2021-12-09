@@ -4,7 +4,11 @@ import { Link } from "react-router-dom";
 const CreateProjectButton = () => {
   return (
     <React.Fragment>
-      <Link to="/addProject" className="btn btn-lg btn-danger ">
+      <Link
+        to="/addProject"
+        className="btn btn-lg bg-scrumButton"
+        style={{ color: "#1a237e" }}
+      >
         Create a Project
       </Link>
     </React.Fragment>

@@ -9,14 +9,7 @@ class Dashboard extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h1
-                font-weight="900"
-                font="sans-serif"
-                className="display-4 text-center"
-                style={{ color: "#c71585" }}
-              >
-                Projects
-              </h1>
+              <h1 className="display-4 text-center scrumMainFont">Projects</h1>
               <br />
               <CreateProjectButton />
               <br />
