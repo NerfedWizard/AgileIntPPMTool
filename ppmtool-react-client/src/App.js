@@ -12,10 +12,8 @@ class App extends Component {
       <Router>
         <div className="dark-overlay">
           <Header />
-
           <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/addProject" component={AddProject} />
-
           <footer></footer>
         </div>
       </Router>
