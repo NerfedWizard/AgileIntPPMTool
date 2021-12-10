@@ -16,7 +16,7 @@ class Dashboard extends Component {
                   Easy Scrum, Easy Go
                 </h2>
               </MDBAnimation>
-              <MDBAnimation type="bounceInUp">
+              <MDBAnimation type="fadeInUpBig">
                 <h1 className="display-4 text-center scrumOffside">Projects</h1>
               </MDBAnimation>
               <br />

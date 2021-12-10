@@ -21,7 +21,7 @@ class ProjectItem extends Component {
                   <li className="list-group-item board bg-scrumButton">
                     <i
                       className="fa fa-flag-checkered pr-1 "
-                      style={{ color: "#311b92" }}
+                      style={{ color: "#FF8C00" }}
                     >
                       {" "}
                       Project Board{" "}
