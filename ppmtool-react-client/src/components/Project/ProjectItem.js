@@ -7,11 +7,13 @@ class ProjectItem extends Component {
         <div className="card card-body mb-3 bg-scrummaster">
           <div className="row">
             <div className="col-2">
-              <span className="mx-auto scrumFancyFont">Scrum-A-licious</span>
+              <span className="mx-auto scrumCharmon">Welcome</span>
             </div>
-            <div className="col-lg-6 col-md-4 col-8 scrumMainFont">
+            <div className="col-lg-6 col-md-4 col-8 scrumOffside">
               <h3>Spring / React Project</h3>
-              <p>Project to create a Kanban Board with Spring Boot and React</p>
+              <p className="scrumBioRhyme">
+                Project to create a Kanban Board with Spring Boot and React
+              </p>
             </div>
             <div className="col-md-4 d-none d-lg-block ">
               <ul className="list-group ">
@@ -39,7 +41,7 @@ class ProjectItem extends Component {
                 </a>
                 <a href="#">
                   <li className="list-group-item delete bg-scrumDelete">
-                    <i className="fa fa-minus-circle pr-1"> Delete Project</i>
+                    <i className="fa fa-minus-circle pr-1 "> Delete Project</i>
                   </li>
                 </a>
               </ul>

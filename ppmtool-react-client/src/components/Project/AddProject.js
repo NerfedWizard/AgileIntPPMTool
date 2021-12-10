@@ -40,55 +40,55 @@ class AddProject extends Component {
           <div className="container">
             <div className="row">
               <div className="col-md-8 m-auto">
-                <h5 className="display-4 text-center scrumMainFont">
+                <h5 className="display-4 text-center scrumOffside">
                   Create Project form
                 </h5>
                 <hr />
                 <form onSubmit={this.onSubmit}>
-                  <div className="form-group">
+                  <div className="form-group scrumOffside">
                     <input
                       type="text"
-                      class="form-control form-control-lg "
+                      class="form-control form-control-lg bg-scrumProjectBoard"
                       placeholder="Project Name"
                       name="projectName"
                       value={this.state.projectName}
                       onChange={this.onChange}
                     />
                   </div>
-                  <div className="form-group">
+                  <div className="form-group scrumOffside">
                     <input
                       type="text"
-                      className="form-control form-control-lg"
+                      className="form-control form-control-lg bg-scrumProjectBoard"
                       placeholder="Unique Project ID"
                       name="projectIdentifier"
                       value={this.state.projectIdentifier}
                       onChange={this.onChange}
                     />
                   </div>
-                  <div className="form-group">
+                  <div className="form-group scrumOffside">
                     <textarea
-                      class="form-control form-control-lg"
+                      class="form-control form-control-lg bg-scrumProjectBoard"
                       placeholder="Project Description"
                       name="description"
                       value={this.state.description}
                       onChange={this.onChange}
                     ></textarea>
                   </div>
-                  <h6 className="scrumMainFont">Start Date</h6>
+                  <h6 className="scrumOffside">Start Date</h6>
                   <div className="form-group">
                     <input
                       type="date"
-                      className="form-control form-control-lg"
+                      className="form-control form-control-lg bg-scrumProjectBoard"
                       name="startDate"
                       value={this.state.startDate}
                       onChange={this.onChange}
                     />
                   </div>
-                  <h6 className="scrumMainFont">Estimated End Date</h6>
+                  <h6 className="scrumOffside">Estimated End Date</h6>
                   <div className="form-group">
                     <input
                       type="date"
-                      className="form-control form-control-lg"
+                      className="form-control form-control-lg bg-scrumProjectBoard"
                       name="endDate"
                       value={this.state.endDate}
                       onChange={this.onChange}

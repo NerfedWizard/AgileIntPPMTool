@@ -7,7 +7,7 @@ const CreateProjectButton = () => {
       <Link
         to="/addProject"
         className="btn btn-lg bg-scrumButton"
-        style={{ color: "#1a237e" }}
+        style={{ color: "#FF8C00" }}
       >
         Create a Project
       </Link>

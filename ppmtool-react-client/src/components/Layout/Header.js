@@ -5,9 +5,8 @@ class Header extends Component {
     return (
       <nav className="navbar navbar-expand-sm bg-scrummaster mb-4">
         <div className="container">
-          <a className="scrumFancyFont" href="Dashboard.html">
-            Easy Scrum, Easy Go:
-            <h1 className="navbar-brand scrumMainFont">
+          <a href="Dashboard.html">
+            <h1 className="navbar-brand scrumOffside">
               {" "}
               Project Management Tool
             </h1>
