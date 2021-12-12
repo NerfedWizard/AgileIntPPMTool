@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 
 class Header extends Component {
   render() {
@@ -7,7 +8,6 @@ class Header extends Component {
         <div className="container">
           <a href="Dashboard.html">
             <h1 className="navbar-brand scrumOffside">
-              {" "}
               Project Management Tool
             </h1>
           </a>

@@ -1,20 +1,50 @@
 @import url("https://fonts.googleapis.com/css2?family=BioRhyme:wght@200&family=Charmonman&family=Lobster+Two&family=Offside&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Monoton&family=Shalimar&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Monoton&family=Rock+Salt&family=Shalimar&family=Yuji+Mai&display=swap");
 
-.scrumTada {
-  -webkit-animation-duration: 3s;
-  -webkit-animation-delay: 2s;
-  -webkit-animation-iteration-count: infinite;
+.shadow-box-example {
+  height: 50px;
+  width: 100%;
+  background-color: #64b5f6;
+}
+.scrumBtn {
+  background: #6b56bf;
+  background-image: linear-gradient(to bottom, #6b56bf, #af85d6);
+  -webkit-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
 }
 
+.scrumBtn:hover {
+  background: #c4a4d6;
+  background-image: -webkit-linear-gradient(top, #c4a4d6, #6034d9);
+  text-decoration: none;
+}
+
+.scrumYujiMai {
+  font-family: "Yuji Mai", serif;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  /* background-image: linear-gradient(#00fa9a, #ff8c00, #0000ff); */
+  color: #00fa9a;
+}
+
+.scrumRockSalt {
+  font-family: "Rock Salt", cursive;
+  color: #ff8c00;
+}
 .scrumMonoton {
   font-family: "Monoton", cursive;
-  color: #1a237e;
+  text-shadow: 1px 1px 2px rgb(144, 10, 10);
+  /* background: radial-gradient(#6034d9, #c4a4d6); */
+  color: #f3f3f3;
 }
 .scrumCharmon {
   font-family: "Charmonman", cursive;
   font-size: x-large;
-  color: #b39ddb !important;
+  color: #c71585 !important;
 }
 .scrumLobster {
   font-family: "Lobster Two", cursive;
@@ -31,7 +61,6 @@
 .scrumShalimar {
   font-family: "Shalimar", cursive;
   font-weight: 900;
-
   color: #add8e6;
 }
 
@@ -82,7 +111,9 @@ img {
 }
 
 .dark-overlay {
-  background-color: #9370db;
+  /* background-color: #000000; */
+  background-image: linear-gradient(#8f6bd6, #866ba0, #481879, #52209e);
+  /* background-image: radial-gradient(#6034d9, #c4a4d6); */
   position: absolute;
   top: 0;
   left: 0;
@@ -97,7 +128,7 @@ img {
   background-color: #1a237e !important;
 }
 .bg-scrumProjectBoard {
-  background-color: #9575cd !important;
+  background-color: #00ced1 !important;
 }
 .bg-scrumUpdate {
   background-color: #448aff !important;
@@ -112,7 +143,7 @@ img {
   background-color: #4a148c !important;
 }
 .bg-scrumButton {
-  background-color: #00008b !important;
+  background-color: #4169e1 !important;
 }
 
 .latest-profiles-img {

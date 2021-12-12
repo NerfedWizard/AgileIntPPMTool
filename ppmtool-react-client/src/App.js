@@ -7,13 +7,14 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import AddProject from "./components/Project/AddProject";
 import { Provider } from "react-redux";
 import store from "./store";
+import { composeWithDevTools } from "redux-devtools-extension";
 
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
         <Router>
-          <div className="dark-overlay">
+          <div className="App dark-overlay">
             <Header />
             <Route exact path="/dashboard" component={Dashboard} />
             <Route exact path="/addProject" component={AddProject} />

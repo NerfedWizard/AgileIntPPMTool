@@ -11,16 +11,22 @@ class Dashboard extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <MDBAnimation type="pulse" infinite>
-                <h2 className="display-4 text-center scrumMonoton">
-                  Easy Scrum, Easy Go
-                </h2>
-              </MDBAnimation>
-              <MDBAnimation type="fadeInUpBig">
-                <h1 className="display-4 text-center scrumOffside">Projects</h1>
-              </MDBAnimation>
+              {/* <MDBAnimation type="pulse"> */}
+              <h2 className="display-4 text-center scrumMonoton">
+                Easy Scrum, Easy Go
+              </h2>
+              {/* </MDBAnimation>
+              <MDBAnimation
+                type="flip "
+                data-animation-reset="true"
+                data-animation-start="onHover"
+              > */}
+              <h1 className="display-4 text-center scrumYujiMai">Projects</h1>
+              {/* </MDBAnimation> */}
               <br />
+
               <CreateProjectButton />
+
               <br />
               <hr />
               <ProjectItem />

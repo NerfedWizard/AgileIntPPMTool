@@ -18,10 +18,10 @@ class ProjectItem extends Component {
             <div className="col-md-4 d-none d-lg-block ">
               <ul className="list-group ">
                 <a href="# ">
-                  <li className="list-group-item board bg-scrumButton">
+                  <li className="list-group-item board bg-scrumProjectBoard">
                     <i
                       className="fa fa-flag-checkered pr-1 "
-                      style={{ color: "#FF8C00" }}
+                      style={{ color: "#9400D3" }}
                     >
                       {" "}
                       Project Board{" "}

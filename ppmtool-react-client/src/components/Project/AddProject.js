@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { createProject } from "../../actions/projectActions";
+import { MDBAnimation, MDBBtn } from "mdbreact";
 
 class AddProject extends Component {
   constructor() {
@@ -13,10 +14,18 @@ class AddProject extends Component {
       description: "",
       startDate: "",
       endDate: "",
+      errors: {},
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
+  //life cycle hooks
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({ errors: nextProps.errors });
+    }
+  }
+
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
@@ -34,51 +43,61 @@ class AddProject extends Component {
   }
 
   render() {
+    const { errors } = this.state;
     return (
       <div>
         <div className="register">
           <div className="container">
             <div className="row">
               <div className="col-md-8 m-auto">
-                <h5 className="display-4 text-center scrumOffside">
+                <h5 className="display-4 text-center scrumYujiMai">
                   Create Project form
                 </h5>
+                {/* <h5
+                  className="display-4 text-center"
+                  style={{ color: "#ff00ff" }}
+                > */}
+                {/* Create Project form
+                </h5> */}
                 <hr />
                 <form onSubmit={this.onSubmit}>
                   <div className="form-group scrumOffside">
                     <input
                       type="text"
-                      class="form-control form-control-lg bg-scrumProjectBoard"
+                      class="form-control form-control-lg bg-scrumButton"
                       placeholder="Project Name"
                       name="projectName"
                       value={this.state.projectName}
                       onChange={this.onChange}
                     />
+                    <p>{errors.projectName}</p>
                   </div>
                   <div className="form-group scrumOffside">
                     <input
                       type="text"
-                      className="form-control form-control-lg bg-scrumProjectBoard"
+                      className="form-control form-control-lg bg-scrumButton"
                       placeholder="Unique Project ID"
                       name="projectIdentifier"
                       value={this.state.projectIdentifier}
                       onChange={this.onChange}
                     />
+                    <p>{errors.projectIdentifier}</p>
                   </div>
                   <div className="form-group scrumOffside">
                     <textarea
-                      class="form-control form-control-lg bg-scrumProjectBoard"
+                      class="form-control form-control-lg bg-scrumButton"
                       placeholder="Project Description"
                       name="description"
                       value={this.state.description}
                       onChange={this.onChange}
-                    ></textarea>
+                    />
+                    <p>{errors.description}</p>
                   </div>
                   <h6 className="scrumOffside">Start Date</h6>
                   <div className="form-group">
                     <input
                       type="date"
-                      className="form-control form-control-lg bg-scrumProjectBoard"
+                      className="form-control form-control-lg bg-scrumButton"
                       name="startDate"
                       value={this.state.startDate}
                       onChange={this.onChange}
@@ -88,7 +107,7 @@ class AddProject extends Component {
                   <div className="form-group">
                     <input
                       type="date"
-                      className="form-control form-control-lg bg-scrumProjectBoard"
+                      className="form-control form-control-lg bg-scrumButton"
                       name="endDate"
                       value={this.state.endDate}
                       onChange={this.onChange}
@@ -97,7 +116,7 @@ class AddProject extends Component {
 
                   <input
                     type="submit"
-                    className="btn bg-scrumDelete btn-block mt-4"
+                    className="btn-large bg-scrumDelete btn-block mt-4 shadow-box-example hoverable"
                   />
                 </form>
               </div>
@@ -110,5 +129,11 @@ class AddProject extends Component {
 }
 AddProject.propTypes = {
   createProject: PropTypes.func.isRequired,
+  errors: PropTypes.object.isRequired,
 };
-export default connect(null, { createProject })(AddProject);
+
+const mapStateToProps = (state) => ({
+  errors: state.errors,
+});
+
+export default connect(mapStateToProps, { createProject })(AddProject);
