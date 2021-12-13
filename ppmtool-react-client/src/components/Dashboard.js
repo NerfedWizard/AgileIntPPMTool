@@ -24,9 +24,7 @@ class Dashboard extends Component {
               <h1 className="display-4 text-center scrumYujiMai">Projects</h1>
               {/* </MDBAnimation> */}
               <br />
-
               <CreateProjectButton />
-
               <br />
               <hr />
               <ProjectItem />
