@@ -1,26 +1,32 @@
 @import url("https://fonts.googleapis.com/css2?family=BioRhyme:wght@200&family=Charmonman&family=Lobster+Two&family=Offside&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Monoton&family=Rock+Salt&family=Shalimar&family=Yuji+Mai&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@700&display=swap");
 
 .shadow-box-example {
   height: 50px;
   width: 100%;
   background-color: #64b5f6;
 }
+.scrumSource {
+  font-family: "Source Sans 3", sans-serif;
+  color: #000000;
+}
 .scrumBtn {
-  background: #6b56bf;
-  background-image: linear-gradient(to bottom, #6b56bf, #af85d6);
+  background: #f6f6f6;
+  background-image: linear-gradient(to bottom, #48835a, #a38f6b);
   -webkit-border-radius: 28;
   border-radius: 28px;
-  font-family: Arial;
-  color: #ffffff;
-  font-size: 20px;
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: 900;
+  color: #000000;
+  font-size: 24px;
   padding: 10px 20px 10px 20px;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .scrumBtn:hover {
   background: #c4a4d6;
-  background-image: -webkit-linear-gradient(top, #c4a4d6, #6034d9);
+  background-image: -webkit-linear-gradient(top, #ada9aa, #552233);
   text-decoration: none;
 }
 
