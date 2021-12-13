@@ -61,7 +61,7 @@ class AddProject extends Component {
                         "is-invalid": errors.projectName,
                       })}
                       placeholder="Unique Project ID"
-                      name="projectIdentifier"
+                      name="projectName"
                       value={this.state.projectName}
                       onChange={this.onChange}
                     />
@@ -127,7 +127,7 @@ class AddProject extends Component {
 
                   <input
                     type="submit"
-                    className="btn btn-primary btn-block mt-4"
+                    className="btn scrumBtn btn-block mt-4  hoverable"
                   />
                 </form>
               </div>
