@@ -42,12 +42,11 @@ class AddProject extends Component {
 
     this.props.createProject(newProject, this.props.history);
   }
-
   render() {
     const { errors } = this.state;
     return (
       <div>
-        <div className="register">
+        <div className="project">
           <div className="container">
             <div className="row">
               <div className="col-md-8 m-auto">

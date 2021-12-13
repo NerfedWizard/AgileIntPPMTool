@@ -11,30 +11,25 @@ class Dashboard extends Component {
   componentDidMount() {
     this.props.getProjects();
   }
-
   render() {
+    const { projects } = this.props.project;
+
     return (
       <div className="projects">
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              {/* <MDBAnimation type="pulse"> */}
-              <h2 className="display-4 text-center scrumMonoton">
+              <h1 className="display-4 text-center scrumMonoton">
                 Easy Scrum, Easy Go
-              </h2>
-              {/* </MDBAnimation>
-              <MDBAnimation
-                type="flip "
-                data-animation-reset="true"
-                data-animation-start="onHover"
-              > */}
-              <h1 className="display-4 text-center scrumYujiMai">Projects</h1>
-              {/* </MDBAnimation> */}
+              </h1>
+              <h2 className="display-4 text-center scrumYujiMai">Projects</h2>
               <br />
               <CreateProjectButton />
               <br />
               <hr />
-              <ProjectItem />
+              {projects.map((project) => (
+                <ProjectItem key={project.id} project={project} />
+              ))}
             </div>
           </div>
         </div>
