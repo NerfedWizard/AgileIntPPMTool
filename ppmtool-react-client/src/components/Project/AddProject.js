@@ -50,16 +50,21 @@ class AddProject extends Component {
           <div className="container">
             <div className="row">
               <div className="col-md-8 m-auto">
-                <h5 className="display-4 text-center">Create Project form</h5>
+                <h5 className="display-4 text-center scrumYujiMai">
+                  Create Project form
+                </h5>
                 <hr />
                 <form onSubmit={this.onSubmit}>
                   <div className="form-group scrumOffside">
                     <input
                       type="text"
-                      className={classnames("form-control form-control-lg", {
-                        "is-invalid": errors.projectName,
-                      })}
-                      placeholder="Unique Project ID"
+                      className={classnames(
+                        "form-control form-control-lg bg-scrumButton",
+                        {
+                          "is-invalid": errors.projectName,
+                        }
+                      )}
+                      placeholder="Project Name"
                       name="projectName"
                       value={this.state.projectName}
                       onChange={this.onChange}
@@ -73,9 +78,12 @@ class AddProject extends Component {
                   <div className="form-group scrumOffside">
                     <input
                       type="text"
-                      className={classnames("form-control form-control-lg", {
-                        "is-invalid": errors.projectIdentifier,
-                      })}
+                      className={classnames(
+                        "form-control form-control-lg bg-scrumButton",
+                        {
+                          "is-invalid": errors.projectIdentifier,
+                        }
+                      )}
                       placeholder="Unique Project ID"
                       name="projectIdentifier"
                       value={this.state.projectIdentifier}
@@ -89,9 +97,12 @@ class AddProject extends Component {
                   </div>
                   <div className="form-group scrumOffside">
                     <textarea
-                      className={classnames("form-control form-control-lg", {
-                        "is-invalid": errors.description,
-                      })}
+                      className={classnames(
+                        "form-control form-control-lg bg-scrumButton",
+                        {
+                          "is-invalid": errors.description,
+                        }
+                      )}
                       placeholder="Project Description"
                       name="description"
                       value={this.state.description}
@@ -107,7 +118,7 @@ class AddProject extends Component {
                   <div className="form-group">
                     <input
                       type="date"
-                      className="form-control form-control-lg "
+                      className="form-control form-control-lg bg-scrumButton"
                       name="startDate"
                       value={this.state.startDate}
                       onChange={this.onChange}
@@ -117,7 +128,7 @@ class AddProject extends Component {
                   <div className="form-group">
                     <input
                       type="date"
-                      className="form-control form-control-lg "
+                      className="form-control form-control-lg bg-scrumButton"
                       name="endDate"
                       value={this.state.endDate}
                       onChange={this.onChange}

@@ -9,25 +9,24 @@
 }
 .scrumSource {
   font-family: "Source Sans 3", sans-serif;
-  color: #000000;
+  font-size: 20px;
+  color: #42d335;
 }
 .scrumBtn {
   background: #f6f6f6;
-  background-image: linear-gradient(to bottom, #48835a, #a38f6b);
+  background-image: radial-gradient(#614cd6, #363495, #22215c);
   -webkit-border-radius: 28;
   border-radius: 28px;
   font-family: "Source Sans 3", sans-serif;
-  font-weight: 900;
   color: #000000;
-  font-size: 24px;
+  font-size: 28px;
   padding: 10px 20px 10px 20px;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .scrumBtn:hover {
   background: #c4a4d6;
-  background-image: -webkit-linear-gradient(top, #ada9aa, #552233);
-  text-decoration: none;
+  background-image: linear-gradient(to bottom, #4b3ba5, #2c2b79, #17173f);
 }
 
 .scrumYujiMai {
@@ -67,7 +66,7 @@
 .scrumShalimar {
   font-family: "Shalimar", cursive;
   font-weight: 900;
-  color: #add8e6;
+  color: #651f68;
 }
 
 img {
@@ -118,11 +117,19 @@ img {
 
 .dark-overlay {
   /* background-color: #000000; */
-  background-image: linear-gradient(#8f6bd6, #866ba0, #481879, #52209e);
-  /* background-image: radial-gradient(#6034d9, #c4a4d6); */
+  background-image: radial-gradient(
+    circle at 100%,
+    #5726c2,
+    #25213a,
+    #41284e,
+    #33187c
+  );
+  /* background-repeat: no-repeat; */
+  background-size: cover;
+  /* background-position: absolute; */
   position: absolute;
-  top: 0;
-  left: 0;
+  /* top: 0;
+  left: 0; */
   width: 100%;
   height: 100%;
 }
@@ -149,7 +156,7 @@ img {
   background-color: #4a148c !important;
 }
 .bg-scrumButton {
-  background-color: #4169e1 !important;
+  background-color: #926ab8 !important;
 }
 
 .latest-profiles-img {
@@ -158,7 +165,7 @@ img {
 }
 
 .form-control::placeholder {
-  color: #bbb !important;
+  color: rgb(22, 243, 52) !important;
 }
 .scrumMainFont {
   font-weight: normal !important;

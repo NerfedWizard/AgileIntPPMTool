@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import CreateProjectButton from "./Project/CreateProjectButton";
 import ProjectItem from "./Project/ProjectItem";
-import { Input } from "mdb-ui-kit";
-import { MDBAnimation } from "mdbreact";
 import { connect } from "react-redux";
 import { getProjects } from "../actions/projectActions";
 import PropTypes from "prop-types";
+import { Input } from "mdb-ui-kit";
+import { MDBAnimation } from "mdbreact";
 
 class Dashboard extends Component {
   componentDidMount() {
@@ -13,7 +13,6 @@ class Dashboard extends Component {
   }
   render() {
     const { projects } = this.props.project;
-
     return (
       <div className="projects">
         <div className="container">
@@ -25,6 +24,7 @@ class Dashboard extends Component {
               <h2 className="display-4 text-center scrumYujiMai">Projects</h2>
               <br />
               <CreateProjectButton />
+
               <br />
               <hr />
               {projects.map((project) => (
@@ -37,10 +37,14 @@ class Dashboard extends Component {
     );
   }
 }
+
 Dashboard.propTypes = {
   project: PropTypes.object.isRequired,
   getProjects: PropTypes.func.isRequired,
 };
-const mapStateToProps = (state) => ({ project: state.project });
 
-export default connect(null, { getProjects })(Dashboard);
+const mapStateToProps = (state) => ({
+  project: state.project,
+});
+
+export default connect(mapStateToProps, { getProjects })(Dashboard);

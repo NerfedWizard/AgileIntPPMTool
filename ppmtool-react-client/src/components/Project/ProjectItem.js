@@ -8,7 +8,7 @@ class ProjectItem extends Component {
         <div className="card card-body mb-3 bg-scrummaster">
           <div className="row">
             <div className="col-2">
-              <span className="mx-auto scrumCharmon">
+              <span className="mx-auto scrumSource">
                 {project.projectIdentifier}
               </span>
             </div>
