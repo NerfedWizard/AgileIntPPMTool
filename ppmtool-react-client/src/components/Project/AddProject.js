@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { createProject } from "../../actions/projectActions";
 import { MDBAnimation, MDBBtn } from "mdbreact";
+import classnames from "classnames";
 
 class AddProject extends Component {
   constructor() {
@@ -50,54 +51,64 @@ class AddProject extends Component {
           <div className="container">
             <div className="row">
               <div className="col-md-8 m-auto">
-                <h5 className="display-4 text-center scrumYujiMai">
-                  Create Project form
-                </h5>
-                {/* <h5
-                  className="display-4 text-center"
-                  style={{ color: "#ff00ff" }}
-                > */}
-                {/* Create Project form
-                </h5> */}
+                <h5 className="display-4 text-center">Create Project form</h5>
                 <hr />
                 <form onSubmit={this.onSubmit}>
                   <div className="form-group scrumOffside">
                     <input
                       type="text"
-                      class="form-control form-control-lg bg-scrumButton"
-                      placeholder="Project Name"
-                      name="projectName"
+                      className={classnames("form-control form-control-lg", {
+                        "is-invalid": errors.projectName,
+                      })}
+                      placeholder="Unique Project ID"
+                      name="projectIdentifier"
                       value={this.state.projectName}
                       onChange={this.onChange}
                     />
-                    <p>{errors.projectName}</p>
+                    {errors.projectName && (
+                      <div className="invalid-feedback">
+                        {errors.projectName}
+                      </div>
+                    )}
                   </div>
                   <div className="form-group scrumOffside">
                     <input
                       type="text"
-                      className="form-control form-control-lg bg-scrumButton"
+                      className={classnames("form-control form-control-lg", {
+                        "is-invalid": errors.projectIdentifier,
+                      })}
                       placeholder="Unique Project ID"
                       name="projectIdentifier"
                       value={this.state.projectIdentifier}
                       onChange={this.onChange}
                     />
-                    <p>{errors.projectIdentifier}</p>
+                    {errors.projectIdentifier && (
+                      <div className="invalid-feedback">
+                        {errors.projectIdentifier}
+                      </div>
+                    )}
                   </div>
                   <div className="form-group scrumOffside">
                     <textarea
-                      class="form-control form-control-lg bg-scrumButton"
+                      className={classnames("form-control form-control-lg", {
+                        "is-invalid": errors.description,
+                      })}
                       placeholder="Project Description"
                       name="description"
                       value={this.state.description}
                       onChange={this.onChange}
                     />
-                    <p>{errors.description}</p>
+                    {errors.description && (
+                      <div className="invalid-feedback">
+                        {errors.description}
+                      </div>
+                    )}
                   </div>
                   <h6 className="scrumOffside">Start Date</h6>
                   <div className="form-group">
                     <input
                       type="date"
-                      className="form-control form-control-lg bg-scrumButton"
+                      className="form-control form-control-lg "
                       name="startDate"
                       value={this.state.startDate}
                       onChange={this.onChange}
@@ -107,7 +118,7 @@ class AddProject extends Component {
                   <div className="form-group">
                     <input
                       type="date"
-                      className="form-control form-control-lg bg-scrumButton"
+                      className="form-control form-control-lg "
                       name="endDate"
                       value={this.state.endDate}
                       onChange={this.onChange}
@@ -116,7 +127,7 @@ class AddProject extends Component {
 
                   <input
                     type="submit"
-                    className="btn-large bg-scrumDelete btn-block mt-4 shadow-box-example hoverable"
+                    className="btn btn-primary btn-block mt-4"
                   />
                 </form>
               </div>
