@@ -1,11 +1,14 @@
 package com.loel.domain;
 
-import java.util.Date;
-
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -24,7 +27,10 @@ public class Backlog {
 	private String projectIdentifier;
 
 	// OneToOne with project
-
+	@OneToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "project_id", nullable = false)
+	@JsonIgnore
+	private Project project;
 	// OneToMany projectTasks
 
 }

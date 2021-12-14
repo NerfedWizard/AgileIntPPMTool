@@ -3,8 +3,10 @@ package com.loel.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.loel.domain.Backlog;
 import com.loel.domain.Project;
 import com.loel.exceptions.ProjectIDException;
+import com.loel.repositories.BacklogRepository;
 import com.loel.repositories.ProjectRepository;
 
 @Service
@@ -12,15 +14,27 @@ public class ProjectService {
 
 	@Autowired
 	private ProjectRepository projectRepository;
+	@Autowired
+	private BacklogRepository backlogRepository;
+	String identToUpper = "project.getProjectIdentifier().toUpperCase()";
 
 	public Project saveOrUpdateProject(Project project) {
 
 		try {
-			project.setProjectIdentifier(project.getProjectIdentifier().toUpperCase());
+			project.setProjectIdentifier(identToUpper);
+			if (project.getId() == null) {
+				Backlog backlog = new Backlog();
+				project.setBacklog(backlog);
+				backlog.setProject(project);
+				backlog.setProjectIdentifier(identToUpper);
+			}
+			if (project.getId() != null) {
+				project.setBacklog(backlogRepository.findByProjectIdentifier(identToUpper));
+			}
 			return projectRepository.save(project);
+
 		} catch (Exception e) {
-			throw new ProjectIDException(
-					"Project ID '" + project.getProjectIdentifier().toUpperCase() + "' already exists");
+			throw new ProjectIDException("Project ID '" + identToUpper + "' already exists");
 		}
 	}
 
