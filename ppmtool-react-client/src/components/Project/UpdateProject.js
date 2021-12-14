@@ -16,12 +16,16 @@ class UpdateProject extends Component {
       description: "",
       startDate: "",
       endDate: "",
+      errors: {},
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({ errors: nextProps.errors });
+    }
     const {
       id,
       projectName,
@@ -62,6 +66,7 @@ class UpdateProject extends Component {
     this.props.createProject(updatedProject, this.props.history);
   }
   render() {
+    const { errors } = this.state;
     return (
       <div className="project">
         <div className="container">
@@ -75,12 +80,20 @@ class UpdateProject extends Component {
                 <div className="form-group scrumOffside">
                   <input
                     type="text"
-                    className="form-control form-control-lg bg-scrumButton"
+                    className={classnames(
+                      "form-control form-control-lg bg-scrumButton",
+                      {
+                        "is-invalid": errors.projectName,
+                      }
+                    )}
                     placeholder="Project Name"
                     name="projectName"
                     value={this.state.projectName}
                     onChange={this.onChange}
                   />
+                  {errors.projectName && (
+                    <div className="invalid-feedback">{errors.projectName}</div>
+                  )}
                 </div>
                 <div className="form-group scrumOffside">
                   <input
@@ -94,12 +107,20 @@ class UpdateProject extends Component {
                 </div>
                 <div className="form-group scrumOffside">
                   <textarea
-                    className="form-control form-control-lg bg-scrumButton"
+                    className={classnames(
+                      "form-control form-control-lg bg-scrumButton",
+                      {
+                        "is-invalid": errors.description,
+                      }
+                    )}
                     placeholder="Project Description"
                     name="description"
                     value={this.state.description}
                     onChange={this.onChange}
-                  ></textarea>
+                  />
+                  {errors.description && (
+                    <div className="invalid-feedback">{errors.description}</div>
+                  )}
                 </div>
                 <h6 className="scrumOffside">Start Date</h6>
                 <div className="form-group scrumOffside">
@@ -138,10 +159,12 @@ UpdateProject.propTypes = {
   getProject: PropTypes.func.isRequired,
   project: PropTypes.object.isRequired,
   createProject: PropTypes.func.isRequired,
+  errors: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   project: state.project.project,
+  errors: state.errors,
 });
 
 export default connect(mapStateToProps, { getProject, createProject })(
