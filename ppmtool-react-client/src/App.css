@@ -13,7 +13,7 @@
   color: #42d335;
 }
 .scrumBtn {
-  background: #f6f6f6;
+  background: #7c1010;
   background-image: radial-gradient(#614cd6, #363495, #22215c);
   -webkit-border-radius: 28;
   border-radius: 28px;
@@ -165,7 +165,7 @@ img {
 }
 
 .form-control::placeholder {
-  color: rgb(22, 243, 52) !important;
+  color: rgba(15, 250, 46, 0.589) !important;
 }
 .scrumMainFont {
   font-weight: normal !important;

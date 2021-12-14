@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link, NavLink } from "react-router-dom";
 
 class ProjectItem extends Component {
   render() {
@@ -29,17 +30,16 @@ class ProjectItem extends Component {
                     </i>
                   </li>
                 </a>
-                <a href="#">
+                <Link to={`/updateProject/${project.projectIdentifier}`}>
                   <li className="list-group-item board bg-scrumUpdate">
                     <i
                       className="fa fa-edit pr-1 "
                       style={{ color: "#311b92" }}
                     >
-                      {" "}
                       Update Project Info
                     </i>
                   </li>
-                </a>
+                </Link>
                 <a href="#">
                   <li className="list-group-item delete bg-scrumDelete">
                     <i className="fa fa-minus-circle pr-1 "> Delete Project</i>
