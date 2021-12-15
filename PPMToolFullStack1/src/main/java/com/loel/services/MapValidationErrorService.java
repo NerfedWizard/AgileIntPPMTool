@@ -3,9 +3,9 @@ package com.loel.services;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 
@@ -17,9 +17,9 @@ import org.springframework.validation.FieldError;
  * values. This is because this validation goes first before the
  * projectController.
  */
+@Service
 public class MapValidationErrorService {
 
-	@Bean
 	public ResponseEntity<?> mapValidationService(BindingResult result) {
 		if (result.hasErrors()) {
 
