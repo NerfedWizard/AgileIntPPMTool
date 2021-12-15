@@ -1,8 +1,21 @@
 package com.loel.domain;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 import java.util.Date;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
+import javax.validation.constraints.NotBlank;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -26,6 +39,10 @@ public class ProjectTask {
 	private Integer priority;
 	private Date dueDate;
 	// ManyToOne with backlog
+	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
+	@JoinColumn(name = "backlog_id", updatable = false, nullable = false)
+	@JsonIgnore
+	private Backlog backlog;
 	@Column(updatable = false)
 	private String projectIdentifier;
 
