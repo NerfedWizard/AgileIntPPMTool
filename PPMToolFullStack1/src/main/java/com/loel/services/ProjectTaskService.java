@@ -33,14 +33,18 @@ public class ProjectTaskService {
 		// Update the Backlog sequence
 		BacklogSequence++;
 
+		backlog.setPTSequence(BacklogSequence);
+
 		// Add sequence to Project Task
 		projectTask.setProjectSequence(projectIdentifier + "-" + BacklogSequence);
 		projectTask.setProjectIdentifier(projectIdentifier);
 
 		// INITIAL priority when priority null
-//		if (projectTask.getPriority() == 0 || projectTask.getPriority() == null) {
-//			projectTask.setPriority(3);
-//		}
+		if (projectTask.getPriority() == null) {// In the future we need projectTask.getPriority()== 0 to handle the
+												// form
+			projectTask.setPriority(3);
+		}
+
 		// INITIAL status when status is null *could use enums here*
 		if (projectTask.getStatus() == "" || projectTask.getStatus() == null) {
 			projectTask.setStatus("TO_DO");
