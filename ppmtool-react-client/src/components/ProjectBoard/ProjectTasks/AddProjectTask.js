@@ -1,7 +1,25 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import classnames from "classnames";
+import { addProjectTask } from "../../../actions/backlogActions";
+import PropTypes from "prop-types";
 
 class AddProjectTask extends Component {
+  constructor(props) {
+    super(props);
+    const { id } = this.props.match.params;
+
+    this.state = {
+      summary: "",
+      acceptanceCriteria: "",
+      status: "",
+      priority: 0,
+      dueDate: "",
+      projectIdentifier: id,
+      errors: {},
+    };
+  }
   render() {
     const { id } = this.props.match.params;
 
@@ -27,30 +45,36 @@ class AddProjectTask extends Component {
                 <div className="form-group">
                   <input
                     type="text"
-                    className="form-control form-control-lg"
+                    className="form-control form-control-lg bg-scrumButton"
                     name="summary"
+                    style={{ color: "#00FFFF" }}
                     placeholder="Project Task summary"
+                    value={this.state.summary}
                   />
                 </div>
                 <div className="form-group">
                   <textarea
-                    className="form-control form-control-lg"
+                    className="form-control form-control-lg bg-scrumButton"
+                    style={{ color: "#00FFFF" }}
                     placeholder="Acceptance Criteria"
                     name="acceptanceCriteria"
+                    value={this.state.acceptanceCriteria}
                   />
                 </div>
                 <h6 className="scrumBioRhyme">Due Date</h6>
                 <div className="form-group">
                   <input
                     type="date"
-                    className="form-control form-control-lg"
+                    className="form-control form-control-lg bg-scrumButton"
                     name="dueDate"
+                    value={this.state.dueDate}
                   />
                 </div>
                 <div className="form-group">
                   <select
-                    className="form-control form-control-lg"
+                    className="form-control form-control-lg bg-scrumButton"
                     name="priority"
+                    value={this.state.priority}
                   >
                     <option value={0}>Select Priority</option>
                     <option value={1}>High</option>
@@ -61,8 +85,9 @@ class AddProjectTask extends Component {
 
                 <div className="form-group">
                   <select
-                    className="form-control form-control-lg"
+                    className="form-control form-control-lg bg-scrumButton"
                     name="status"
+                    value={this.state.status}
                   >
                     <option value="">Select Status</option>
                     <option value="TO_DO">TO DO</option>
@@ -74,7 +99,7 @@ class AddProjectTask extends Component {
                 <input
                   style={{ color: "#000000" }}
                   type="submit"
-                  className="btn scrumSubmitBtn  btn-block mt-4 scrumSource"
+                  className="btn scrumSubmitBtn  btn-block mt-4 scrumNunito"
                 />
               </form>
             </div>
@@ -84,5 +109,8 @@ class AddProjectTask extends Component {
     );
   }
 }
+AddProjectTask.propTypes = {
+  addProjectTask: PropTypes.func.isRequired,
+};
 
-export default AddProjectTask;
+export default connect(null, { addProjectTask })(AddProjectTask);

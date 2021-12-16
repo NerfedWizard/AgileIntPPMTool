@@ -6,6 +6,7 @@ import { getProjects } from "../actions/projectActions";
 import PropTypes from "prop-types";
 import { Input } from "mdb-ui-kit";
 import { MDBAnimation } from "mdbreact";
+import ToggleColorMode from "./Decoration/darkModeToggleSwitch";
 
 class Dashboard extends Component {
   componentDidMount() {
@@ -18,10 +19,12 @@ class Dashboard extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h1 className="display-4 text-center scrumMonoton">
-                Easy Scrum, Easy Go
-              </h1>
-              <h2 className="display-4 text-center scrumYujiMai">Projects</h2>
+              <MDBAnimation className="scrumAnimateRubberBand">
+                <h1 className="display-4 text-center scrumMonoton">
+                  Easy Scrum, Easy Go
+                </h1>
+                <h2 className="display-4 text-center scrumYujiMai">Projects</h2>
+              </MDBAnimation>
               <br />
               <CreateProjectButton />
 

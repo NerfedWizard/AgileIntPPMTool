@@ -64,6 +64,7 @@ class AddProject extends Component {
                           "is-invalid": errors.projectName,
                         }
                       )}
+                      style={{ color: "#00FFFF" }}
                       placeholder="Project Name"
                       name="projectName"
                       value={this.state.projectName}
@@ -84,6 +85,7 @@ class AddProject extends Component {
                           "is-invalid": errors.projectIdentifier,
                         }
                       )}
+                      style={{ color: "#00FFFF" }}
                       placeholder="Unique Project ID"
                       name="projectIdentifier"
                       value={this.state.projectIdentifier}
@@ -103,6 +105,7 @@ class AddProject extends Component {
                           "is-invalid": errors.description,
                         }
                       )}
+                      style={{ color: "#00FFFF" }}
                       placeholder="Project Description"
                       name="description"
                       value={this.state.description}
@@ -114,22 +117,24 @@ class AddProject extends Component {
                       </div>
                     )}
                   </div>
-                  <h6 className="scrumOffside">Start Date</h6>
+                  <h6 className="scrumNunito">Start Date</h6>
                   <div className="form-group">
                     <input
                       type="date"
                       className="form-control form-control-lg bg-scrumButton"
                       name="startDate"
+                      style={{ color: "#00FFFF" }}
                       value={this.state.startDate}
                       onChange={this.onChange}
                     />
                   </div>
-                  <h6 className="scrumOffside">Estimated End Date</h6>
+                  <h6 className="scrumNunito">Estimated End Date</h6>
                   <div className="form-group">
                     <input
                       type="date"
                       className="form-control form-control-lg bg-scrumButton"
                       name="endDate"
+                      style={{ color: "#00FFFF" }}
                       value={this.state.endDate}
                       onChange={this.onChange}
                     />
@@ -138,7 +143,7 @@ class AddProject extends Component {
                   <input
                     style={{ color: "#000000" }}
                     type="submit"
-                    className="btn scrumSubmitBtn  btn-block mt-4  hoverable scrumSource"
+                    className="btn scrumSubmitBtn  btn-block mt-4  hoverable scrumNunito"
                   />
                 </form>
               </div>

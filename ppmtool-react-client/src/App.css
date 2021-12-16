@@ -1,6 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=BioRhyme:wght@200&family=Charmonman&family=Lobster+Two&family=Offside&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Monoton&family=Rock+Salt&family=Shalimar&family=Yuji+Mai&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@900&family=Roboto:ital,wght@0,900;1,900&display=swap");
+
+.scrumNunito {
+  font-family: "Nunito", sans-serif;
+  font-weight: 900;
+  color: #26c24d;
+}
+.scrumRobotoItl {
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  color: #1a237e;
+}
+.scrumRoboto {
+  font-family: "Roboto", sans-serif;
+  color: #1a237e;
+  font-weight: 900;
+}
 
 .shadow-box-example {
   height: 50px;
@@ -25,8 +42,8 @@
   border-radius: 28px;
 }
 .scrumSubmitBtn:hover {
-  background: #99050598;
-  background-image: radial-gradient(to bottom, #ec4c4cd2, #970e31, #951329);
+  background: #864a4a98;
+  background-image: radial-gradient(to bottom, #ec4c4cd2, #9e5164, #951329);
 }
 
 .scrumBtn:hover {
@@ -168,6 +185,9 @@ img {
   width: 40px;
   height: 40px;
 }
+.input.form-control.form-control-lg {
+  background: #6f71e6 !important;
+}
 
 .form-control::placeholder {
   color: rgba(15, 250, 46, 0.589) !important;
@@ -184,4 +204,9 @@ img {
 }
 .whatever {
   color: #311b92;
+}
+.scrumAnimateRubberBand {
+  -webkit-animation: jackInTheBox;
+  -webkit-animation-delay: 2s;
+  /* -webkit-animation-iteration-count: infinite; */
 }
