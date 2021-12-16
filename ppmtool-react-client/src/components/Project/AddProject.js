@@ -136,8 +136,9 @@ class AddProject extends Component {
                   </div>
 
                   <input
+                    style={{ color: "#000000" }}
                     type="submit"
-                    className="btn scrumBtn btn-block mt-4  hoverable"
+                    className="btn scrumSubmitBtn  btn-block mt-4  hoverable scrumSource"
                   />
                 </form>
               </div>

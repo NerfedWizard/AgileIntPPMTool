@@ -6,7 +6,7 @@ const CreateProjectButton = () => {
     <React.Fragment>
       <Link
         to="/addProject"
-        className="btn btn-lg bg-scrumButton scrumBioRhyme"
+        className="btn btn-lg scrumBtn scrumBioRhyme"
         style={{ color: "#FF8C00" }}
       >
         Create a Project

@@ -12,16 +12,21 @@
   font-size: 20px;
   color: #42d335;
 }
+.scrumSubmitBtn {
+  background: #fad8d8;
+  background-image: radial-gradient(#b66875, #9c3783, #bb4cb2);
+  -webkit-border-radius: 28;
+  border-radius: 28px;
+}
 .scrumBtn {
-  background: #7c1010;
+  background: #fad8d8;
   background-image: radial-gradient(#614cd6, #363495, #22215c);
   -webkit-border-radius: 28;
   border-radius: 28px;
-  font-family: "Source Sans 3", sans-serif;
-  color: #000000;
-  font-size: 28px;
-  padding: 10px 20px 10px 20px;
-  text-decoration: none;
+}
+.scrumSubmitBtn:hover {
+  background: #99050598;
+  background-image: radial-gradient(to bottom, #ec4c4cd2, #970e31, #951329);
 }
 
 .scrumBtn:hover {
