@@ -62,4 +62,9 @@ public class Project {
 		this.updatedAt = new Date();
 	}
 
+	public Object getProjectLeader() {
+
+		return null;
+	}
+
 }
