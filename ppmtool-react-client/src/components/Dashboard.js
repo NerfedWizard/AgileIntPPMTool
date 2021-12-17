@@ -20,10 +20,12 @@ class Dashboard extends Component {
           <div className="row">
             <div className="col-md-12">
               <MDBAnimation className="scrumAnimateRubberBand">
-                <h1 className="display-4 text-center scrumMonoton">
-                  Easy Scrum, Easy Go
+                <h2 className="display-2 text-center scrumCharmon">
+                  Kanban Project
+                </h2>
+                <h1 className="display-9 text-center scrumRockSalt">
+                  Scrum As You Are
                 </h1>
-                <h2 className="display-4 text-center scrumYujiMai">Projects</h2>
               </MDBAnimation>
               <br />
               <CreateProjectButton />

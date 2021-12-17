@@ -2,6 +2,52 @@
 @import url("https://fonts.googleapis.com/css2?family=Monoton&family=Rock+Salt&family=Shalimar&family=Yuji+Mai&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@900&family=Roboto:ital,wght@0,900;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&display=swap");
+
+#shine-background {
+  /* background-size: cover; */
+  position: relative;
+  top: -50%;
+  left: -50%;
+  width: 100%;
+  height: 100%;
+  background-color: #363495;
+  background: radial-gradient(
+      farthest-corner at top,
+      #ffffff 0%,
+      #5726c2 4%,
+      #41284e 12.25%,
+      #25213a 22.25%,
+      #33187c 50%
+    )
+    top right/200% 200%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  color: rgb(243, 62, 228);
+  font-weight: bold;
+  animation: colorChange 5s infinite alternate;
+}
+@keyframes colorChange {
+  to {
+    background-position: top left;
+  }
+}
+@keyframes move_eye {
+  from {
+    margin-left: -20%;
+  }
+  to {
+    margin-left: 100%;
+  }
+}
+.scrumFuzzyBubbles {
+  font-family: "Fuzzy Bubbles", cursive;
+  font-weight: 700, bold;
+  text-shadow: 1px 1px 2px rgb(110, 10, 10), 0 0 25px rgb(195, 73, 185),
+    0 0 5px rgb(100, 20, 110);
+  color: #102242;
+}
 
 .scrumNunito {
   font-family: "Nunito", sans-serif;
@@ -54,14 +100,17 @@
 .scrumYujiMai {
   font-family: "Yuji Mai", serif;
   text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
-  /* background-image: linear-gradient(#00fa9a, #ff8c00, #0000ff); */
   color: #00fa9a;
 }
 
 .scrumRockSalt {
   font-family: "Rock Salt", cursive;
-  color: #ff8c00;
+  font-size: 26px;
+  text-shadow: 1px 1px 2px rgb(110, 10, 10), 0 0 25px rgb(195, 73, 185),
+    0 0 5px rgb(100, 20, 110);
+  color: #102242;
 }
+
 .scrumMonoton {
   font-family: "Monoton", cursive;
   text-shadow: 1px 1px 2px rgb(144, 10, 10);
@@ -71,7 +120,9 @@
 .scrumCharmon {
   font-family: "Charmonman", cursive;
   font-size: x-large;
-  color: #c71585 !important;
+  color: #fff5ee;
+  text-shadow: 1px 1px 2px rgb(238, 107, 210), 0 0 25px rgb(202, 47, 189),
+    0 0 5px rgb(202, 77, 196);
 }
 .scrumLobster {
   font-family: "Lobster Two", cursive;
@@ -138,29 +189,33 @@ img {
 }
 
 .dark-overlay {
-  /* background-color: #000000; */
-  background-image: radial-gradient(
-    circle at 100%,
-    #5726c2,
-    #25213a,
-    #41284e,
-    #33187c
-  );
-  /* background-repeat: no-repeat; */
-  background-size: cover;
-  /* background-position: absolute; */
-  position: absolute;
-  /* top: 0;
-  left: 0; */
+  position: relative;
+  top: 0%;
+  left: 0%;
   width: 100%;
   height: 100%;
+  background-color: #363495;
+  background: radial-gradient(
+      farthest-corner at top,
+      #ffffff 0%,
+      #501481 4%,
+      #3e1753 12.25%,
+      #7314c0 22.25%,
+      #322458 50%
+    )
+    top right/200% 200%;
+  justify-content: center;
+  align-items: center;
+  color: rgb(243, 62, 228);
+  font-weight: bold;
+  animation: colorChange 5s infinite alternate;
 }
 
 .card-form {
   opacity: 0.9;
 }
 .bg-scrummaster {
-  background-color: #1a237e !important;
+  background-color: #060a3f9b !important;
 }
 .bg-scrumProjectBoard {
   background-color: #00ced1 !important;

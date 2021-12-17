@@ -10,13 +10,14 @@ import store from "./store";
 import UpdateProject from "./components/Project/UpdateProject";
 import ProjectBoard from "./components/ProjectBoard/ProjectBoard";
 import AddProjectTask from "./components/ProjectBoard/ProjectTasks/AddProjectTask";
-import ToggleColorMode from "./components/Decoration/darkModeToggleSwitch";
+// import ToggleColorMode from "./components/Decoration/darkModeToggleSwitch";
 
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
         <Router>
+          {/* <div id="shine-background"> */}
           <div className="App dark-overlay">
             <Header />
             {/* <ToggleColorMode /> */}
@@ -30,6 +31,7 @@ class App extends Component {
               component={AddProjectTask}
             />
           </div>
+          {/* </div> */}
         </Router>
       </Provider>
     );
