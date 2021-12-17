@@ -19,7 +19,7 @@ class App extends Component {
         <Router>
           <div className="App dark-overlay">
             <Header />
-            <ToggleColorMode />
+            {/* <ToggleColorMode /> */}
             <Route exact path="/dashboard" component={Dashboard} />
             <Route exact path="/addProject" component={AddProject} />
             <Route exact path="/updateProject/:id" component={UpdateProject} />

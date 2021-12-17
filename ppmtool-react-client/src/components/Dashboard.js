@@ -6,7 +6,7 @@ import { getProjects } from "../actions/projectActions";
 import PropTypes from "prop-types";
 import { Input } from "mdb-ui-kit";
 import { MDBAnimation } from "mdbreact";
-import ToggleColorMode from "./Decoration/darkModeToggleSwitch";
+// import ToggleColorMode from "./Decoration/darkModeToggleSwitch";
 
 class Dashboard extends Component {
   componentDidMount() {
