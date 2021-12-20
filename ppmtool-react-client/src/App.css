@@ -4,6 +4,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@900&family=Roboto:ital,wght@0,900;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&display=swap");
 
+@media (min-width: 1200px) {
+}
+
 #shine-background {
   /* background-size: cover; */
   position: relative;
@@ -21,7 +24,7 @@
       #33187c 50%
     )
     top right/200% 200%;
-  display: grid;
+  display: flow-root;
   justify-content: center;
   align-items: center;
   color: rgb(243, 62, 228);

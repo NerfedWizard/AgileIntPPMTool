@@ -15,25 +15,31 @@ import AddProjectTask from "./components/ProjectBoard/ProjectTasks/AddProjectTas
 class App extends Component {
   render() {
     return (
-      <Provider store={store}>
-        <Router>
-          {/* <div id="shine-background"> */}
-          <div className="App dark-overlay">
-            <Header />
-            {/* <ToggleColorMode /> */}
-            <Route exact path="/dashboard" component={Dashboard} />
-            <Route exact path="/addProject" component={AddProject} />
-            <Route exact path="/updateProject/:id" component={UpdateProject} />
-            <Route exact path="/projectBoard/:id" component={ProjectBoard} />
-            <Route
-              exact
-              path="/addProjectTask/:id"
-              component={AddProjectTask}
-            />
-          </div>
-          {/* </div> */}
-        </Router>
-      </Provider>
+      <div className="dark-overlay ">
+        <Provider store={store}>
+          <Router>
+            {/* <div id="shine-background"> */}
+            <div className="App">
+              <Header />
+              {/* <ToggleColorMode /> */}
+              <Route exact path="/dashboard" component={Dashboard} />
+              <Route exact path="/addProject" component={AddProject} />
+              <Route
+                exact
+                path="/updateProject/:id"
+                component={UpdateProject}
+              />
+              <Route exact path="/projectBoard/:id" component={ProjectBoard} />
+              <Route
+                exact
+                path="/addProjectTask/:id"
+                component={AddProjectTask}
+              />
+            </div>
+            {/* </div> */}
+          </Router>
+        </Provider>
+      </div>
     );
   }
 }

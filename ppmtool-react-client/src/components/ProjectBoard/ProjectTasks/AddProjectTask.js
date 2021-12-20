@@ -55,7 +55,7 @@ class AddProjectTask extends Component {
     const { errors } = this.state;
     return (
       <div className="add-PBI">
-        <div className="container">
+        <div className="container-fluid">
           <div className="row">
             <div className="col-md-8 m-auto">
               <Link
@@ -65,7 +65,7 @@ class AddProjectTask extends Component {
               >
                 Back to Project Board
               </Link>
-              <h4 className="display-4 text-center scrumBioRhyme">
+              <h4 className="display-5 text-center scrumBioRhyme">
                 Add Project Task
               </h4>
               <p className="lead text-center scrumBioRhyme">
