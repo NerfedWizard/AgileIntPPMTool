@@ -72,87 +72,83 @@ class UpdateProject extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-8 m-auto">
-              <div id="shine-background">
-                <h5 className="display-4 text-center scrumYujiMai">
-                  Update Project
-                </h5>
-                <hr />
-                <form onSubmit={this.onSubmit}>
-                  <div className="form-group scrumOffside">
-                    <input
-                      type="text"
-                      className={classnames(
-                        "form-control form-control-lg bg-scrumButton",
-                        {
-                          "is-invalid": errors.projectName,
-                        }
-                      )}
-                      placeholder="Project Name"
-                      name="projectName"
-                      value={this.state.projectName}
-                      onChange={this.onChange}
-                    />
-                    {errors.projectName && (
-                      <div className="invalid-feedback">
-                        {errors.projectName}
-                      </div>
-                    )}
-                  </div>
-                  <div className="form-group scrumOffside">
-                    <input
-                      type="text"
-                      className="form-control form-control-lg bg-scrumButton"
-                      placeholder="ID cannot be changed"
-                      name="projectIndentifier"
-                      value={this.state.projectIndentifier}
-                      disabled
-                    />
-                  </div>
-                  <div className="form-group scrumOffside">
-                    <textarea
-                      className={classnames(
-                        "form-control form-control-lg bg-scrumButton",
-                        {
-                          "is-invalid": errors.description,
-                        }
-                      )}
-                      placeholder="Project Description"
-                      name="description"
-                      value={this.state.description}
-                      onChange={this.onChange}
-                    />
-                    {errors.description && (
-                      <div className="invalid-feedback">
-                        {errors.description}
-                      </div>
-                    )}
-                  </div>
-                  <h6 className="scrumOffside">Start Date</h6>
-                  <div className="form-group scrumOffside">
-                    <input
-                      type="date"
-                      className="form-control form-control-lg bg-scrumButton"
-                      name="startDate"
-                      value={this.state.startDate}
-                      onChange={this.onChange}
-                    />
-                  </div>
-                  <h6 className="scrumOffside">Estimated End Date</h6>
-                  <div className="form-group scrumOffside">
-                    <input
-                      type="date"
-                      className="form-control form-control-lg bg-scrumButton"
-                      name="endDate"
-                      value={this.state.endDate}
-                      onChange={this.onChange}
-                    />
-                  </div>
+              {/* <div id="shine-background"> */}
+              <h5 className="display-4 text-center scrumYujiMai">
+                Update Project
+              </h5>
+              <hr />
+              <form onSubmit={this.onSubmit}>
+                <div className="form-group scrumOffside">
                   <input
-                    type="submit"
-                    className="btn scrumBtn btn-block mt-4  hoverable"
+                    type="text"
+                    className={classnames(
+                      "form-control form-control-lg bg-scrumButton",
+                      {
+                        "is-invalid": errors.projectName,
+                      }
+                    )}
+                    placeholder="Project Name"
+                    name="projectName"
+                    value={this.state.projectName}
+                    onChange={this.onChange}
                   />
-                </form>
-              </div>
+                  {errors.projectName && (
+                    <div className="invalid-feedback">{errors.projectName}</div>
+                  )}
+                </div>
+                <div className="form-group scrumOffside">
+                  <input
+                    type="text"
+                    className="form-control form-control-lg bg-scrumButton"
+                    placeholder="ID cannot be changed"
+                    name="projectIndentifier"
+                    value={this.state.projectIndentifier}
+                    disabled
+                  />
+                </div>
+                <div className="form-group scrumOffside">
+                  <textarea
+                    className={classnames(
+                      "form-control form-control-lg bg-scrumButton",
+                      {
+                        "is-invalid": errors.description,
+                      }
+                    )}
+                    placeholder="Project Description"
+                    name="description"
+                    value={this.state.description}
+                    onChange={this.onChange}
+                  />
+                  {errors.description && (
+                    <div className="invalid-feedback">{errors.description}</div>
+                  )}
+                </div>
+                <h6 className="scrumOffside">Start Date</h6>
+                <div className="form-group scrumOffside">
+                  <input
+                    type="date"
+                    className="form-control form-control-lg bg-scrumButton"
+                    name="startDate"
+                    value={this.state.startDate}
+                    onChange={this.onChange}
+                  />
+                </div>
+                <h6 className="scrumOffside">Estimated End Date</h6>
+                <div className="form-group scrumOffside">
+                  <input
+                    type="date"
+                    className="form-control form-control-lg bg-scrumButton"
+                    name="endDate"
+                    value={this.state.endDate}
+                    onChange={this.onChange}
+                  />
+                </div>
+                <input
+                  type="submit"
+                  className="btn scrumBtn btn-block mt-4  hoverable"
+                />
+              </form>
+              {/* </div> */}
             </div>
           </div>
         </div>

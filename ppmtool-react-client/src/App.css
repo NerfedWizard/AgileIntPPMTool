@@ -247,9 +247,9 @@ img {
   background: #6f71e6 !important;
 }
 
-.form-control::placeholder {
+/* .form-control::placeholder {
   color: rgba(15, 250, 46, 0.589) !important;
-}
+} */
 .scrumMainFont {
   font-weight: normal !important;
   font-family: fantasy !important;

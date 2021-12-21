@@ -5,6 +5,7 @@ import { createProject } from "../../actions/projectActions";
 import { MDBAnimation, MDBBtn } from "mdbreact";
 import classnames from "classnames";
 
+//Work on handling the errors through css
 class AddProject extends Component {
   constructor() {
     super();
@@ -47,7 +48,7 @@ class AddProject extends Component {
     return (
       <div>
         <div className="project h-100">
-          <div className="container">
+          <div className="container-fluid">
             <div className="row">
               <div className="col-md-8 m-auto">
                 <h5 className="display-4 text-center scrumYujiMai">
@@ -55,7 +56,7 @@ class AddProject extends Component {
                 </h5>
                 <hr />
                 <form onSubmit={this.onSubmit}>
-                  <div className="form-group scrumOffside">
+                  <div className="form-group form-floating scrumOffside">
                     <input
                       type="text"
                       className={classnames(
@@ -64,19 +65,23 @@ class AddProject extends Component {
                           "is-invalid": errors.projectName,
                         }
                       )}
-                      style={{ color: "#00FFFF" }}
+                      id="floatingInput"
+                      // style={{ color: "#00FFFF" }}
                       placeholder="Project Name"
                       name="projectName"
                       value={this.state.projectName}
                       onChange={this.onChange}
                     />
+                    <label for="floatingInput" style={{ color: "#98FB98" }}>
+                      Project Name
+                    </label>
                     {errors.projectName && (
                       <div className="invalid-feedback">
                         {errors.projectName}
                       </div>
                     )}
                   </div>
-                  <div className="form-group scrumOffside">
+                  <div className="form-group form-floating scrumOffside">
                     <input
                       type="text"
                       className={classnames(
@@ -85,7 +90,8 @@ class AddProject extends Component {
                           "is-invalid": errors.projectIdentifier,
                         }
                       )}
-                      style={{ color: "#00FFFF" }}
+                      // style={{ color: "#00FFFF" }}
+                      id="floatingInput"
                       placeholder="Unique Project ID"
                       name="projectIdentifier"
                       value={this.state.projectIdentifier}
@@ -96,6 +102,9 @@ class AddProject extends Component {
                         {errors.projectIdentifier}
                       </div>
                     )}
+                    <label for="floatingInput" style={{ color: "#98FB98" }}>
+                      Unique Project ID
+                    </label>
                   </div>
                   <div className="form-group scrumOffside">
                     <textarea
@@ -105,7 +114,8 @@ class AddProject extends Component {
                           "is-invalid": errors.description,
                         }
                       )}
-                      style={{ color: "#00FFFF" }}
+                      id="floatingInput"
+                      // style={{ color: "#00FFFF" }}
                       placeholder="Project Description"
                       name="description"
                       value={this.state.description}
@@ -116,6 +126,9 @@ class AddProject extends Component {
                         {errors.description}
                       </div>
                     )}
+                    <label for="floatingInput" style={{ color: "#98FB98" }}>
+                      Project Description
+                    </label>
                   </div>
                   <h6 className="scrumNunito">Start Date</h6>
                   <div className="form-group">
@@ -123,6 +136,7 @@ class AddProject extends Component {
                       type="date"
                       className="form-control form-control-lg bg-scrumButton"
                       name="startDate"
+                      id="floatingInput"
                       style={{ color: "#00FFFF" }}
                       value={this.state.startDate}
                       onChange={this.onChange}
