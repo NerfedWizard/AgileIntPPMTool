@@ -80,19 +80,19 @@
 }
 .scrumSubmitBtn {
   background: #fad8d8;
-  background-image: radial-gradient(#b66875, #9c3783, #bb4cb2);
+  background-image: radial-gradient(#0059ff, #9597ff, #3c00ff);
   -webkit-border-radius: 28;
   border-radius: 28px;
 }
 .scrumBtn {
   background: #fad8d8;
-  background-image: radial-gradient(#614cd6, #363495, #22215c);
+  background-image: radial-gradient(#221b79, #3638dfc4, #264b8f);
   -webkit-border-radius: 28;
   border-radius: 28px;
 }
 .scrumSubmitBtn:hover {
-  background: #864a4a98;
-  background-image: radial-gradient(to bottom, #ec4c4cd2, #9e5164, #951329);
+  background: #351fff42;
+  background-image: radial-gradient(to bottom, #4c71ecd2, #9e5164, #951329);
 }
 
 .scrumBtn:hover {
@@ -227,10 +227,13 @@ img {
   background-color: #448aff !important;
 }
 .bg-scrumDelete {
-  font-weight: normal !important;
-  font-family: fantasy !important;
-  color: #dc143c !important;
-  background-color: #e9967a !important;
+  font-family: "FuzzyBubbles", cursive !important;
+  font-weight: 900 !important;
+  color: #000000 !important;
+  background: #fad8d8;
+  background-image: radial-gradient(#ff0000, #ff9595, #ff0062);
+  -webkit-border-radius: 28;
+  border-radius: 28px;
 }
 .bg-scrumlord {
   background-color: #4a148c !important;

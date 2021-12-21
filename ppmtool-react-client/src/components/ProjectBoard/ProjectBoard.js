@@ -53,8 +53,14 @@ class ProjectBoard extends Component {
     BoardContent = boardAlgorithm(errors, project_tasks);
     return (
       <div className="container">
-        <Link to={`/addProjectTask/${id}`} className="btn btn-primary mb-3">
-          <i className="fas fa-plus-circle"> Create Project Task</i>
+        <Link
+          to={`/addProjectTask/${id}`}
+          className="btn scrumSubmitBtn mb-3 hoverable scrumNunito"
+        >
+          <i className="fas fa-plus-circle" style={{ color: "#000000" }}>
+            {" "}
+            Create Project Task
+          </i>
         </Link>
         <br />
         <hr />
