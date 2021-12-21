@@ -11,6 +11,7 @@ function DarkModeToggleSwitch() {
   const theme = useTheme();
   const colorMode = React.useContext(ColorModeContext);
   return (
+    <div className="side-container";>
     <Box
       sx={{
         display: "flex",
@@ -38,6 +39,7 @@ function DarkModeToggleSwitch() {
             }}
       </IconButton>
     </Box>
+    </div>
   );
 }
 
@@ -63,10 +65,10 @@ export default function ToggleColorMode() {
   );
 
   return (
-    <ColorModeContext.Provider value={colorMode}>
-      <ThemeProvider theme={theme}>
-        <DarkModeToggleSwitch />
-      </ThemeProvider>
-    </ColorModeContext.Provider>
+      <ColorModeContext.Provider value={colorMode}>
+        <ThemeProvider theme={theme}>
+          <DarkModeToggleSwitch />
+        </ThemeProvider>
+      </ColorModeContext.Provider>
   );
 }
