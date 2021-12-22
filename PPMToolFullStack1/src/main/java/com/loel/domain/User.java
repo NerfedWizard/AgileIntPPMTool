@@ -43,7 +43,8 @@ public class User implements UserDetails {
 	private String confirmPassword;
 	private Date createAt;
 	private Date updateAt;
-	private static final long serialVersionUID = new Random().nextLong();// or some long
+	static Random rand = new Random();
+	private static final long serialVersionUID = rand.nextLong();// or some long
 
 	// OneToMany with Project
 
@@ -68,6 +69,14 @@ public class User implements UserDetails {
 	}
 
 	public void setFirstName(String firstName) {
+		String tempFirstName = firstName.toLowerCase();
+		char[] letters = tempFirstName.toCharArray();
+		for (char c : letters) {
+			if (!(c >= 'a' && c <= 'z')) {
+				System.out.println("First name must be letters");
+			}
+		}
+
 		this.firstName = firstName;
 	}
 
@@ -87,6 +96,7 @@ public class User implements UserDetails {
 		this.password = password;
 	}
 
+	@JsonIgnore
 	public String getConfirmPassword() {
 		return confirmPassword;
 	}

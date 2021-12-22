@@ -10,17 +10,28 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 @ControllerAdvice
 @RestController
-public class CustomResponseEntityExceptionHandler extends ResponseEntityExceptionHandler{
+public class CustomResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
 
 	@ExceptionHandler
-	public final ResponseEntity<Object> handleProjectIDException(ProjectIDException ex, WebRequest request){
+	public final ResponseEntity<Object> handleProjectIDException(ProjectIDException ex, WebRequest request) {
 		ProjectIDExceptionResponse exceptionResponse = new ProjectIDExceptionResponse(ex.getMessage());
 
 		return new ResponseEntity<Object>(exceptionResponse, HttpStatus.BAD_REQUEST);
 	}
-	 @ExceptionHandler
-	    public final ResponseEntity<Object> handleProjectNotFoundException(ProjectNotFoundException ex, WebRequest request){
-	        ProjectNotFoundExceptionResponse exceptionResponse = new ProjectNotFoundExceptionResponse(ex.getMessage());
-	        return new ResponseEntity(exceptionResponse, HttpStatus.BAD_REQUEST);
-	    }
+
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@ExceptionHandler
+	public final ResponseEntity<Object> handleProjectNotFoundException(ProjectNotFoundException ex,
+			WebRequest request) {
+		ProjectNotFoundExceptionResponse exceptionResponse = new ProjectNotFoundExceptionResponse(ex.getMessage());
+		return new ResponseEntity(exceptionResponse, HttpStatus.BAD_REQUEST);
+	}
+
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@ExceptionHandler
+	public final ResponseEntity<Object> handleDuplicateUsernameException(DuplicateUsernameException ex,
+			WebRequest request) {
+		DuplicateUsernameResponse exceptionResponse = new DuplicateUsernameResponse(ex.getMessage());
+		return new ResponseEntity(exceptionResponse, HttpStatus.BAD_REQUEST);
+	}
 }
