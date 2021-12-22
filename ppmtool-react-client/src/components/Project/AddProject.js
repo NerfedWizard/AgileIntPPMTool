@@ -62,7 +62,7 @@ class AddProject extends Component {
                       className={classnames(
                         "form-control form-control-lg bg-scrumButton",
                         {
-                          "is-invalid": errors.projectName,
+                          "is-invalid": errors.projectName, //Need to configure the floating Error
                         }
                       )}
                       id="floatingInput"
