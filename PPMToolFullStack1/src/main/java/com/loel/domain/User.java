@@ -69,13 +69,6 @@ public class User implements UserDetails {
 	}
 
 	public void setFirstName(String firstName) {
-		String tempFirstName = firstName.toLowerCase();
-		char[] letters = tempFirstName.toCharArray();
-		for (char c : letters) {
-			if (!(c >= 'a' && c <= 'z')) {
-				System.out.println("First name must be letters");
-			}
-		}
 
 		this.firstName = firstName;
 	}
