@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.loel.domain.Project;
 import com.loel.services.MapValidationErrorService;
 import com.loel.services.ProjectService;
+import java.security.Principal;
 
 @RestController
 @RequestMapping("/api/project")
@@ -31,13 +32,13 @@ public class ProjectController {
 	private MapValidationErrorService mapValidationErrorService;
 
 	@PostMapping("")
-	public ResponseEntity<?> createNewProject(@Valid @RequestBody Project project, BindingResult result) {
-
+	public ResponseEntity<?> createNewProject(@Valid @RequestBody Project project, BindingResult result,
+			Principal principal) {
 		ResponseEntity<?> errorMap = mapValidationErrorService.mapValidationService(result);
 		if (errorMap != null)
 			return errorMap;
 
-		Project project1 = projectService.saveOrUpdateProject(project);
+		Project project1 = projectService.saveOrUpdateProject(project, principal.getName());
 		return new ResponseEntity<Project>(project1, HttpStatus.CREATED);
 	}
 
