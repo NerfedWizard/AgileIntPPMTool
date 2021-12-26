@@ -25,6 +25,15 @@ public class ProjectService {
 	private UserRepository userRepository;
 
 	public Project saveOrUpdateProject(Project project, String username) {
+		if (project.getId() != null) {
+			Project existingProject = projectRepository.findByProjectIdentifier(project.getProjectIdentifier());
+			if (existingProject != null && (!existingProject.getProjectLeader().equals(username))) {
+				throw new ProjectNotFoundException("This Project is not in your control boss!");
+			} else if (existingProject == null) {
+				throw new ProjectNotFoundException("This Project with ID: '" + project.getProjectIdentifier()
+						+ "' only exists in an Alternate Universe");
+			}
+		}
 		try {
 			User user = userRepository.findByUsername(username);
 			project.setUser(user);
@@ -63,7 +72,7 @@ public class ProjectService {
 
 		}
 		if (!project.getProjectLeader().equals(username)) {
-			throw new ProjectNotFoundException("Don't snoop at projects that aren't yours");
+			throw new ProjectNotFoundException("Quit snooping this isn't your Project");
 		}
 
 		return project;
