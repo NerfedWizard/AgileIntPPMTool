@@ -13,13 +13,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import org.hibernate.annotations.Proxy;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-
-@AllArgsConstructor
-@NoArgsConstructor
+@Proxy(lazy = false)
 @Entity
 public class Backlog {
 
@@ -27,49 +25,6 @@ public class Backlog {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private Integer PTSequence = 0;
-
-	public Long getId() {
-		return this.id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public Integer getPTSequence() {
-		return this.PTSequence;
-	}
-
-	public void setPTSequence(Integer pTSequence) {
-		this.PTSequence = pTSequence;
-	}
-
-	public String getProjectIdentifier() {
-		return this.projectIdentifier;
-	}
-
-	public void setProjectIdentifier(String projectIdentifier) {
-		this.projectIdentifier = projectIdentifier;
-	}
-
-	public Project getProject() {
-		return this.project;
-	}
-
-	public void setProject(Project project) {
-		this.project = project;
-	}
-
-	public List<ProjectTask> getProjectTasks() {
-		return this.projectTasks;
-	}
-
-	public void setProjectTasks(List<ProjectTask> projectTasks) {
-		this.projectTasks = projectTasks;
-	}
-
-
-
 	private String projectIdentifier;
 
 	// OneToOne with project
@@ -77,8 +32,51 @@ public class Backlog {
 	@JoinColumn(name = "project_id", nullable = false)
 	@JsonIgnore
 	private Project project;
-	// OneToMany projectTasks
+
 	@OneToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER, mappedBy = "backlog", orphanRemoval = true)
 	private List<ProjectTask> projectTasks = new ArrayList<>();
+
+	public Backlog() {
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Integer getPTSequence() {
+		return PTSequence;
+	}
+
+	public void setPTSequence(Integer PTSequence) {
+		this.PTSequence = PTSequence;
+	}
+
+	public String getProjectIdentifier() {
+		return projectIdentifier;
+	}
+
+	public void setProjectIdentifier(String projectIdentifier) {
+		this.projectIdentifier = projectIdentifier;
+	}
+
+	public Project getProject() {
+		return project;
+	}
+
+	public void setProject(Project project) {
+		this.project = project;
+	}
+
+	public List<ProjectTask> getProjectTasks() {
+		return projectTasks;
+	}
+
+	public void setProjectTasks(List<ProjectTask> projectTasks) {
+		this.projectTasks = projectTasks;
+	}
 
 }

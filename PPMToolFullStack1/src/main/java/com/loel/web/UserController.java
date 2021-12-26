@@ -27,6 +27,7 @@ import static com.loel.security.SecurityConstraints.TOKEN_PREFIX;
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
+
 	@Autowired
 	private MapValidationErrorService mapValidationErrorService;
 
@@ -70,5 +71,4 @@ public class UserController {
 
 		return new ResponseEntity<User>(newUser, HttpStatus.CREATED);
 	}
-
 }

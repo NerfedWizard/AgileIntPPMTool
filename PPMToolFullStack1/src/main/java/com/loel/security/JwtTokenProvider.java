@@ -30,8 +30,7 @@ public class JwtTokenProvider {
 		Map<String, Object> claims = new HashMap<>();
 		claims.put("id", (Long.toString(user.getId())));
 		claims.put("username", user.getUsername());
-		claims.put("firstName", user.getFirstName());
-		claims.put("lastname", user.getLastName());
+		claims.put("fullName", user.getFullName());
 		return Jwts.builder().setSubject(userId).setClaims(claims).setIssuedAt(now).setExpiration(expiryDate)
 				.signWith(SignatureAlgorithm.HS512, SECRET).compact();
 	}
@@ -56,6 +55,7 @@ public class JwtTokenProvider {
 	}
 
 	// Get user Id from token
+
 	public Long getUserIdFromJWT(String token) {
 		Claims claims = Jwts.parser().setSigningKey(SECRET).parseClaimsJws(token).getBody();
 		String id = (String) claims.get("id");
