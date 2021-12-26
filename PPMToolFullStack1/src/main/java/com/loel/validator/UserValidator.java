@@ -6,8 +6,6 @@ import org.springframework.validation.Validator;
 
 import com.loel.domain.User;
 
-/** Could use this to handle the firstname lastname being not letters */
-
 @Component
 public class UserValidator implements Validator {
 
@@ -22,13 +20,14 @@ public class UserValidator implements Validator {
 		User user = (User) object;
 
 		if (user.getPassword().length() < 6) {
-			errors.rejectValue("password", "Length", "Password must be at least 6 characters");
+			errors.rejectValue("password", "Length", "Password needs to be longer sport!");
 		}
 
-//		if (!user.getPassword().equals(user.getConfirmPassword())) {
-//			errors.rejectValue("confirmPassword", "Match", "Passwords must match");
-//
-//		}
+		if (!user.getPassword().equals(user.getConfirmPassword())) {
+			errors.rejectValue("confirmPassword", "Match", "These passwords aren't the same chief!");
+
+		}
+
 		// confirmPassword
 
 	}

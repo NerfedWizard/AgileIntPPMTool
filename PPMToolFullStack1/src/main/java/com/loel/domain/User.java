@@ -1,59 +1,45 @@
 package com.loel.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import org.hibernate.annotations.Proxy;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
-import java.util.Random;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.PrePersist;
-import javax.persistence.PreUpdate;
-import javax.persistence.Transient;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import lombok.NoArgsConstructor;
-
+@Proxy(lazy = false)
 @Entity
-@NoArgsConstructor
 public class User implements UserDetails {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Email(message = "Username needs to be an Email")
-	@NotBlank(message = "Username is required")
+	@Email(message = "Username needs to be a valid email")
+	@NotBlank(message = "Need a username Boss and make it clever")
 	@Column(unique = true)
 	private String username;
-	@NotBlank(message = "Need your first name big shooter")
-	private String firstName;
-	@NotBlank(message = "You're not Prince, need your last name")
-	private String lastName;
-	@NotBlank(message = "Must enter a password buddy")
+	@NotBlank(message = "You're not Prince, going to need your full name")
+	private String fullName;
+	@NotBlank(message = "You want security big shooter need a password")
 	private String password;
 	@Transient
 	private String confirmPassword;
-	private Date createAt;
-	private Date updateAt;
-	static Random rand = new Random();
-	private static final long serialVersionUID = rand.nextLong();// or some long
+	private Date create_At;
+	private Date update_At;
 
 	// OneToMany with Project
 	@OneToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER, mappedBy = "user", orphanRemoval = true)
 	private List<Project> projects = new ArrayList<>();
+
+	public User() {
+	}
 
 	public Long getId() {
 		return id;
@@ -71,21 +57,12 @@ public class User implements UserDetails {
 		this.username = username;
 	}
 
-	public String getFirstName() {
-		return firstName;
+	public String getFullName() {
+		return fullName;
 	}
 
-	public void setFirstName(String firstName) {
-
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
 	}
 
 	public String getPassword() {
@@ -96,7 +73,6 @@ public class User implements UserDetails {
 		this.password = password;
 	}
 
-	@JsonIgnore
 	public String getConfirmPassword() {
 		return confirmPassword;
 	}
@@ -105,31 +81,40 @@ public class User implements UserDetails {
 		this.confirmPassword = confirmPassword;
 	}
 
-	public Date getCreateAt() {
-		return createAt;
+	public Date getCreate_At() {
+		return create_At;
 	}
 
-	public void setCreateAt(Date createAt) {
-		this.createAt = createAt;
+	public void setCreate_At(Date create_At) {
+		this.create_At = create_At;
 	}
 
-	public Date getUpdateAt() {
-		return updateAt;
+	public Date getUpdate_At() {
+		return update_At;
 	}
 
-	public void setUpdateAt(Date updateAt) {
-		this.updateAt = updateAt;
+	public void setUpdate_At(Date update_At) {
+		this.update_At = update_At;
+	}
+
+	public List<Project> getProjects() {
+		return projects;
+	}
+
+	public void setProjects(List<Project> projects) {
+		this.projects = projects;
 	}
 
 	@PrePersist
 	protected void onCreate() {
-		this.createAt = new Date();
+		this.create_At = new Date();
 	}
 
 	@PreUpdate
 	protected void onUpdate() {
-		this.updateAt = new Date();
+		this.update_At = new Date();
 	}
+
 	/*
 	 * UserDetails interface methods
 	 */
@@ -163,5 +148,4 @@ public class User implements UserDetails {
 	public boolean isEnabled() {
 		return true;
 	}
-
 }

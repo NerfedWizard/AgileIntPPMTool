@@ -4,9 +4,9 @@ import javax.validation.constraints.NotBlank;
 
 public class LoginRequest {
 
-	@NotBlank(message = "Username cannot be blank")
+	@NotBlank(message = "Gotta type something Sherlock")
 	private String username;
-	@NotBlank(message = "Password cannot be blank")
+	@NotBlank(message = "Blank is a little to easy to guess try typing a password")
 	private String password;
 
 	public String getUsername() {

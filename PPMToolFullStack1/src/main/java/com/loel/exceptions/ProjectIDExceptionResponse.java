@@ -1,15 +1,18 @@
 package com.loel.exceptions;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-
-@Data
-@NoArgsConstructor
 public class ProjectIDExceptionResponse {
+
 	private String projectIdentifier;
 
 	public ProjectIDExceptionResponse(String projectIdentifier) {
+		this.projectIdentifier = projectIdentifier;
+	}
+
+	public String getProjectIdentifier() {
+		return projectIdentifier;
+	}
+
+	public void setProjectIdentifier(String projectIdentifier) {
 		this.projectIdentifier = projectIdentifier;
 	}
 }

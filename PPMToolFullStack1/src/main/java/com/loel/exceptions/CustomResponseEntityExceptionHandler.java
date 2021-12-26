@@ -12,11 +12,11 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 @RestController
 public class CustomResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
 
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@ExceptionHandler
 	public final ResponseEntity<Object> handleProjectIDException(ProjectIDException ex, WebRequest request) {
 		ProjectIDExceptionResponse exceptionResponse = new ProjectIDExceptionResponse(ex.getMessage());
-
-		return new ResponseEntity<Object>(exceptionResponse, HttpStatus.BAD_REQUEST);
+		return new ResponseEntity(exceptionResponse, HttpStatus.BAD_REQUEST);
 	}
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })

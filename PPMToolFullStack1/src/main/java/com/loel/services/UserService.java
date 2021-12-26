@@ -21,15 +21,18 @@ public class UserService {
 
 		try {
 			newUser.setPassword(bCryptPasswordEncoder.encode(newUser.getPassword()));
+			// Username has to be unique (exception)
 			newUser.setUsername(newUser.getUsername());
-
-//			newUser.setConfirmPassword("");
-
+			// Make sure that password and confirmPassword match
+			// We don't persist or show the confirmPassword
+			newUser.setConfirmPassword("");
 			return userRepository.save(newUser);
 
 		} catch (Exception e) {
-			throw new DuplicateUsernameException("Username '" + newUser.getUsername() + "' is used sorry boss");
+			throw new DuplicateUsernameException(
+					"Someone beat you to '" + newUser.getUsername() + "' or maybe you already registered");
 		}
+
 	}
 
 }

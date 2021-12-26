@@ -12,7 +12,7 @@ import org.springframework.validation.FieldError;
 /**
  * Makes sure we are getting a valid project object by making sure the client
  * passes a valid object
- * 
+ *
  * Currently this does not check the constraint on the database of unique
  * values. This is because this validation goes first before the
  * projectController.
@@ -21,16 +21,16 @@ import org.springframework.validation.FieldError;
 public class MapValidationErrorService {
 
 	public ResponseEntity<?> mapValidationService(BindingResult result) {
-		if (result.hasErrors()) {
 
+		if (result.hasErrors()) {
 			Map<String, String> errorMap = new HashMap<>();
 
 			for (FieldError error : result.getFieldErrors()) {
 				errorMap.put(error.getField(), error.getDefaultMessage());
 			}
-
 			return new ResponseEntity<Map<String, String>>(errorMap, HttpStatus.BAD_REQUEST);
 		}
+
 		return null;
 
 	}
