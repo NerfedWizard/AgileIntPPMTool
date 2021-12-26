@@ -34,7 +34,7 @@ public class Project {
 	@Size(min = 4, max = 5, message = "Must be 4 or 5 characters big shooter!")
 	@Column(updatable = false, unique = true)
 	private String projectIdentifier;
-	@NotBlank(message = "Project description is required")
+	@NotBlank(message = "You need to give your Project a Description Buddy!")
 	private String description;
 	@JsonFormat(pattern = "yyyy-mm-dd")
 	private Date start_date;
