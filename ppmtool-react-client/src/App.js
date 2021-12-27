@@ -11,6 +11,9 @@ import UpdateProject from "./components/Project/UpdateProject";
 import ProjectBoard from "./components/ProjectBoard/ProjectBoard";
 import AddProjectTask from "./components/ProjectBoard/ProjectTasks/AddProjectTask";
 import UpdateProjectTask from "./components/ProjectBoard/ProjectTasks/UpdateProjectTask";
+import Landing from "./components/Layout/Landing";
+import Register from "./components/UserManagement/Register";
+import Login from "./components/UserManagement/Login";
 // import ToggleColorMode from "./components/Decoration/darkModeToggleSwitch";
 
 class App extends Component {
@@ -19,10 +22,17 @@ class App extends Component {
       <div className="dark-overlay ">
         <Provider store={store}>
           <Router>
-            {/* <div id="shine-background"> */}
             <div className="App">
               <Header />
-              {/* <ToggleColorMode /> */}
+              {
+                //Public Routes
+              }
+              <Route exact path="/" component={Landing} />
+              <Route exact path="/register" component={Register} />
+              <Route exact path="/login" component={Login} />
+              {
+                //Private Routes
+              }
               <Route exact path="/dashboard" component={Dashboard} />
               <Route exact path="/addProject" component={AddProject} />
               <Route
@@ -42,7 +52,6 @@ class App extends Component {
                 component={UpdateProjectTask}
               />
             </div>
-            {/* </div> */}
           </Router>
         </Provider>
       </div>
