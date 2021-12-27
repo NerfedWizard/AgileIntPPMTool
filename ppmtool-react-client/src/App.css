@@ -200,7 +200,8 @@ img {
   margin-top: -24px;
   margin-bottom: -50px;
 }
-.dashboard {
+
+.projects {
   position: relative;
   /* background: url("../img/showcase.jpg") no-repeat; */
   background-size: cover;

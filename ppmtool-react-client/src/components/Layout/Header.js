@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -71,10 +70,8 @@ class Header extends Component {
     return (
       <nav className="navbar navbar-expand-sm bg-scrummaster mb-4">
         <div className="container">
-          <Link className="navbar-brand" to="/">
-            <h1 className="navbar-brand scrumOffside">
-              Project Management Tool
-            </h1>
+          <Link className="navbar-brand scrummOffside" to="/">
+            Personal Project Management Tool
           </Link>
           <button
             className="navbar-toggler"
@@ -84,11 +81,13 @@ class Header extends Component {
           >
             <span className="navbar-toggler-icon" />
           </button>
+          {headerLinks}
         </div>
       </nav>
     );
   }
 }
+
 Header.propTypes = {
   logout: PropTypes.func.isRequired,
   security: PropTypes.object.isRequired,
