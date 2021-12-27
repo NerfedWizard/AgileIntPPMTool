@@ -9,17 +9,25 @@ class Landing extends Component {
           <div className="container">
             <div className="row">
               <div className="col-md-12 text-center">
-                <h1 className="display-3 mb-4">
+                <h1 className="display-3 mb-4 scrumCharmon">
                   Personal Project Management Tool
                 </h1>
-                <p className="lead">
+                <p className="lead scrumRobotoItl">
                   Create your account to join active projects or start your own
                 </p>
                 <hr />
-                <Link className="btn btn-lg btn-primary mr-2" to="/register">
+                <Link
+                  className="btn scrumBtn scrumBioRhyme mr-2"
+                  style={{ color: "#FF8C00" }}
+                  to="/register"
+                >
                   Sign Up
                 </Link>
-                <Link className="btn btn-lg btn-secondary mr-2" to="/login">
+                <Link
+                  className="btn scrumSubmitBtn mr-2 hoverable scrumNunito"
+                  to="/login"
+                  style={{ color: "#000000" }}
+                >
                   Login
                 </Link>
               </div>

@@ -60,6 +60,8 @@
 .scrumRobotoItl {
   font-family: "Roboto", sans-serif;
   font-style: italic;
+  text-shadow: 1px 1px 2px rgb(10, 110, 32), 0 0 25px rgb(73, 195, 114),
+    0 0 5px rgb(20, 110, 80);
   color: #1a237e;
 }
 .scrumRoboto {
@@ -76,6 +78,8 @@
 .scrumSource {
   font-family: "Source Sans 3", sans-serif;
   font-size: 20px;
+  text-shadow: 1px 1px 2px rgb(10, 110, 32), 0 0 25px rgb(73, 195, 114),
+    0 0 5px rgb(20, 110, 80);
   color: #42d335;
 }
 .scrumSubmitBtn {
@@ -129,7 +133,9 @@
 }
 .scrumLobster {
   font-family: "Lobster Two", cursive;
-  color: #b39ddb !important;
+  color: #342058 !important;
+  text-shadow: 1px 1px 2px rgb(107, 238, 157), 0 0 25px rgb(47, 202, 137),
+    0 0 5px rgb(77, 202, 119);
 }
 .scrumOffside {
   font-family: "Offside", cursive;
