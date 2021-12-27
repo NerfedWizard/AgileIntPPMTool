@@ -55,7 +55,7 @@ class AddProjectTask extends Component {
     const { errors } = this.state;
     return (
       <div className="add-PBI">
-        <div className="container-fluid">
+        <div className="container">
           <div className="row">
             <div className="col-md-8 m-auto">
               <Link
@@ -65,42 +65,51 @@ class AddProjectTask extends Component {
               >
                 Back to Project Board
               </Link>
-              <h4 className="display-5 text-center scrumBioRhyme">
+              <h4 className="display-5 text-center scrumLobster">
                 Add Project Task
               </h4>
               <p className="lead text-center scrumBioRhyme">
                 Project Name + Project Code
               </p>
               <form onSubmit={this.onSubmit}>
-                <div className="form-group">
+                <div className="form-group form-floating">
                   <input
                     type="text"
                     className={classnames(
                       "form-control form-control-lg bg-scrumButton",
                       {
-                        "is-invalid": errors.summary,
+                        "form-control is-invalid": errors.summary,
                       }
                     )}
                     name="summary"
+                    id="floatingInput"
                     style={{ color: "#00FFFF" }}
                     placeholder="Project Task summary"
                     value={this.state.summary}
                     onChange={this.onChange}
                   />
                   {errors.summary && (
-                    <div className="invalid-feedback">{errors.summary}</div>
+                    <div className="form-control invalid-feedback">
+                      {errors.summary}
+                    </div>
                   )}
-                  <a />
+                  <label for="floatingInput" style={{ color: "#98FB98" }}>
+                    Summary
+                  </label>
                 </div>
-                <div className="form-group">
+                <div className="form-group form-floating">
                   <textarea
                     className="form-control form-control-lg bg-scrumButton"
                     style={{ color: "#00FFFF" }}
+                    id="floatingTextArea"
                     placeholder="Acceptance Criteria"
                     name="acceptanceCriteria"
                     value={this.state.acceptanceCriteria}
                     onChange={this.onChange}
                   />
+                  <label for="floatingTextArea" style={{ color: "#98FB98" }}>
+                    Acceptance Criteria
+                  </label>
                 </div>
                 <h6 className="scrumBioRhyme">Due Date</h6>
                 <div className="form-group">
@@ -110,34 +119,46 @@ class AddProjectTask extends Component {
                     name="dueDate"
                     value={this.state.dueDate}
                     onChange={this.onChange}
+                    style={{ color: "#98FB98" }}
                   />
                 </div>
-                <div className="form-group">
+                <div className="form-group form-floating">
                   <select
-                    className="form-control form-control-lg bg-scrumButton"
+                    className="form-select form-control form-control-lg bg-scrumButton"
                     name="priority"
+                    id="floatingSelect"
+                    aria-label="floating label priority"
+                    style={{ color: "#98FB98" }}
                     value={this.state.priority}
                     onChange={this.onChange}
                   >
-                    <option value={0}>Select Priority</option>
+                    <option selected>Select Priority</option>
                     <option value={1}>High</option>
                     <option value={2}>Medium</option>
                     <option value={3}>Low</option>
                   </select>
+                  <label for="floatingSelect" style={{ color: "#98FB98" }}>
+                    Priority
+                  </label>
                 </div>
 
-                <div className="form-group">
+                <div className="form-group form-floating">
                   <select
-                    className="form-control form-control-lg bg-scrumButton"
+                    className="form-select form-control form-control-lg bg-scrumButton"
                     name="status"
+                    id="floatingSelect"
                     value={this.state.status}
                     onChange={this.onChange}
+                    style={{ color: "#98FB98" }}
                   >
-                    <option value="">Select Status</option>
+                    <option selected>Select Status</option>
                     <option value="TO_DO">TO DO</option>
                     <option value="IN_PROGRESS">IN PROGRESS</option>
                     <option value="DONE">DONE</option>
                   </select>
+                  <label for="floatingSelect" style={{ color: "#98FB98" }}>
+                    Status
+                  </label>
                 </div>
 
                 <input
