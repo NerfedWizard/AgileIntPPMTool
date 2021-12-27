@@ -55,7 +55,7 @@ class AddProjectTask extends Component {
     const { errors } = this.state;
     return (
       <div className="add-PBI">
-        <div className="container">
+        <div className="container-fluid">
           <div className="row">
             <div className="col-md-8 m-auto">
               <Link

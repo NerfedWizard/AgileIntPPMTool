@@ -3,12 +3,14 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import classnames from "classnames";
 import { login } from "../../actions/securityActions";
+
 class Login extends Component {
   constructor() {
     super();
     this.state = {
       username: "",
       password: "",
+      errors: {},
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -16,6 +18,9 @@ class Login extends Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.security.validToken) {
       this.props.history.push("/dashboard");
+    }
+    if (nextProps.errors) {
+      this.setState({ errors: nextProps.errors });
     }
   }
   onSubmit(e) {
@@ -32,6 +37,7 @@ class Login extends Component {
   }
 
   render() {
+    const { errors } = this.state;
     return (
       <div className="login">
         <div className="container">
@@ -44,12 +50,22 @@ class Login extends Component {
                     type="text"
                     style={{ color: "#00FFFF" }}
                     id="floatingInput"
-                    className="form-control form-control-lg bg-scrumButton"
+                    className={classnames(
+                      "form-control form-control-lg bg-scrumButton",
+                      {
+                        "form-control is-invalid": errors.username,
+                      }
+                    )}
                     placeholder="Email Address"
                     name="username"
                     value={this.state.username}
                     onChange={this.onChange}
                   />
+                  {errors.username && (
+                    <div className="form-control invalid-feedback">
+                      {errors.username}
+                    </div>
+                  )}
                   <label for="floatingInput" style={{ color: "#98FB98" }}>
                     Email Address
                   </label>
@@ -57,7 +73,12 @@ class Login extends Component {
                 <div className="form-group form-floating scrumOffSide">
                   <input
                     type="password"
-                    className="form-control form-control-lg bg-scrumButton"
+                    className={classnames(
+                      "form-control form-control-lg bg-scrumButton",
+                      {
+                        "form-control is-invalid": errors.password,
+                      }
+                    )}
                     placeholder="Password"
                     style={{ color: "#00FFFF" }}
                     id="floatingPassword"
@@ -65,6 +86,11 @@ class Login extends Component {
                     value={this.state.password}
                     onChange={this.onChange}
                   />
+                  {errors.password && (
+                    <div className="form-control invalid-feedback">
+                      {errors.password}
+                    </div>
+                  )}
                   <label for="floatingPassword" style={{ color: "#98FB98" }}>
                     Password
                   </label>
@@ -86,6 +112,7 @@ class Login extends Component {
 Login.propTypes = {
   login: PropTypes.func.isRequired,
   errors: PropTypes.object.isRequired,
+  security: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({

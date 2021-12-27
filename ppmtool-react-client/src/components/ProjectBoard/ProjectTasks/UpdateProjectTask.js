@@ -102,10 +102,10 @@ class UpdateProjectTask extends Component {
               >
                 Back to Project Board
               </Link>
-              <h4 className="display-4 text-center scrumYujiMai">
+              <h4 className="display-4 text-center scrumLobster">
                 Update Project Task
               </h4>
-              <p className="lead text-center scrumNunito">
+              <p className="lead text-center scrumBioRhyme">
                 Project Name: {this.state.projectIdentifier} | Project Task ID:{" "}
                 {this.state.projectSequence}{" "}
               </p>
@@ -114,7 +114,7 @@ class UpdateProjectTask extends Component {
                   <input
                     type="text"
                     className={classnames(
-                      "form-control form-control-lg bg-scrumButton",
+                      "form-control form-control-lg bg-scrumButton scrumBioRhyme",
                       {
                         "is-invalid": errors.summary,
                       }
@@ -122,6 +122,7 @@ class UpdateProjectTask extends Component {
                     id="floatingInput"
                     name="summary"
                     placeholder="Project Task summary"
+                    style={{ color: "#00ffff" }}
                     value={this.state.summary}
                     onChange={this.onChange}
                   />
@@ -135,13 +136,14 @@ class UpdateProjectTask extends Component {
                 <div className="form-group  form-floating scrumOffside">
                   <textarea
                     className="form-control form-control-lg bg-scrumButton"
-                    id="floatingInput"
+                    id="floatingTextArea"
                     placeholder="Acceptance Criteria"
                     name="acceptanceCriteria"
+                    style={{ color: "#00ffff" }}
                     value={this.state.acceptanceCriteria}
                     onChange={this.onChange}
                   />
-                  <label for="floatingInput" style={{ color: "#98FB98" }}>
+                  <label for="floatingTextArea" style={{ color: "#98FB98" }}>
                     Acceptance Criteria
                   </label>
                 </div>
@@ -153,34 +155,45 @@ class UpdateProjectTask extends Component {
                     name="dueDate"
                     value={this.state.dueDate}
                     onChange={this.onChange}
+                    style={{ color: "#00ffff" }}
                   />
                 </div>
                 <div className="form-group form-floating  scrumOffside">
                   <select
                     className="form-control form-control-lg bg-scrumButton"
                     name="priority"
+                    id="floatingSelect"
                     value={this.state.priority}
                     onChange={this.onChange}
+                    style={{ color: "#00ffff" }}
                   >
-                    <option value={0}>Select Priority</option>
+                    <option selected>Select Priority</option>
                     <option value={1}>High</option>
                     <option value={2}>Medium</option>
                     <option value={3}>Low</option>
                   </select>
+                  <label for="floatingSelect" style={{ color: "#98FB98" }}>
+                    Priority
+                  </label>
                 </div>
 
-                <div className="form-group  form-floating scrumOffside">
+                <div className="form-group form-floating scrumOffside">
                   <select
                     className="form-control form-control-lg bg-scrumButton"
                     name="status"
+                    id="floatingSelect"
                     value={this.state.status}
                     onChange={this.onChange}
+                    style={{ color: "#00ffff" }}
                   >
-                    <option value="">Select Status</option>
+                    <option selected>Select Status</option>
                     <option value="TO_DO">TO DO</option>
                     <option value="IN_PROGRESS">IN PROGRESS</option>
                     <option value="DONE">DONE</option>
                   </select>
+                  <label for="floatingSelect" style={{ color: "#98FB98" }}>
+                    Status
+                  </label>
                 </div>
 
                 <input
