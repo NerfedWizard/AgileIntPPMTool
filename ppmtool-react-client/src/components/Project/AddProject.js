@@ -47,8 +47,8 @@ class AddProject extends Component {
     const { errors } = this.state;
     return (
       <div>
-        <div className="project h-100">
-          <div className="container-fluid">
+        <div className="addProject">
+          <div className="container">
             <div className="row">
               <div className="col-md-8 m-auto">
                 <h5 className="display-4 text-center scrumYujiMai">
@@ -62,7 +62,7 @@ class AddProject extends Component {
                       className={classnames(
                         "form-control form-control-lg bg-scrumButton",
                         {
-                          "is-invalid": errors.projectName, //Need to configure the floating Error
+                          "form-control is-invalid": errors.projectName, //Need to configure the floating Error
                         }
                       )}
                       id="floatingInput"
@@ -76,7 +76,7 @@ class AddProject extends Component {
                       Project Name
                     </label>
                     {errors.projectName && (
-                      <div className="invalid-feedback">
+                      <div className="form-control invalid-feedback">
                         {errors.projectName}
                       </div>
                     )}
@@ -87,7 +87,7 @@ class AddProject extends Component {
                       className={classnames(
                         "form-control form-control-lg bg-scrumButton",
                         {
-                          "is-invalid": errors.projectIdentifier,
+                          "form-control is-invalid": errors.projectIdentifier,
                         }
                       )}
                       // style={{ color: "#00FFFF" }}
@@ -98,7 +98,7 @@ class AddProject extends Component {
                       onChange={this.onChange}
                     />
                     {errors.projectIdentifier && (
-                      <div className="invalid-feedback">
+                      <div className="form-control invalid-feedback">
                         {errors.projectIdentifier}
                       </div>
                     )}
@@ -106,15 +106,15 @@ class AddProject extends Component {
                       Unique Project ID
                     </label>
                   </div>
-                  <div className="form-group scrumOffside">
+                  <div className="form-group scrumOffside form-floating">
                     <textarea
                       className={classnames(
-                        "form-control form-control-lg bg-scrumButton",
+                        "form-control form-control-lg bg-scrumButton ",
                         {
-                          "is-invalid": errors.description,
+                          "form-control is-invalid": errors.description,
                         }
                       )}
-                      id="floatingInput"
+                      id="floatingTextArea"
                       // style={{ color: "#00FFFF" }}
                       placeholder="Project Description"
                       name="description"
@@ -122,16 +122,16 @@ class AddProject extends Component {
                       onChange={this.onChange}
                     />
                     {errors.description && (
-                      <div className="invalid-feedback">
+                      <div className="form-control invalid-feedback">
                         {errors.description}
                       </div>
                     )}
-                    <label for="floatingInput" style={{ color: "#98FB98" }}>
+                    <label for="floatingTextArea" style={{ color: "#98FB98" }}>
                       Project Description
                     </label>
                   </div>
                   <h6 className="scrumNunito">Start Date</h6>
-                  <div className="form-group">
+                  <div className="form-group form-floating">
                     <input
                       type="date"
                       className="form-control form-control-lg bg-scrumButton"
@@ -143,7 +143,7 @@ class AddProject extends Component {
                     />
                   </div>
                   <h6 className="scrumNunito">Estimated End Date</h6>
-                  <div className="form-group">
+                  <div className="form-group form-floating">
                     <input
                       type="date"
                       className="form-control form-control-lg bg-scrumButton"

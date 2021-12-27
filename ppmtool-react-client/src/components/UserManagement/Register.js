@@ -18,7 +18,11 @@ class Register extends Component {
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
-
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({ errors: nextProps.errors });
+    }
+  }
   onSubmit(e) {
     e.preventDefault();
     const newUser = {
@@ -36,6 +40,7 @@ class Register extends Component {
   }
 
   render() {
+    const { errors } = this.state;
     return (
       <div className="register">
         <div className="container">
@@ -49,15 +54,28 @@ class Register extends Component {
                 <div className="form-group form-floating scrumOffSide">
                   <input
                     type="text"
-                    className="form-control form-control-lg bg-scrumButton"
-                    id="floatingInput"
+                    className={classnames(
+                      "form-control form-control-lg bg-scrumButton",
+                      {
+                        "form-control is-invalid": errors.fullName,
+                      }
+                    )}
+                    id="floatingInputInvalid"
                     placeholder="Full Name"
                     name="fullName"
                     style={{ color: "#00FFFF" }}
                     value={this.state.fullName}
                     onChange={this.onChange}
                   />
-                  <label for="floatingInput" style={{ color: "#98FB98" }}>
+                  {errors.fullName && (
+                    <div className="form-control invalid-feedback">
+                      {errors.fullName}
+                    </div>
+                  )}
+                  <label
+                    for="floatingInputInvalid"
+                    style={{ color: "#98FB98" }}
+                  >
                     Full Name
                   </label>
                 </div>
@@ -65,13 +83,23 @@ class Register extends Component {
                   <input
                     id="floatingInput"
                     type="text"
-                    className="form-control form-control-lg bg-scrumButton"
+                    className={classnames(
+                      "form-control form-control-lg bg-scrumButton",
+                      {
+                        "form-control is-invalid": errors.username,
+                      }
+                    )}
                     placeholder="Email Address (Username)"
                     style={{ color: "#00FFFF" }}
                     name="username"
                     value={this.state.username}
                     onChange={this.onChange}
                   />
+                  {errors.username && (
+                    <div className="form-control invalid-feedback">
+                      {errors.username}
+                    </div>
+                  )}
                   <label for="floatingInput" style={{ color: "#98FB98" }}>
                     Email Address (Username)
                   </label>
@@ -79,30 +107,50 @@ class Register extends Component {
                 <div className="form-group form-floating scrumOffSide">
                   <input
                     type="password"
-                    className="form-control form-control-lg bg-scrumButton"
+                    className={classnames(
+                      "form-control form-control-lg bg-scrumButton",
+                      {
+                        "form-control is-invalid": errors.password,
+                      }
+                    )}
                     placeholder="Password"
                     name="password"
-                    id="floatingInput"
+                    id="floatingPassword"
                     style={{ color: "#00FFFF" }}
                     value={this.state.password}
                     onChange={this.onChange}
                   />
-                  <label for="floatingInput" style={{ color: "#98FB98" }}>
+                  {errors.password && (
+                    <div className="form-control invalid-feedback">
+                      {errors.password}
+                    </div>
+                  )}
+                  <label for="floatingPassword" style={{ color: "#98FB98" }}>
                     Password
                   </label>
                 </div>
                 <div className="form-group form-floating scrumOffSide">
                   <input
                     type="password"
-                    className="form-control form-control-lg bg-scrumButton"
+                    className={classnames(
+                      "form-control form-control-lg bg-scrumButton",
+                      {
+                        "form-control is-invalid": errors.confirmPassword,
+                      }
+                    )}
                     placeholder="Confirm Password"
                     name="confirmPassword"
                     style={{ color: "#00FFFF" }}
-                    id="floatingInput"
+                    id="floatingPassword"
                     value={this.state.confirmPassword}
                     onChange={this.onChange}
                   />
-                  <label for="floatingInput" style={{ color: "#98FB98" }}>
+                  {errors.confirmPassword && (
+                    <div className="form-control invalid-feedback ">
+                      {errors.confirmPassword}
+                    </div>
+                  )}
+                  <label for="floatingPassword" style={{ color: "#98FB98" }}>
                     Confirm Password
                   </label>
                 </div>
