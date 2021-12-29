@@ -16,7 +16,7 @@ if (window.navigator.userAgent.includes("Chrome") && ReactReduxDevTools) {
     rootReducer,
     initialState,
     composeWithDevTools(applyMiddleware(...middleware)),
-    ReactReduxDevTools
+    window._REDUX_DEVTOOLS_EXTENSION_ && window._REDUX_DEVTOOLS_EXTENSION_() //Eventually this needs to be 'ReactReduxDevTools'
   );
 } else {
   store = createStore(

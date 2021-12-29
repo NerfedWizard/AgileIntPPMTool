@@ -11,14 +11,14 @@ class Landing extends Component {
   render() {
     return (
       <div className="landing">
-        <div className="dark-overlay landing-inner text-dark">
+        <div className="landing-inner text-dark">
           <div className="container">
             <div className="row">
               <div className="col-md-12 text-center">
-                <h1 className="display-3 mb-4 scrumCharmon">
+                <h1 className="display-3 mb-5 scrumCharmon">
                   Personal Project Management Tool
                 </h1>
-                <p className="lead scrumRobotoItl">
+                <p className="lead display-5 scrumFuzzyBubbles">
                   Create your account to join active projects or start your own
                 </p>
                 <hr />

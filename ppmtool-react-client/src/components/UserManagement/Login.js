@@ -53,7 +53,7 @@ class Login extends Component {
               <form onSubmit={this.onSubmit}>
                 <div className="form-group form-floating scrumOffSide">
                   <input
-                    type="text"
+                    type="email"
                     style={{ color: "#00FFFF" }}
                     id="floatingInput"
                     className={classnames(

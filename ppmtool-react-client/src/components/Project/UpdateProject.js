@@ -68,7 +68,7 @@ class UpdateProject extends Component {
   render() {
     const { errors } = this.state;
     return (
-      <div className="project">
+      <div className="addProject">
         <div className="container">
           <div className="row">
             <div className="col-md-8 m-auto">
@@ -84,7 +84,7 @@ class UpdateProject extends Component {
                     className={classnames(
                       "form-control form-control-lg bg-scrumButton",
                       {
-                        "is-invalid": errors.projectName,
+                        "form-control is-invalid": errors.projectName,
                       }
                     )}
                     placeholder="Project Name"
@@ -93,7 +93,9 @@ class UpdateProject extends Component {
                     onChange={this.onChange}
                   />
                   {errors.projectName && (
-                    <div className="invalid-feedback">{errors.projectName}</div>
+                    <div className="form-control invalid-feedback">
+                      {errors.projectName}
+                    </div>
                   )}
                 </div>
                 <div className="form-group scrumOffside">
@@ -111,7 +113,7 @@ class UpdateProject extends Component {
                     className={classnames(
                       "form-control form-control-lg bg-scrumButton",
                       {
-                        "is-invalid": errors.description,
+                        "form-control is-invalid": errors.description,
                       }
                     )}
                     placeholder="Project Description"
@@ -120,7 +122,9 @@ class UpdateProject extends Component {
                     onChange={this.onChange}
                   />
                   {errors.description && (
-                    <div className="invalid-feedback">{errors.description}</div>
+                    <div className="form-control invalid-feedback">
+                      {errors.description}
+                    </div>
                   )}
                 </div>
                 <h6 className="scrumOffside">Start Date</h6>
