@@ -158,11 +158,11 @@ class UpdateProjectTask extends Component {
                     style={{ color: "#00ffff" }}
                   />
                 </div>
-                <div className="form-group form-floating  scrumOffside">
+                <div className="form-group scrumOffside">
                   <select
                     className="form-control form-control-lg bg-scrumButton"
                     name="priority"
-                    id="floatingSelect"
+                    // id="floatingSelect"
                     value={this.state.priority}
                     onChange={this.onChange}
                     style={{ color: "#00ffff" }}
@@ -172,16 +172,16 @@ class UpdateProjectTask extends Component {
                     <option value={2}>Medium</option>
                     <option value={3}>Low</option>
                   </select>
-                  <label for="floatingSelect" style={{ color: "#98FB98" }}>
+                  {/* <label for="floatingSelect" style={{ color: "#98FB98" }}>
                     Priority
-                  </label>
+                  </label> */}
                 </div>
 
-                <div className="form-group form-floating scrumOffside">
+                <div className="form-group scrumOffside">
                   <select
                     className="form-control form-control-lg bg-scrumButton"
                     name="status"
-                    id="floatingSelect"
+                    // id="floatingSelect"
                     value={this.state.status}
                     onChange={this.onChange}
                     style={{ color: "#00ffff" }}
@@ -191,9 +191,9 @@ class UpdateProjectTask extends Component {
                     <option value="IN_PROGRESS">IN PROGRESS</option>
                     <option value="DONE">DONE</option>
                   </select>
-                  <label for="floatingSelect" style={{ color: "#98FB98" }}>
+                  {/* <label for="floatingSelect" style={{ color: "#98FB98" }}>
                     Status
-                  </label>
+                  </label> */}
                 </div>
 
                 <input
