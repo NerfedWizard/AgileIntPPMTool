@@ -15,10 +15,10 @@ class Landing extends Component {
           <div className="container">
             <div className="row">
               <div className="col-md-12 text-center">
-                <h1 className="display-3 mb-4 scrumCharmon">
+                <h1 className="display-2 mb-1 scrumCharmon">
                   Personal Project Management Tool
                 </h1>
-                <p className="lead scrumRobotoItl">
+                <p className="lead display-4 scrumFuzzyBubbles">
                   Create your account to join active projects or start your own
                 </p>
                 <hr />

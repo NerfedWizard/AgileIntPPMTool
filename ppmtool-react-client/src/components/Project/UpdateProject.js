@@ -78,22 +78,25 @@ class UpdateProject extends Component {
               </h5>
               <hr />
               <form onSubmit={this.onSubmit}>
-                <div className="form-group scrumOffside">
+                <div className="form-group form-floating scrumOffside">
                   <input
                     type="text"
                     className={classnames(
                       "form-control form-control-lg bg-scrumButton",
                       {
-                        "is-invalid": errors.projectName,
+                        "form-control is-invalid": errors.projectName,
                       }
                     )}
                     placeholder="Project Name"
                     name="projectName"
+                    style={{ color: "#00FFFF" }}
                     value={this.state.projectName}
                     onChange={this.onChange}
                   />
                   {errors.projectName && (
-                    <div className="invalid-feedback">{errors.projectName}</div>
+                    <div className="form-control invalid-feedback">
+                      {errors.projectName}
+                    </div>
                   )}
                 </div>
                 <div className="form-group scrumOffside">
@@ -102,6 +105,7 @@ class UpdateProject extends Component {
                     className="form-control form-control-lg bg-scrumButton"
                     placeholder="ID cannot be changed"
                     name="projectIndentifier"
+                    style={{ color: "#00FFFF" }}
                     value={this.state.projectIndentifier}
                     disabled
                   />
@@ -111,16 +115,19 @@ class UpdateProject extends Component {
                     className={classnames(
                       "form-control form-control-lg bg-scrumButton",
                       {
-                        "is-invalid": errors.description,
+                        "form-control is-invalid": errors.description,
                       }
                     )}
                     placeholder="Project Description"
                     name="description"
+                    style={{ color: "#00FFFF" }}
                     value={this.state.description}
                     onChange={this.onChange}
                   />
                   {errors.description && (
-                    <div className="invalid-feedback">{errors.description}</div>
+                    <div className="form-control invalid-feedback">
+                      {errors.description}
+                    </div>
                   )}
                 </div>
                 <h6 className="scrumOffside">Start Date</h6>

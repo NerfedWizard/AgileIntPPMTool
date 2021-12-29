@@ -48,7 +48,7 @@ class Register extends Component {
     const { errors } = this.state;
     return (
       <div className="register">
-        <div className="container">
+        <div className="container-flex">
           <div className="row">
             <div className="col-md-8 m-auto">
               <h1 className="display-4 text-center scrumLobster">Sign Up</h1>
@@ -112,12 +112,9 @@ class Register extends Component {
                 <div className="form-group form-floating scrumOffSide">
                   <input
                     type="password"
-                    className={classnames(
-                      "form-control form-control-lg bg-scrumButton",
-                      {
-                        "form-control is-invalid": errors.password,
-                      }
-                    )}
+                    className={classnames("form-control  bg-scrumButton", {
+                      "form-control is-invalid": errors.password,
+                    })}
                     placeholder="Password"
                     name="password"
                     id="floatingPassword"

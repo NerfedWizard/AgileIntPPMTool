@@ -69,6 +69,7 @@ class AddProject extends Component {
                       // style={{ color: "#00FFFF" }}
                       placeholder="Project Name"
                       name="projectName"
+                      style={{ color: "#00FFFF" }}
                       value={this.state.projectName}
                       onChange={this.onChange}
                     />
@@ -94,6 +95,7 @@ class AddProject extends Component {
                       id="floatingInput"
                       placeholder="Unique Project ID"
                       name="projectIdentifier"
+                      style={{ color: "#00FFFF" }}
                       value={this.state.projectIdentifier}
                       onChange={this.onChange}
                     />
@@ -118,6 +120,7 @@ class AddProject extends Component {
                       // style={{ color: "#00FFFF" }}
                       placeholder="Project Description"
                       name="description"
+                      style={{ color: "#00FFFF" }}
                       value={this.state.description}
                       onChange={this.onChange}
                     />

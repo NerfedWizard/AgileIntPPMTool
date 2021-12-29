@@ -55,7 +55,7 @@ class AddProjectTask extends Component {
     const { errors } = this.state;
     return (
       <div className="add-PBI">
-        <div className="container-fluid">
+        <div className="container-flex">
           <div className="row">
             <div className="col-md-8 m-auto">
               <Link
@@ -100,10 +100,10 @@ class AddProjectTask extends Component {
                 <div className="form-group form-floating">
                   <textarea
                     className="form-control form-control-lg bg-scrumButton"
-                    style={{ color: "#00FFFF" }}
                     id="floatingTextArea"
                     placeholder="Acceptance Criteria"
                     name="acceptanceCriteria"
+                    style={{ color: "#00FFFF" }}
                     value={this.state.acceptanceCriteria}
                     onChange={this.onChange}
                   />
@@ -111,7 +111,9 @@ class AddProjectTask extends Component {
                     Acceptance Criteria
                   </label>
                 </div>
-                <h6 className="scrumBioRhyme">Due Date</h6>
+                <h6 className="Ubuntu" style={{ color: "#FF8C00" }}>
+                  Due Date
+                </h6>
                 <div className="form-group">
                   <input
                     type="date"
@@ -119,16 +121,16 @@ class AddProjectTask extends Component {
                     name="dueDate"
                     value={this.state.dueDate}
                     onChange={this.onChange}
-                    style={{ color: "#98FB98" }}
+                    style={{ color: "#00FFFF" }}
                   />
                 </div>
-                <div className="form-group form-floating">
+                <div className="form-group">
                   <select
                     className="form-select form-control form-control-lg bg-scrumButton"
                     name="priority"
-                    id="floatingSelect"
+                    // id="floatingSelect"
                     aria-label="floating label priority"
-                    style={{ color: "#98FB98" }}
+                    style={{ color: "#00FFFF" }}
                     value={this.state.priority}
                     onChange={this.onChange}
                   >
@@ -137,28 +139,28 @@ class AddProjectTask extends Component {
                     <option value={2}>Medium</option>
                     <option value={3}>Low</option>
                   </select>
-                  <label for="floatingSelect" style={{ color: "#98FB98" }}>
+                  {/* <label for="floatingSelect" style={{ color: "#98FB98" }}>
                     Priority
-                  </label>
+                  </label> */}
                 </div>
 
-                <div className="form-group form-floating">
+                <div className="form-group ">
                   <select
-                    className="form-select form-control form-control-lg bg-scrumButton"
+                    className="form-select form-control form-control-lg  bg-scrumButton"
                     name="status"
-                    id="floatingSelect"
+                    // id="floatingSelect"
                     value={this.state.status}
                     onChange={this.onChange}
-                    style={{ color: "#98FB98" }}
+                    style={{ color: "#00FFFF" }}
                   >
                     <option selected>Select Status</option>
                     <option value="TO_DO">TO DO</option>
                     <option value="IN_PROGRESS">IN PROGRESS</option>
                     <option value="DONE">DONE</option>
                   </select>
-                  <label for="floatingSelect" style={{ color: "#98FB98" }}>
+                  {/* <label for="floatingSelect" style={{ color: "#98FB98" }}>
                     Status
-                  </label>
+                  </label> */}
                 </div>
 
                 <input
