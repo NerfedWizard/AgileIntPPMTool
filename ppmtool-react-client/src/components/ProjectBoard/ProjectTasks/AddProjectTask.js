@@ -122,12 +122,12 @@ class AddProjectTask extends Component {
                     style={{ color: "#98FB98" }}
                   />
                 </div>
-                <div className="form-group form-floating">
+                <div className="form-group ">
                   <select
                     className="form-select form-control form-control-lg bg-scrumButton"
                     name="priority"
-                    id="floatingSelect"
-                    aria-label="floating label priority"
+                    // id="floatingSelect"
+                    // aria-label="floating label priority"
                     style={{ color: "#98FB98" }}
                     value={this.state.priority}
                     onChange={this.onChange}
@@ -137,16 +137,16 @@ class AddProjectTask extends Component {
                     <option value={2}>Medium</option>
                     <option value={3}>Low</option>
                   </select>
-                  <label for="floatingSelect" style={{ color: "#98FB98" }}>
+                  {/* <label for="floatingSelect" style={{ color: "#98FB98" }}>
                     Priority
-                  </label>
+                  </label> */}
                 </div>
 
-                <div className="form-group form-floating">
+                <div className="form-group">
                   <select
                     className="form-select form-control form-control-lg bg-scrumButton"
                     name="status"
-                    id="floatingSelect"
+                    // id="floatingSelect"
                     value={this.state.status}
                     onChange={this.onChange}
                     style={{ color: "#98FB98" }}
@@ -156,9 +156,9 @@ class AddProjectTask extends Component {
                     <option value="IN_PROGRESS">IN PROGRESS</option>
                     <option value="DONE">DONE</option>
                   </select>
-                  <label for="floatingSelect" style={{ color: "#98FB98" }}>
+                  {/* <label for="floatingSelect" style={{ color: "#98FB98" }}>
                     Status
-                  </label>
+                  </label> */}
                 </div>
 
                 <input

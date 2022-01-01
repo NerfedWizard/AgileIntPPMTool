@@ -47,8 +47,20 @@ class ProjectBoard extends Component {
           );
         } else {
           return (
-            <div className="alert alert-info text-center" role="alert">
-              No Project Tasks on this board
+            <div
+              className="alert text-center  font-weight-bold whatever"
+              role="alert"
+            >
+              <h4 className="alert-heading scrumYujiMai">
+                Stop! Collaborate And Listen
+              </h4>
+
+              <p className="mb-0 scrumNunito">
+                You Haven't Created Anything Yet!!
+              </p>
+              <g className="mb-1 scrumFuzzyBubbles2">
+                Create A Task and See Where This Rabbit Hole Goes...
+              </g>
             </div>
           );
         }

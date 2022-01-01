@@ -49,13 +49,23 @@
   font-weight: 700, bold;
   text-shadow: 1px 1px 2px rgb(110, 10, 10), 0 0 25px rgb(195, 73, 185),
     0 0 5px rgb(100, 20, 110);
+  color: #5c7194;
+}
+.scrumFuzzyBubbles2 {
+  font-family: "Fuzzy Bubbles", cursive;
+  font-weight: 700, bold;
+  font-size: 25px;
+  text-shadow: 1px 1px 2px rgb(110, 10, 10), 0 0 25px rgb(195, 73, 185),
+    0 0 5px rgb(100, 20, 110);
   color: #102242;
 }
 
 .scrumNunito {
   font-family: "Nunito", sans-serif;
   font-weight: 900;
-  color: #26c24d;
+  font-size: 25px;
+  text-shadow: 1px 1px 2px rgb(0, 0, 0), 0 0 25px rgb(49, 49, 49),
+    0 0 5px rgb(201, 207, 205);
 }
 .scrumRobotoItl {
   font-family: "Roboto", sans-serif;
@@ -70,10 +80,10 @@
   font-weight: 900;
 }
 
-.shadow-box-example {
+.scrumShadow {
   height: 50px;
   width: 100%;
-  background-color: #64b5f6;
+  background-color: #00b62e;
 }
 .scrumSource {
   font-family: "Source Sans 3", sans-serif;
@@ -84,7 +94,7 @@
 }
 .scrumSubmitBtn {
   background: #fad8d8;
-  background-image: radial-gradient(#0059ff, #9597ff, #3c00ff);
+  background-image: radial-gradient(#0059ff, #353674, #3c00ff);
   -webkit-border-radius: 28;
   border-radius: 28px;
 }
@@ -106,9 +116,10 @@
 
 .scrumYujiMai {
   font-family: "Yuji Mai", serif;
-  font-size: 30px;
-  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
-  color: #00fa9a;
+  font-size: 60px;
+  text-shadow: 1px 1px 2px rgb(68, 73, 6), 0 0 25px rgb(145, 255, 0),
+    0 0 5px rgb(97, 139, 0);
+  color: #000000;
 }
 
 .scrumRockSalt {
@@ -149,7 +160,7 @@
 .scrumShalimar {
   font-family: "Shalimar", cursive;
   font-weight: 900;
-  color: #651f68;
+  color: #3b033d;
 }
 
 img {
@@ -299,7 +310,7 @@ img {
   background-color: #4a148c !important;
 }
 .bg-scrumButton {
-  background-color: #926ab8 !important;
+  background-color: #727174cc !important;
 }
 
 .latest-profiles-img {
@@ -309,7 +320,24 @@ img {
 .input.form-control.form-control-lg {
   background: #6f71e6 !important;
 }
-
+.bg-danger {
+  background-image: linear-gradient(#ff0000, #c23535, #ff0062) !important;
+}
+.bg-primary {
+  background-image: linear-gradient(#7d85f6, #3735c2, #0044ff) !important;
+}
+.bg-info {
+  background-image: linear-gradient(#7df6ab, #80c235, #00ff95) !important;
+}
+.bg-warning {
+  background-image: radial-gradient(#8a9900, #8f9938, #fffc49) !important;
+}
+.bg-light {
+  background-image: linear-gradient(#2a2222, #3d3d41, #808185d8) !important;
+}
+.bg-secondary {
+  background-image: linear-gradient(#be9166, #9b8a50, #ff7b00) !important;
+}
 /* .form-control::placeholder {
   color: rgba(15, 250, 46, 0.589) !important;
 } */
@@ -324,8 +352,10 @@ img {
   color: #b39ddb !important;
 }
 .whatever {
-  color: #311b92;
+  color: #8b2f2f;
 }
-/* .scrumAnimateRubberBand {
-  -webkit-animation: jackInTheBox;
-  -webkit-animation-delay: 2s; */
+.scrumAnimateRubberBand {
+  animation-name: jackInTheBox;
+  /* animation-duration: infinite; */
+  -webkit-animation-delay: 2s;
+}

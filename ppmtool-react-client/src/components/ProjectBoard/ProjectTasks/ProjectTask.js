@@ -14,21 +14,21 @@ class ProjectTask extends Component {
     let priorityClass;
 
     if (project_task.priority === 1) {
-      priorityClass = "bg-danger text-light";
+      priorityClass = "bg-danger text-dark";
       priorityString = "HIGH";
     }
 
     if (project_task.priority === 2) {
-      priorityClass = "bg-warning text-light";
+      priorityClass = "bg-warning text-dark";
       priorityString = "MEDIUM";
     }
 
     if (project_task.priority === 3) {
-      priorityClass = "bg-info text-light";
+      priorityClass = "bg-info text-dark";
       priorityString = "LOW";
     }
     return (
-      <div className="card mb-1 bg-light">
+      <div className="card text-white bg-light mb-1">
         <div className={`card-header text-primary ${priorityClass}`}>
           ID: {project_task.projectSequence} -- Priority: {priorityString}
         </div>

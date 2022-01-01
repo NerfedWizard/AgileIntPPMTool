@@ -46,9 +46,9 @@ class Login extends Component {
     const { errors } = this.state;
     return (
       <div className="login">
-        <div className="container">
+        <div className="container-fluid">
           <div className="row">
-            <div className="col-md-8 m-auto">
+            <div className="col-md-8 m-auto float-right">
               <h1 className="display-4 text-center scrumLobster">Log In</h1>
               <form onSubmit={this.onSubmit}>
                 <div className="form-group form-floating scrumOffSide">
@@ -59,7 +59,7 @@ class Login extends Component {
                     className={classnames(
                       "form-control form-control-lg bg-scrumButton",
                       {
-                        "form-control is-invalid": errors.username,
+                        "is-invalid": errors.username,
                       }
                     )}
                     placeholder="Email Address"
@@ -68,9 +68,7 @@ class Login extends Component {
                     onChange={this.onChange}
                   />
                   {errors.username && (
-                    <div className="form-control invalid-feedback">
-                      {errors.username}
-                    </div>
+                    <div className="invalid-feedback">{errors.username}</div>
                   )}
                   <label for="floatingInput" style={{ color: "#98FB98" }}>
                     Email Address
@@ -82,7 +80,7 @@ class Login extends Component {
                     className={classnames(
                       "form-control form-control-lg bg-scrumButton",
                       {
-                        "form-control is-invalid": errors.password,
+                        "is-invalid": errors.password,
                       }
                     )}
                     placeholder="Password"
@@ -93,9 +91,7 @@ class Login extends Component {
                     onChange={this.onChange}
                   />
                   {errors.password && (
-                    <div className="form-control invalid-feedback">
-                      {errors.password}
-                    </div>
+                    <div className="invalid-feedback">{errors.password}</div>
                   )}
                   <label for="floatingPassword" style={{ color: "#98FB98" }}>
                     Password
