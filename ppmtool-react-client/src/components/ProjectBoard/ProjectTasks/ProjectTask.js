@@ -3,11 +3,17 @@ import { Link } from "react-router-dom";
 import { deleteProjectTask } from "../../../actions/backlogActions";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import { dragula } from "dragula";
 
 class ProjectTask extends Component {
   onDeleteClick(backlog_id, pt_id) {
     this.props.deleteProjectTask(backlog_id, pt_id);
   }
+  // componentDidMount() {
+  //   let left = document.getElementById("left");
+  //   let right = document.getElementById("right");
+  //   dragula([left, right]);
+  // }
   render() {
     const { project_task } = this.props;
     let priorityString;

@@ -37,10 +37,10 @@ if (jwtToken) {
     window.location.href = "/";
   }
 }
-class App extends Component {
+class App extends React.Component {
   render() {
     return (
-      <div className="dark-overlay ">
+      <div className="dark-overlay">
         <Provider store={store}>
           <Router>
             <div className="App">

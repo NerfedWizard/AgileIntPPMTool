@@ -68,7 +68,7 @@ class Header extends Component {
     }
 
     return (
-      <nav className="navbar navbar-expand-sm bg-scrummaster mb-4">
+      <nav className="navbar navbar-expand-sm mb-4">
         <div className="container">
           <Link className="navbar-brand scrummOffside" to="/">
             Personal Project Management Tool

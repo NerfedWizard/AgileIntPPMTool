@@ -11,14 +11,14 @@ class Landing extends Component {
   render() {
     return (
       <div className="landing">
-        <div className="landing-inner text-dark">
+        <div className="landing-inner">
           <div className="container">
             <div className="row">
               <div className="col-md-12 text-center">
-                <h1 className="display-3 mb-5 scrumCharmon">
+                <h1 className=" mb-5 scrumCharmon">
                   Personal Project Management Tool
                 </h1>
-                <p className="lead display-5 scrumFuzzyBubbles">
+                <p className="scrumFuzzyBubbles">
                   Create your account to join active projects or start your own
                 </p>
                 <hr />
@@ -30,9 +30,9 @@ class Landing extends Component {
                   Sign Up
                 </Link>
                 <Link
-                  className="btn scrumSubmitBtn mr-2 hoverable scrumNunito"
+                  className="btn scrumBtn mr-2 scrumBioRhyme"
                   to="/login"
-                  style={{ color: "#000000" }}
+                  style={{ color: "#FF8C00" }}
                 >
                   Login
                 </Link>

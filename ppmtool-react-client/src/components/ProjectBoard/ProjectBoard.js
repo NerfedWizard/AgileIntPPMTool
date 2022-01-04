@@ -75,7 +75,7 @@ class ProjectBoard extends Component {
         <div className="container">
           <Link
             to={`/addProjectTask/${id}`}
-            className="btn scrumSubmitBtn mb-3 hoverable scrumNunito"
+            className="btn scrumSubmitBtn mb-3 "
           >
             <i className="fas fa-plus-circle" style={{ color: "#000000" }}>
               {" "}

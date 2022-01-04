@@ -7,29 +7,28 @@
 @media (min-width: 1200px) {
 }
 
-#shine-background {
+.high-contrast {
   /* background-size: cover; */
   position: relative;
-  top: -50%;
-  left: -50%;
+  top: 0%;
+  left: 0%;
   width: 100%;
   height: 100%;
-  background-color: #363495;
-  background: radial-gradient(
+  background-color: #252525;
+  /* background: radial-gradient(
       farthest-corner at top,
-      #ffffff 0%,
-      #5726c2 4%,
-      #41284e 12.25%,
-      #25213a 22.25%,
-      #33187c 50%
-    )
-    top right/200% 200%;
-  display: flow-root;
+      #767677 0%,
+      #575757 4%,
+      #3b3b3b 12.25%,
+      rgb(82, 82, 82) 22.25%,
+      #000000 50%
+    ) */
+  /* top right/200% 200%; */
   justify-content: center;
   align-items: center;
-  color: rgb(243, 62, 228);
+  color: rgb(107, 107, 107);
   font-weight: bold;
-  animation: colorChange 5s infinite alternate;
+  /* animation: colorChange 5s infinite alternate; */
 }
 @keyframes colorChange {
   to {
@@ -49,7 +48,8 @@
   font-weight: 700, bold;
   text-shadow: 1px 1px 2px rgb(110, 10, 10), 0 0 25px rgb(195, 73, 185),
     0 0 5px rgb(100, 20, 110);
-  color: #5c7194;
+  color: #001d4e;
+  font-size: 35px;
 }
 .scrumFuzzyBubbles2 {
   font-family: "Fuzzy Bubbles", cursive;
@@ -138,7 +138,7 @@
 }
 .scrumCharmon {
   font-family: "Charmonman", cursive;
-  font-size: x-large;
+  font-size: 77px;
   color: #fff5ee;
   text-shadow: 1px 1px 2px rgb(238, 107, 210), 0 0 25px rgb(202, 47, 189),
     0 0 5px rgb(202, 77, 196);
@@ -164,11 +164,11 @@
 }
 
 img {
-  width: 100%;
+  object-fit: cover;
 }
 
 .navbar {
-  background-color: #708090;
+  background-color: #202a35be;
 }
 .fa.fa-edit {
   color: #18a2b9;
@@ -268,19 +268,19 @@ img {
   left: 0%;
   width: 100%;
   height: 100%;
-  background-color: #363495;
+  background-color: #e6e6fa;
   background: radial-gradient(
       farthest-corner at top,
-      #ffffff 0%,
-      #501481 4%,
-      #3e1753 12.25%,
-      #7314c0 22.25%,
-      #322458 50%
+      #9370db 0%,
+      #8a2be2 4%,
+      #9932cc 12.25%,
+      #4b0082 22.25%,
+      #9400d3 50%
     )
     top right/200% 200%;
   justify-content: center;
   align-items: center;
-  color: rgb(243, 62, 228);
+  color: rgb(107, 107, 107);
   font-weight: bold;
   animation: colorChange 5s infinite alternate;
 }
@@ -298,11 +298,8 @@ img {
   background-color: #448aff !important;
 }
 .bg-scrumDelete {
-  font-family: "FuzzyBubbles", cursive !important;
-  font-weight: 900 !important;
-  color: #000000 !important;
   background: #fad8d8;
-  background-image: radial-gradient(#ff0000, #ff9595, #ff0062);
+  background-image: radial-gradient(#791b3a, #df366ec4, #8f2649);
   -webkit-border-radius: 28;
   border-radius: 28px;
 }
@@ -359,3 +356,59 @@ img {
   /* animation-duration: infinite; */
   -webkit-animation-delay: 2s;
 }
+html,
+body {
+  font-family: Lato, Arial, sans-serif !important;
+}
+
+h3 {
+  font-size: 18px !important;
+}
+
+p {
+  font-size: 16px !important;
+}
+
+#left,
+#right {
+  margin-top: 20px;
+  padding-top: 20px;
+  background-color: #e8615f;
+  min-height: 400px;
+
+  border-radius: 3px !important;
+}
+
+#left {
+  width: 49%;
+  float: left !important;
+}
+
+#right {
+  width: 49%;
+  float: right !important;
+}
+
+.card {
+  background-color: #fff;
+  margin: 7px;
+  border-radius: 5px;
+
+  box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+.card:hover {
+  cursor: pointer !important;
+}
+
+.card-header {
+  padding: 5px 0 0 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2) !important;
+}
+
+.card-body {
+  padding: 10px 0 10px 5px !important;
+}
+/* .container {
+  display: flex !important;
+} */

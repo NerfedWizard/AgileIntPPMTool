@@ -56,42 +56,42 @@ class Register extends Component {
                 Create your Account
               </p>
               <form onSubmit={this.onSubmit}>
-                <div className="form-group form-floating scrumOffSide">
+                <div className="form-group scrumOffSide">
                   <input
                     type="text"
+                    // id="floatingInputInvalid"
                     className={classnames(
                       "form-control form-control-lg bg-scrumButton",
                       {
-                        "form-control is-invalid": errors.fullName,
+                        "is-invalid": errors.fullName,
                       }
                     )}
-                    id="floatingInputInvalid"
                     placeholder="Full Name"
                     name="fullName"
                     style={{ color: "#00FFFF" }}
                     value={this.state.fullName}
                     onChange={this.onChange}
                   />
-                  {errors.fullName && (
-                    <div className="form-control invalid-feedback">
-                      {errors.fullName}
-                    </div>
-                  )}
-                  <label
+                  <span className="text-danger">
+                    {errors.fullName && (
+                      <div className="invalid-feedback">{errors.fullName}</div>
+                    )}
+                  </span>
+                  {/* <label
                     for="floatingInputInvalid"
                     style={{ color: "#98FB98" }}
                   >
                     Full Name
-                  </label>
+                  </label> */}
                 </div>
-                <div className="form-group form-floating scrumOffSide">
+                <div className="form-group scrumOffSide">
                   <input
-                    id="floatingInput"
+                    // id="floatingInput"
                     type="text"
                     className={classnames(
                       "form-control form-control-lg bg-scrumButton",
                       {
-                        "form-control is-invalid": errors.username,
+                        "is-invalid": errors.username,
                       }
                     )}
                     placeholder="Email Address (Username)"
@@ -100,64 +100,60 @@ class Register extends Component {
                     value={this.state.username}
                     onChange={this.onChange}
                   />
-                  {errors.username && (
-                    <div className="form-control invalid-feedback">
-                      {errors.username}
-                    </div>
-                  )}
-                  <label for="floatingInput" style={{ color: "#98FB98" }}>
+                  {/* <label for="floatingInput" style={{ color: "#98FB98" }}>
                     Email Address (Username)
-                  </label>
+                  </label> */}
+                  {errors.username && (
+                    <div className="invalid-feedback">{errors.username}</div>
+                  )}
                 </div>
-                <div className="form-group form-floating scrumOffSide">
+                <div className="form-group scrumOffSide">
                   <input
                     type="password"
                     className={classnames(
                       "form-control form-control-lg bg-scrumButton",
                       {
-                        "form-control is-invalid": errors.password,
+                        "is-invalid": errors.password,
                       }
                     )}
                     placeholder="Password"
                     name="password"
-                    id="floatingPassword"
+                    // id="floatingPassword"
                     style={{ color: "#00FFFF" }}
                     value={this.state.password}
                     onChange={this.onChange}
                   />
                   {errors.password && (
-                    <div className="form-control invalid-feedback">
-                      {errors.password}
-                    </div>
+                    <div className="invalid-feedback">{errors.password}</div>
                   )}
-                  <label for="floatingPassword" style={{ color: "#98FB98" }}>
+                  {/* <label for="floatingPassword" style={{ color: "#98FB98" }}>
                     Password
-                  </label>
+                  </label> */}
                 </div>
-                <div className="form-group form-floating scrumOffSide">
+                <div className="form-group scrumOffSide">
                   <input
                     type="password"
                     className={classnames(
                       "form-control form-control-lg bg-scrumButton",
                       {
-                        "form-control is-invalid": errors.confirmPassword,
+                        "is-invalid": errors.confirmPassword,
                       }
                     )}
                     placeholder="Confirm Password"
                     name="confirmPassword"
                     style={{ color: "#00FFFF" }}
-                    id="floatingPassword"
+                    // id="floatingPassword"
                     value={this.state.confirmPassword}
                     onChange={this.onChange}
                   />
                   {errors.confirmPassword && (
-                    <div className="form-control invalid-feedback ">
+                    <div className="invalid-feedback ">
                       {errors.confirmPassword}
                     </div>
                   )}
-                  <label for="floatingPassword" style={{ color: "#98FB98" }}>
+                  {/* <label for="floatingPassword" style={{ color: "#98FB98" }}>
                     Confirm Password
-                  </label>
+                  </label> */}
                 </div>
                 <input
                   type="submit"
