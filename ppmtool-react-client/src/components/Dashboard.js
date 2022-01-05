@@ -6,6 +6,9 @@ import { getProjects } from "../actions/projectActions";
 import PropTypes from "prop-types";
 import { Input } from "mdb-ui-kit";
 import { MDBAnimation } from "mdbreact";
+import ToggleSwitch from "./ToggleSwitch";
+
+// import Toggle from 'react-bootstrap-toggle';
 // import ToggleColorMode from "./Decoration/darkModeToggleSwitch";
 
 class Dashboard extends Component {
@@ -14,6 +17,8 @@ class Dashboard extends Component {
   }
   render() {
     const { projects } = this.props.project;
+    const { checked } = true;
+    const { setChecked } = true;
     return (
       <div className="projects">
         <div className="container">
@@ -29,8 +34,17 @@ class Dashboard extends Component {
               </MDBAnimation>
               <br />
               <CreateProjectButton />
-
               <br />
+              <ToggleSwitch id="switch" checked={checked} onChange={checked => setChecked(checked)} />`
+              {/* <Toggle
+                onClick={this.onToggle}
+                on={<h2>ON</h2>}
+                off={<h2>OFF</h2>}
+                size="xs"
+                offstyle="danger"
+                active={this.state.toggleActive}
+              /> */}
+              {/* <ToggleColorMode /> */}
               <hr />
               {projects.map((project) => (
                 <ProjectItem key={project.id} project={project} />

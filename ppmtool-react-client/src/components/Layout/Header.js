@@ -3,12 +3,18 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logout } from "../../actions/securityActions";
+// import ToggleSwitch from "./components/ToggleSwitch"
+// import BootstrapSwitchButton from 'bootstrap-switch-button-react'
+// import ToggleColorMode from "./Decoration/darkModeToggleSwitch";
+// import Toggle from 'react-bootstrap-toggle';
+// import ToggleColorMode from "../Decoration/darkModeToggleSwitch";
 
 class Header extends Component {
   logout() {
     this.props.logout();
     window.location.href = "/";
   }
+
   render() {
     const { validToken, user } = this.props.security;
 
@@ -54,6 +60,9 @@ class Header extends Component {
             <Link className="nav-link" to="/login">
               Login
             </Link>
+          </li>
+          <li >
+
           </li>
         </ul>
       </div>

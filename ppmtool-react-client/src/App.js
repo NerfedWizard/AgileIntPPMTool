@@ -20,6 +20,9 @@ import setJWTToken from "./securityUtils/setJWTToken";
 import { SET_CURRENT_USER } from "./actions/types";
 import { logout } from "./actions/securityActions";
 import SecuredRoute from "./securityUtils/SecureRoute";
+import BootstrapSwitchButton from 'bootstrap-switch-button-react';
+
+// import ToggleButton from 'react-bootstrap/ToggleButton'
 
 const jwtToken = localStorage.jwtToken;
 
@@ -40,11 +43,12 @@ if (jwtToken) {
 class App extends React.Component {
   render() {
     return (
-      <div className="dark-overlay">
+      <div className="high-contrast">
         <Provider store={store}>
           <Router>
             <div className="App">
               <Header />
+              {/* <BootstrapSwitchButton checked={true} size="lg" /> */}
               {
                 //Public Routes
               }
