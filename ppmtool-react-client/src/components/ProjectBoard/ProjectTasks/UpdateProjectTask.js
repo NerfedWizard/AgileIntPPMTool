@@ -1,13 +1,19 @@
+import classnames from "classnames";
+import { MDBAnimation, MDBCol, MDBContainer, MDBInput, MDBRow } from "mdbreact";
+import PropTypes from "prop-types";
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import classnames from "classnames";
 import { Link } from "react-router-dom";
 import {
-  getProjectTask,
-  updateProjectTask,
+  getProjectTask, updateProjectTask
 } from "../../../actions/backlogActions";
-import PropTypes from "prop-types";
-
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import NativeSelect from '@mui/material/NativeSelect';
+import InputBase from '@mui/material/InputBase';
+import { FormHelperText } from "@mui/material";
+import InputLabel from '@mui/material/InputLabel';
 class UpdateProjectTask extends Component {
   constructor() {
     super();
@@ -26,6 +32,7 @@ class UpdateProjectTask extends Component {
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
@@ -64,6 +71,10 @@ class UpdateProjectTask extends Component {
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
+  //handleChange
+  handleChange(e) {
+    this.setState({ [e.target.value]: e.target.value });
+  }
 
   onSubmit(e) {
     e.preventDefault();
@@ -92,117 +103,115 @@ class UpdateProjectTask extends Component {
   render() {
     const { errors } = this.state;
     return (
-      <div className="add-PBI">
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col-md-8 m-auto">
-              <Link
-                to={`/projectBoard/${this.state.projectIdentifier}`}
-                className="btn scrumBtn"
-              >
-                Back to Project Board
-              </Link>
-              <h4 className="display-4 text-center scrumLobster">
-                Update Project Task
-              </h4>
-              <p className="lead text-center scrumBioRhyme">
-                Project Name: {this.state.projectIdentifier} | Project Task ID:{" "}
-                {this.state.projectSequence}{" "}
-              </p>
-              <form onSubmit={this.onSubmit}>
-                <div className="form-group form-floating  scrumOffside">
-                  <input
-                    type="text"
-                    className={classnames(
-                      "form-control form-control-lg bg-scrumButton scrumBioRhyme",
-                      {
-                        "is-invalid": errors.summary,
-                      }
+      <div>
+        <div className="add-PBI">
+          <MDBContainer>
+            <MDBRow>
+              <MDBCol md="12">
+                <Link
+                  to={`/projectBoard/${this.state.projectIdentifier}`}
+                  className="btn scrumBtn "
+                  style={{ color: "#FF8C00" }}
+                >
+                  Back to Project Board
+                </Link>
+                <h4 className="display-4 text-center scrumLobster">
+                  Update Project Task
+                </h4>
+                <p className="lead text-center scrumBioRhyme">
+                  Project Name: {this.state.projectIdentifier} | Project Task ID:{" "}
+                  {this.state.projectSequence}{" "}
+                </p>
+                <form onSubmit={this.onSubmit}>
+                  <div className="form-group scrumOffside">
+                    <MDBInput
+                      type="text"
+                      className={classnames(
+                        "form-control form-control-lg scrumBioRhyme",
+                        {
+                          "is-invalid": errors.summary,
+                        }
+                      )}
+                      style={{ color: "Chartreuse" }}
+                      material label="Project Task summary"
+                      name="summary"
+                      value={this.state.summary}
+                      onChange={this.onChange}
+                    />
+                    {errors.summary && (
+                      <MDBAnimation className="scrumFlash" infinite>
+                        <h1 className="scrumRockError" append="invalid-feedback ">{errors.summary}</h1>
+                      </MDBAnimation>
                     )}
-                    id="floatingInput"
-                    name="summary"
-                    placeholder="Project Task summary"
-                    style={{ color: "#00ffff" }}
-                    value={this.state.summary}
-                    onChange={this.onChange}
-                  />
-                  <label for="floatingInput" style={{ color: "#98FB98" }}>
-                    Project Task summary
-                  </label>
-                  {errors.summary && (
-                    <div className="invalid-feedback">{errors.summary}</div>
-                  )}
-                </div>
-                <div className="form-group  form-floating scrumOffside">
-                  <textarea
-                    className="form-control form-control-lg bg-scrumButton"
-                    id="floatingTextArea"
-                    placeholder="Acceptance Criteria"
-                    name="acceptanceCriteria"
-                    style={{ color: "#00ffff" }}
-                    value={this.state.acceptanceCriteria}
-                    onChange={this.onChange}
-                  />
-                  <label for="floatingTextArea" style={{ color: "#98FB98" }}>
-                    Acceptance Criteria
-                  </label>
-                </div>
-                <h6>Due Date</h6>
-                <div className="form-group scrumOffside">
+                    <label style={{ color: "#98FB98" }}>
+                      Summary
+                    </label>
+                  </div>
+                  <div className="form-group scrumOffside">
+                    <MDBInput
+                      type="textarea"
+                      style={{ color: "Chartreuse" }}
+                      material label="Acceptance Criteria"
+                      name="acceptanceCriteria"
+                      value={this.state.acceptanceCriteria}
+                      onChange={this.onChange}
+                    />
+                    <label style={{ color: "#98FB98" }}>
+                      Acceptance Criteria
+                    </label>
+                  </div>
+                  <h6 className="scrumLabel" style={{ color: "#98FB98" }}>Due Date</h6>
+                  <div className="form-group scrumOffside">
+                    <MDBInput
+                      type="date"
+                      className="md-form mdb-react-date_picker"
+                      name="dueDate"
+                      value={this.state.dueDate}
+                      onChange={this.onChange}
+                      style={{ color: "#98FB98" }}
+                    />
+                  </div>
+                  <FormControl fullWidth>
+                    <Select
+                      labelId="scrum-select-label"
+                      id="scrum-select"
+                      name="priority"
+                      value={this.state.priority}
+                      onChange={this.handleChange}
+                    >
+                      <MenuItem value={0} style={{ color: "white" }}>
+                        Select Priority
+                      </MenuItem>
+                      <MenuItem value={1} style={{ color: "firebrick" }}>HIGH</MenuItem>
+                      <MenuItem value={2} style={{ color: "GoldenRod" }}>MEDIUM</MenuItem>
+                      <MenuItem value={3} style={{ color: "limegreen" }}>LOW</MenuItem>
+                    </Select>
+                    <FormHelperText style={{ color: "MediumSpringGreen" }}>Select Priority</FormHelperText>
+                  </FormControl>
+                  <FormControl fullWidth>
+                    <Select
+                      labelId="scrum-select-status"
+                      id="scrum-select"
+                      name="status"
+                      value={this.state.status}
+                      onChange={this.handleChange}
+                    >
+                      <MenuItem value=" " style={{ color: "firebrick" }}>
+                        Select Status
+                      </MenuItem>
+                      <MenuItem value="TO_DO" style={{ color: "GoldenRod" }}>TO DO</MenuItem>
+                      <MenuItem value="IN_PROGRESS" style={{ color: "DodgerBlue" }}>IN PROGRESS</MenuItem>
+                      <MenuItem value="DONE" style={{ color: "Green" }}>DONE</MenuItem>
+                    </Select>
+                    <FormHelperText style={{ color: "MediumSpringGreen" }}>Select Status</FormHelperText>
+                  </FormControl>
                   <input
-                    type="date"
-                    className="form-control form-control-lg bg-scrumButton"
-                    name="dueDate"
-                    value={this.state.dueDate}
-                    onChange={this.onChange}
-                    style={{ color: "#00ffff" }}
+                    type="submit" className="scrumLabel scrumBtn btn-block" style={{ maxWidth: '2000px', maxHeight: '50px', minWidth: '50px', minHeight: '45px' }}
                   />
-                </div>
-                <div className="form-group scrumOffside">
-                  <select
-                    className="form-control form-control-lg bg-scrumButton"
-                    name="priority"
-                    // id="floatingSelect"
-                    value={this.state.priority}
-                    onChange={this.onChange}
-                    style={{ color: "#00ffff" }}
-                  >
-                    <option selected>Select Priority</option>
-                    <option value={1}>High</option>
-                    <option value={2}>Medium</option>
-                    <option value={3}>Low</option>
-                  </select>
-                  {/* <label for="floatingSelect" style={{ color: "#98FB98" }}>
-                    Priority
-                  </label> */}
-                </div>
-
-                <div className="form-group scrumOffside">
-                  <select
-                    className="form-control form-control-lg bg-scrumButton"
-                    name="status"
-                    // id="floatingSelect"
-                    value={this.state.status}
-                    onChange={this.onChange}
-                    style={{ color: "#00ffff" }}
-                  >
-                    <option selected>Select Status</option>
-                    <option value="TO_DO">TO DO</option>
-                    <option value="IN_PROGRESS">IN PROGRESS</option>
-                    <option value="DONE">DONE</option>
-                  </select>
-                  {/* <label for="floatingSelect" style={{ color: "#98FB98" }}>
-                    Status
-                  </label> */}
-                </div>
-
-                <input
-                  type="submit"
-                  className="btn scrumSubmitBtn  btn-block mt-4  hoverable scrumNunito"
-                />
-              </form>
-            </div>
-          </div>
+                </form>
+              </MDBCol>
+            </MDBRow>
+          </MDBContainer>
         </div>
       </div>
     );

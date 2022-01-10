@@ -3,7 +3,7 @@ import { createNewUser } from "../../actions/securityActions";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import classnames from "classnames";
-
+import { MDBRow, MDBCol, MDBInput, MDBBtn, MDBDatePickerV5, MDBContainer, MDBAnimation, MDBInputGroup } from "mdbreact";
 class Register extends Component {
   constructor() {
     super();
@@ -48,122 +48,91 @@ class Register extends Component {
     const { errors } = this.state;
     return (
       <div className="register">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-8 m-auto">
+        <MDBContainer>
+          <MDBRow>
+            <MDBCol md="8 m-auto">
               <h1 className="display-4 text-center scrumLobster">Sign Up</h1>
               <p className="lead text-center scrumLobster">
                 Create your Account
               </p>
               <form onSubmit={this.onSubmit}>
-                <div className="form-group scrumOffSide">
-                  <input
+                <div className="form-group">
+                  <MDBInput
                     type="text"
-                    // id="floatingInputInvalid"
-                    className={classnames(
-                      "form-control form-control-lg bg-scrumButton",
-                      {
-                        "is-invalid": errors.fullName,
-                      }
-                    )}
-                    placeholder="Full Name"
+                    className={classnames("form-control form-control-lg", {
+                      "is-invalid": errors.fullName
+                    })}
+                    style={{ color: "Chartreuse" }}
+                    material label="Full Name"
                     name="fullName"
-                    style={{ color: "#00FFFF" }}
                     value={this.state.fullName}
                     onChange={this.onChange}
                   />
-                  <span className="text-danger">
-                    {errors.fullName && (
-                      <div className="invalid-feedback">{errors.fullName}</div>
-                    )}
-                  </span>
-                  {/* <label
-                    for="floatingInputInvalid"
-                    style={{ color: "#98FB98" }}
-                  >
-                    Full Name
-                  </label> */}
+                  {errors.fullName && (
+                    <MDBAnimation className="scrumFlash" infinite>
+                      <h1 className="scrumRockError" append="invalid-feedback ">{errors.fullName}</h1>
+                    </MDBAnimation>
+                  )}
                 </div>
-                <div className="form-group scrumOffSide">
-                  <input
-                    // id="floatingInput"
+                <div className="form-group">
+                  <MDBInput
                     type="text"
-                    className={classnames(
-                      "form-control form-control-lg bg-scrumButton",
-                      {
-                        "is-invalid": errors.username,
-                      }
-                    )}
-                    placeholder="Email Address (Username)"
-                    style={{ color: "#00FFFF" }}
+                    className={classnames("form-control form-control-lg", {
+                      "is-invalid": errors.username
+                    })}
+                    style={{ color: "Chartreuse" }}
+                    material label="Email Address (Username)"
                     name="username"
                     value={this.state.username}
                     onChange={this.onChange}
                   />
-                  {/* <label for="floatingInput" style={{ color: "#98FB98" }}>
-                    Email Address (Username)
-                  </label> */}
                   {errors.username && (
-                    <div className="invalid-feedback">{errors.username}</div>
+                    <MDBAnimation className="scrumFlash" infinite>
+                      <h1 className="scrumRockError" append="invalid-feedback ">{errors.username}</h1>
+                    </MDBAnimation>
                   )}
                 </div>
-                <div className="form-group scrumOffSide">
-                  <input
+                <div className="form-group">
+                  <MDBInput
                     type="password"
-                    className={classnames(
-                      "form-control form-control-lg bg-scrumButton",
-                      {
-                        "is-invalid": errors.password,
-                      }
-                    )}
-                    placeholder="Password"
+                    className={classnames("form-control form-control-lg", {
+                      "is-invalid": errors.password
+                    })}
+                    style={{ color: "Chartreuse" }}
+                    material label="Password"
                     name="password"
-                    // id="floatingPassword"
-                    style={{ color: "#00FFFF" }}
                     value={this.state.password}
                     onChange={this.onChange}
                   />
                   {errors.password && (
-                    <div className="invalid-feedback">{errors.password}</div>
+                    <MDBAnimation className="scrumFlash" infinite>
+                      <h1 className="scrumRockError" append="invalid-feedback ">{errors.password}</h1>
+                    </MDBAnimation>
                   )}
-                  {/* <label for="floatingPassword" style={{ color: "#98FB98" }}>
-                    Password
-                  </label> */}
                 </div>
-                <div className="form-group scrumOffSide">
-                  <input
+                <div className="form-group" >
+                  <MDBInput
                     type="password"
-                    className={classnames(
-                      "form-control form-control-lg bg-scrumButton",
-                      {
-                        "is-invalid": errors.confirmPassword,
-                      }
-                    )}
-                    placeholder="Confirm Password"
+                    className={classnames("form-control form-control-lg", {
+                      "is-invalid": errors.confirmPassword
+                    })}
+                    style={{ color: "Chartreuse" }}
+                    material label="Confirm Password"
                     name="confirmPassword"
-                    style={{ color: "#00FFFF" }}
-                    // id="floatingPassword"
                     value={this.state.confirmPassword}
                     onChange={this.onChange}
                   />
                   {errors.confirmPassword && (
-                    <div className="invalid-feedback ">
-                      {errors.confirmPassword}
-                    </div>
+                    <MDBAnimation className="scrumFlash" infinite>
+                      <h1 className="scrumRockError" append="invalid-feedback ">{errors.confirmPassword}</h1>
+                    </MDBAnimation>
                   )}
-                  {/* <label for="floatingPassword" style={{ color: "#98FB98" }}>
-                    Confirm Password
-                  </label> */}
                 </div>
-                <input
-                  type="submit"
-                  className="btn scrumSubmitBtn btn-block mt-4 hoverable scrumNunito"
-                  style={{ color: "#000000" }}
-                />
-              </form>
-            </div>
-          </div>
-        </div>
+                <input type="submit" className="scrumLabel scrumBtn btn-block" style={{ maxWidth: '1000px', maxHeight: '50px', minWidth: '30px', minHeight: '45px' }} />
+              </form >
+            </MDBCol>
+          </MDBRow>
+        </MDBContainer>
       </div>
     );
   }

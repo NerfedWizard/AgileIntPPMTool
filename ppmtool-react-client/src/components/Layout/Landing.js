@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import { MDBRow, MDBCol, MDBInput, MDBBtn, MDBDatePickerV5, MDBContainer, MDBInputGroup } from "mdbreact";
 class Landing extends Component {
   componentDidMount() {
     if (this.props.security.validToken) {
@@ -15,7 +16,7 @@ class Landing extends Component {
           <div className="container">
             <div className="row">
               <div className="col-md-12 text-center">
-                <h1 className=" mb-5 scrumCharmon">
+                <h1 className=" scrumCharmon">
                   Personal Project Management Tool
                 </h1>
                 <p className="scrumFuzzyBubbles">
@@ -23,16 +24,16 @@ class Landing extends Component {
                 </p>
                 <hr />
                 <Link
-                  className="btn scrumBtn scrumBioRhyme mr-2"
-                  style={{ color: "#FF8C00" }}
+                  className="btn scrumLabel scrumBtn mr-2"
+                  style={{ maxWidth: '1000px', maxHeight: '50px', minWidth: '250px', minHeight: '45px', color: "goldenRod" }}
                   to="/register"
                 >
                   Sign Up
                 </Link>
                 <Link
-                  className="btn scrumBtn mr-2 scrumBioRhyme"
+                  className="btn scrumLabel scrumBtn mr-2"
+                  style={{ maxWidth: '1000px', maxHeight: '50px', minWidth: '250px', minHeight: '45px', color: "goldenRod" }}
                   to="/login"
-                  style={{ color: "#FF8C00" }}
                 >
                   Login
                 </Link>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { deleteProjectTask } from "../../../actions/backlogActions";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { dragula } from "dragula";
+import { MDBRow, MDBCol, MDBInput, MDBBtn, MDBDatePickerV5, MDBContainer, MDBInputGroup } from "mdbreact";
 
 class ProjectTask extends Component {
   onDeleteClick(backlog_id, pt_id) {
@@ -39,19 +39,20 @@ class ProjectTask extends Component {
           ID: {project_task.projectSequence} -- Priority: {priorityString}
         </div>
         <div className="card-body bg-light">
-          <h5 className="card-title">{project_task.summary}</h5>
+          <h5 className="card-title scrumRobotoTask">{project_task.summary}</h5>
           <p className="card-text text-truncate ">
             {project_task.acceptanceCriteria}
           </p>
           <Link
             to={`/updateProjectTask/${project_task.projectIdentifier}/${project_task.projectSequence}`}
-            className="btn scrumBtn ml-4"
+            className="btn scrumBtn ml-4" style={{ maxWidth: '300px', maxHeight: '50px', minWidth: '170px', minHeight: '20px' }}
           >
             View / Update
           </Link>
 
           <button
-            className="btn bg-scrumDelete ml-4"
+            className="btn scrumDelBtn ml-4"
+            style={{ maxWidth: '300px', maxHeight: '50px', minWidth: '170px', minHeight: '20px' }}
             onClick={this.onDeleteClick.bind(
               this,
               project_task.projectIdentifier,

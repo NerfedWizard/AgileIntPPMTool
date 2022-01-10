@@ -4,7 +4,8 @@ import Backlog from "./Backlog";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { getBacklog } from "../../actions/backlogActions";
-
+import { DragDropContext } from 'react-beautiful-dnd';
+import { MDBRow, MDBCol, MDBInput, MDBBtn, MDBDatePickerV5, MDBContainer, MDBInputGroup } from "mdbreact";
 class ProjectBoard extends Component {
   //constructor to handle errors
   constructor() {
@@ -77,7 +78,7 @@ class ProjectBoard extends Component {
             to={`/addProjectTask/${id}`}
             className="btn scrumSubmitBtn mb-3 "
           >
-            <i className="fas fa-plus-circle" style={{ color: "#000000" }}>
+            <i className="fas fa-plus-circle scrumLabel" style={{ color: "#000000" }}>
               {" "}
               Create Project Task
             </i>

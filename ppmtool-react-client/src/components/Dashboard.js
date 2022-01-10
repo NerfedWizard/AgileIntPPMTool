@@ -1,15 +1,11 @@
+import { MDBAnimation, MDBRow, MDBCol, MDBInput, MDBBtn, MDBDatePickerV5, MDBContainer, MDBInputGroup } from "mdbreact";
+import PropTypes from "prop-types";
 import React, { Component } from "react";
-import CreateProjectButton from "./Project/CreateProjectButton";
-import ProjectItem from "./Project/ProjectItem";
 import { connect } from "react-redux";
 import { getProjects } from "../actions/projectActions";
-import PropTypes from "prop-types";
-import { Input } from "mdb-ui-kit";
-import { MDBAnimation } from "mdbreact";
-import ToggleSwitch from "./ToggleSwitch";
+import CreateProjectButton from "./Project/CreateProjectButton";
+import ProjectItem from "./Project/ProjectItem";
 
-// import Toggle from 'react-bootstrap-toggle';
-// import ToggleColorMode from "./Decoration/darkModeToggleSwitch";
 
 class Dashboard extends Component {
   componentDidMount() {
@@ -21,9 +17,9 @@ class Dashboard extends Component {
     const { setChecked } = true;
     return (
       <div className="projects">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-12">
+        <MDBContainer>
+          <MDBRow>
+            <MDBCol md="12 m-auto" style={{ margin: 0 }}>
               <MDBAnimation className="scrumAnimateRubberBand">
                 <h2 className="display-2 text-center scrumCharmon">
                   Kanban Project
@@ -35,23 +31,13 @@ class Dashboard extends Component {
               <br />
               <CreateProjectButton />
               <br />
-              <ToggleSwitch id="switch" checked={checked} onChange={checked => setChecked(checked)} />`
-              {/* <Toggle
-                onClick={this.onToggle}
-                on={<h2>ON</h2>}
-                off={<h2>OFF</h2>}
-                size="xs"
-                offstyle="danger"
-                active={this.state.toggleActive}
-              /> */}
-              {/* <ToggleColorMode /> */}
               <hr />
               {projects.map((project) => (
                 <ProjectItem key={project.id} project={project} />
               ))}
-            </div>
-          </div>
-        </div>
+            </MDBCol>
+          </MDBRow>
+        </MDBContainer>
       </div>
     );
   }

@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { createProject } from "../../actions/projectActions";
-import { MDBAnimation, MDBBtn } from "mdbreact";
 import classnames from "classnames";
-
+import { MDBRow, MDBCol, MDBInput, MDBBtn, MDBDatePickerV5, MDBContainer, MDBInputGroup, MDBAnimation } from "mdbreact";
 //Work on handling the errors through css
 class AddProject extends Component {
   constructor() {
@@ -47,122 +46,96 @@ class AddProject extends Component {
     const { errors } = this.state;
     return (
       <div>
-        <div className="addProject">
-          <div className="container">
-            <div className="row">
-              <div className="col-md-8 m-auto">
+        <div className="projects">
+          <MDBContainer>
+            <MDBRow>
+              <MDBCol md="9">
                 <h5 className="display-4 text-center scrumYujiMai">
                   Create Project form
                 </h5>
                 <hr />
                 <form onSubmit={this.onSubmit}>
-                  <div className="form-group form-floating scrumOffside">
-                    <input
+                  <div className="form-group scrumOffside">
+                    <MDBInput
                       type="text"
-                      className={classnames(
-                        "form-control form-control-lg bg-scrumButton",
-                        {
-                          "form-control is-invalid": errors.projectName, //Need to configure the floating Error
-                        }
-                      )}
-                      id="floatingInput"
-                      // style={{ color: "#00FFFF" }}
-                      placeholder="Project Name"
+                      className={classnames("form-control form-control-lg", {
+                        "is-invalid": errors.projectName
+                      })}
+                      style={{ color: "Chartreuse" }}
+                      material label="Project Name"
                       name="projectName"
                       value={this.state.projectName}
                       onChange={this.onChange}
                     />
-                    <label for="floatingInput" style={{ color: "#98FB98" }}>
-                      Project Name
-                    </label>
                     {errors.projectName && (
-                      <div className="form-control invalid-feedback">
-                        {errors.projectName}
-                      </div>
+                      <MDBAnimation className="scrumFlash" infinite>
+                        <h1 className="scrumRockError" append="invalid-feedback ">{errors.projectName}</h1>
+                      </MDBAnimation>
                     )}
                   </div>
-                  <div className="form-group form-floating scrumOffside">
-                    <input
+                  <div className="form-group scrumOffside">
+                    <MDBInput
                       type="text"
-                      className={classnames(
-                        "form-control form-control-lg bg-scrumButton",
-                        {
-                          "form-control is-invalid": errors.projectIdentifier,
-                        }
-                      )}
-                      // style={{ color: "#00FFFF" }}
-                      id="floatingInput"
-                      placeholder="Unique Project ID"
+                      className={classnames("form-control form-control-lg", {
+                        "is-invalid": errors.projectIdentifier
+                      })}
+                      style={{ color: "Chartreuse" }}
+                      material label="Unique Project ID"
                       name="projectIdentifier"
                       value={this.state.projectIdentifier}
                       onChange={this.onChange}
                     />
                     {errors.projectIdentifier && (
-                      <div className="form-control invalid-feedback">
-                        {errors.projectIdentifier}
-                      </div>
+                      <MDBAnimation className="scrumFlash" infinite>
+                        <h1 className="scrumRockError" append="invalid-feedback ">{errors.projectIdentifier}</h1>
+                      </MDBAnimation>
                     )}
-                    <label for="floatingInput" style={{ color: "#98FB98" }}>
-                      Unique Project ID
-                    </label>
                   </div>
-                  <div className="form-group scrumOffside form-floating">
-                    <textarea
-                      className={classnames(
-                        "form-control form-control-lg bg-scrumButton ",
-                        {
-                          "form-control is-invalid": errors.description,
-                        }
-                      )}
-                      id="floatingTextArea"
-                      // style={{ color: "#00FFFF" }}
-                      placeholder="Project Description"
+                  <div className="form-group scrumOffside">
+                    <MDBInput type="textarea"
+                      className={classnames("form-control form-control-lg", {
+                        "is-invalid": errors.description
+                      })}
+                      style={{ color: "Chartreuse" }}
+                      material label="Project Description"
                       name="description"
                       value={this.state.description}
                       onChange={this.onChange}
                     />
                     {errors.description && (
-                      <div className="form-control invalid-feedback">
-                        {errors.description}
-                      </div>
+                      <MDBAnimation className="scrumFlash" infinite>
+                        <h1 className="scrumRockError" append="invalid-feedback ">{errors.description}</h1>
+                      </MDBAnimation>
                     )}
-                    <label for="floatingTextArea" style={{ color: "#98FB98" }}>
-                      Project Description
-                    </label>
                   </div>
-                  <h6 className="scrumNunito">Start Date</h6>
-                  <div className="form-group form-floating">
-                    <input
+                  <h6 style={{ color: "YellowGreen" }}>Start Date</h6>
+                  <div className="form-group scrumOffside">
+                    <MDBInput
                       type="date"
-                      className="form-control form-control-lg bg-scrumButton"
-                      name="startDate"
-                      id="floatingInput"
-                      style={{ color: "#00FFFF" }}
-                      value={this.state.startDate}
+                      className="md-form mdb-react-date__picker"
+                      name="start_date"
+                      value={this.state.start_date}
                       onChange={this.onChange}
                     />
                   </div>
-                  <h6 className="scrumNunito">Estimated End Date</h6>
-                  <div className="form-group form-floating">
-                    <input
+                  <h6 style={{ color: "YellowGreen" }}>Estimated End Date</h6>
+                  <div className="form-group scrumOffside">
+                    <MDBInput
                       type="date"
-                      className="form-control form-control-lg bg-scrumButton"
-                      name="endDate"
-                      style={{ color: "#00FFFF" }}
-                      value={this.state.endDate}
+                      className="md-form mdb-react-date__picker"
+                      name="end_date"
+                      value={this.state.end_date}
                       onChange={this.onChange}
                     />
                   </div>
 
                   <input
-                    style={{ color: "#000000" }}
-                    type="submit"
-                    className="btn scrumSubmitBtn  btn-block mt-4  hoverable scrumNunito"
+                    type="submit" className="scrumLabel scrumBtn btn-block" style={{ maxWidth: '1000px', maxHeight: '50px', minWidth: '30px', minHeight: '45px' }}
                   />
                 </form>
-              </div>
-            </div>
-          </div>
+              </MDBCol>
+            </MDBRow>
+          </MDBContainer>
         </div>
       </div>
     );

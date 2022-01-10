@@ -3,7 +3,7 @@ import { getProject, createProject } from "../../actions/projectActions";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import classnames from "classnames";
-
+import { MDBRow, MDBCol, MDBInput, MDBBtn, MDBDatePickerV5, MDBContainer, MDBInputGroup, MDBAnimation } from "mdbreact";
 class UpdateProject extends Component {
   //set state
   constructor() {
@@ -68,94 +68,87 @@ class UpdateProject extends Component {
   render() {
     const { errors } = this.state;
     return (
-      <div className="addProject">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-8 m-auto">
-              {/* <div id="shine-background"> */}
+      <div className="projects">
+        <MDBContainer>
+          <MDBRow>
+            <MDBCol md="9">
               <h5 className="display-4 text-center scrumYujiMai">
                 Update Project
               </h5>
               <hr />
               <form onSubmit={this.onSubmit}>
                 <div className="form-group scrumOffside">
-                  <input
+                  <MDBInput
                     type="text"
-                    className={classnames(
-                      "form-control form-control-lg bg-scrumButton",
-                      {
-                        "form-control is-invalid": errors.projectName,
-                      }
-                    )}
-                    placeholder="Project Name"
+                    className={classnames("form-control form-control-lg", {
+                      "is-invalid": errors.projectName
+                    })}
+                    style={{ color: "Chartreuse" }}
+                    material label="Project Name"
                     name="projectName"
                     value={this.state.projectName}
                     onChange={this.onChange}
                   />
                   {errors.projectName && (
-                    <div className="form-control invalid-feedback">
-                      {errors.projectName}
-                    </div>
+                    <MDBAnimation className="scrumFlash" infinite>
+                      <h1 className="scrumRockError" append="invalid-feedback ">{errors.projectName}</h1>
+                    </MDBAnimation>
                   )}
                 </div>
                 <div className="form-group scrumOffside">
-                  <input
-                    type="text"
-                    className="form-control form-control-lg bg-scrumButton"
-                    placeholder="ID cannot be changed"
+                  <MDBInput
+                    style={{ color: "Chartreuse" }}
+                    material label="ID cannot be changed"
                     name="projectIndentifier"
                     value={this.state.projectIndentifier}
                     disabled
                   />
                 </div>
                 <div className="form-group scrumOffside">
-                  <textarea
-                    className={classnames(
-                      "form-control form-control-lg bg-scrumButton",
-                      {
-                        "form-control is-invalid": errors.description,
-                      }
-                    )}
-                    placeholder="Project Description"
+                  <MDBInput type="textarea"
+                    className={classnames("form-control form-control-lg", {
+                      "is-invalid": errors.description
+                    })}
+                    style={{ color: "Chartreuse" }}
+                    material label="Project Description"
                     name="description"
                     value={this.state.description}
                     onChange={this.onChange}
                   />
                   {errors.description && (
-                    <div className="form-control invalid-feedback">
-                      {errors.description}
-                    </div>
+                    <MDBAnimation className="scrumFlash" infinite>
+                      <h1 className="scrumRockError" append="invalid-feedback ">{errors.description}</h1>
+                    </MDBAnimation>
                   )}
                 </div>
-                <h6 className="scrumOffside">Start Date</h6>
+                <h6 style={{ color: "Chartreuse" }}>Start Date</h6>
                 <div className="form-group scrumOffside">
-                  <input
+                  <MDBInput
                     type="date"
-                    className="form-control form-control-lg bg-scrumButton"
-                    name="startDate"
-                    value={this.state.startDate}
+                    className="md-form mdb-react-date__picker"
+                    name="start_date"
+                    value={this.state.start_date}
                     onChange={this.onChange}
                   />
                 </div>
-                <h6 className="scrumOffside">Estimated End Date</h6>
+                <h6 style={{ color: "Chartreuse" }}>Estimated End Date</h6>
                 <div className="form-group scrumOffside">
-                  <input
+                  <MDBInput
                     type="date"
-                    className="form-control form-control-lg bg-scrumButton"
-                    name="endDate"
-                    value={this.state.endDate}
+                    className="md-form mdb-react-date__picker"
+                    name="end_date"
+                    value={this.state.end_date}
                     onChange={this.onChange}
                   />
                 </div>
                 <input
                   type="submit"
-                  className="btn scrumBtn btn-block mt-4  hoverable"
+                  type="submit" className="scrumLabel scrumBtn btn-block" style={{ maxWidth: '2000px', maxHeight: '50px', minWidth: '50px', minHeight: '45px' }}
                 />
               </form>
-              {/* </div> */}
-            </div>
-          </div>
-        </div>
+            </MDBCol>
+          </MDBRow>
+        </MDBContainer>
       </div>
     );
   }

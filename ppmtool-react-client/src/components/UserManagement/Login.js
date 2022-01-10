@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
 import classnames from "classnames";
+import { MDBCol, MDBContainer, MDBInput, MDBRow, MDBAnimation } from "mdbreact";
+import PropTypes from "prop-types";
+import React, { Component } from "react";
+import { connect } from "react-redux";
 import { login } from "../../actions/securityActions";
-
 class Login extends Component {
   constructor() {
     super();
@@ -46,67 +46,53 @@ class Login extends Component {
     const { errors } = this.state;
     return (
       <div className="login">
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col-md-8 m-auto">
+        <MDBContainer>
+          <MDBRow>
+            <MDBCol md="8 m-auto">
               <h1 className="display-4 text-center scrumLobster">Log In</h1>
               <form onSubmit={this.onSubmit}>
-                <div className="form-group form-floating scrumOffSide">
-                  <input
-                    type="email"
-                    style={{ color: "#00FFFF" }}
-                    id="floatingInput"
-                    className={classnames(
-                      "form-control form-control-lg bg-scrumButton",
-                      {
-                        "is-invalid": errors.username,
-                      }
-                    )}
-                    placeholder="Email Address"
+                <div className="form-group">
+                  <MDBInput
+                    type="text"
+                    className={classnames("form-control form-control-lg", {
+                      "is-invalid": errors.username
+                    })}
+                    style={{ color: "Chartreuse" }}
+                    material label="Email Address"
                     name="username"
                     value={this.state.username}
                     onChange={this.onChange}
                   />
                   {errors.username && (
-                    <div className="invalid-feedback">{errors.username}</div>
+                    <MDBAnimation className="scrumFlash" infinite>
+                      <h1 className="scrumRockError" append="invalid-feedback ">{errors.username}</h1>
+                    </MDBAnimation>
                   )}
-                  <label for="floatingInput" style={{ color: "#98FB98" }}>
-                    Email Address
-                  </label>
                 </div>
-                <div className="form-group form-floating scrumOffSide">
-                  <input
+                <div className="form-group">
+                  <MDBInput
                     type="password"
-                    className={classnames(
-                      "form-control form-control-lg bg-scrumButton",
-                      {
-                        "is-invalid": errors.password,
-                      }
-                    )}
-                    placeholder="Password"
-                    style={{ color: "#00FFFF" }}
-                    id="floatingPassword"
+                    className={classnames("form-control form-control-lg", {
+                      "is-invalid": errors.password
+                    })}
+                    style={{ color: "Chartreuse" }}
+                    material label="Password"
                     name="password"
                     value={this.state.password}
                     onChange={this.onChange}
                   />
                   {errors.password && (
-                    <div className="invalid-feedback">{errors.password}</div>
+                    <MDBAnimation className="scrumFlash" infinite>
+                      <h1 className="scrumRockError" append="invalid-feedback ">{errors.password}</h1>
+                    </MDBAnimation>
                   )}
-                  <label for="floatingPassword" style={{ color: "#98FB98" }}>
-                    Password
-                  </label>
                 </div>
-                <input
-                  type="submit"
-                  className="btn scrumSubmitBtn btn-block mt-4 hoverable scrumNunito"
-                  style={{ color: "#000000" }}
-                />
+                <input type="submit" className="scrumLabel scrumBtn btn-block" style={{ maxWidth: '1000px', maxHeight: '50px', minWidth: '30px', minHeight: '45px' }} />
               </form>
-            </div>
-          </div>
-        </div>
-      </div>
+            </MDBCol>
+          </MDBRow>
+        </MDBContainer>
+      </div >
     );
   }
 }
