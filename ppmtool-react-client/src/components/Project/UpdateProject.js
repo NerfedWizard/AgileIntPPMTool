@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import { getProject, createProject } from "../../actions/projectActions";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
 import classnames from "classnames";
-import { MDBRow, MDBCol, MDBInput, MDBBtn, MDBDatePickerV5, MDBContainer, MDBInputGroup, MDBAnimation } from "mdbreact";
+import { MDBAnimation, MDBCol, MDBContainer, MDBInput, MDBRow } from "mdbreact";
+import PropTypes from "prop-types";
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { createProject, getProject } from "../../actions/projectActions";
 class UpdateProject extends Component {
   //set state
   constructor() {

@@ -4,11 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logout } from "../../actions/securityActions";
 import { MDBRow, MDBCol, MDBInput, MDBBtn, MDBDatePickerV5, MDBContainer, MDBInputGroup } from "mdbreact";
-// import ToggleSwitch from "./components/ToggleSwitch"
-// import BootstrapSwitchButton from 'bootstrap-switch-button-react'
-// import ToggleColorMode from "./Decoration/darkModeToggleSwitch";
-// import Toggle from 'react-bootstrap-toggle';
-// import ToggleColorMode from "../Decoration/darkModeToggleSwitch";
+
 
 class Header extends Component {
   logout() {
@@ -83,17 +79,9 @@ class Header extends Component {
           <Link className="navbar-brand scrummOffside" to="/">
             Personal Project Management Tool
           </Link>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#mobile-nav"
-          >
-            <span className="navbar-toggler-icon" />
-          </button>
           {headerLinks}
         </div>
-      </nav>
+      </nav >
     );
   }
 }

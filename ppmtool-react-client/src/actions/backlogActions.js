@@ -1,9 +1,6 @@
 import axios from "axios";
 import {
-  GET_ERRORS,
-  GET_BACKLOG,
-  GET_PROJECT_TASK,
-  DELETE_PROJECT_TASK,
+  DELETE_PROJECT_TASK, GET_BACKLOG, GET_ERRORS, GET_PROJECT_TASK
 } from "./types";
 //Fix bug with priority in Spring Boot Server, needs to check null first
 export const addProjectTask =

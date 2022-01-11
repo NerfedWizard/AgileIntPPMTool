@@ -32,7 +32,8 @@ class UpdateProjectTask extends Component {
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
+    this.handleChangeStatus = this.handleChangeStatus.bind(this);
+    this.handleChangePriority = this.handleChangePriority.bind(this);
   }
 
   componentDidMount() {
@@ -72,10 +73,13 @@ class UpdateProjectTask extends Component {
     this.setState({ [e.target.name]: e.target.value });
   }
   //handleChange
-  handleChange(e) {
-    this.setState({ [e.target.value]: e.target.value });
+  //handleChange
+  handleChangeStatus(e) {
+    this.setState({ [e.target.name]: e.target.value });
   }
-
+  handleChangePriority(e) {
+    this.setState({ [e.target.name]: e.target.value });
+  }
   onSubmit(e) {
     e.preventDefault();
 
@@ -177,7 +181,7 @@ class UpdateProjectTask extends Component {
                       id="scrum-select"
                       name="priority"
                       value={this.state.priority}
-                      onChange={this.handleChange}
+                      onChange={this.handleChangePriority}
                     >
                       <MenuItem value={0} style={{ color: "white" }}>
                         Select Priority
@@ -194,7 +198,7 @@ class UpdateProjectTask extends Component {
                       id="scrum-select"
                       name="status"
                       value={this.state.status}
-                      onChange={this.handleChange}
+                      onChange={this.handleChangeStatus}
                     >
                       <MenuItem value=" " style={{ color: "firebrick" }}>
                         Select Status

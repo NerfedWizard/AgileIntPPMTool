@@ -1,5 +1,5 @@
 import classnames from "classnames";
-import { MDBCol, MDBContainer, MDBInput, MDBRow, MDBAnimation } from "mdbreact";
+import { MDBAnimation, MDBCol, MDBContainer, MDBInput, MDBRow } from "mdbreact";
 import PropTypes from "prop-types";
 import React, { Component } from "react";
 import { connect } from "react-redux";

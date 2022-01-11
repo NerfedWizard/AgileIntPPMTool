@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import { createNewUser } from "../../actions/securityActions";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
 import classnames from "classnames";
-import { MDBRow, MDBCol, MDBInput, MDBBtn, MDBDatePickerV5, MDBContainer, MDBAnimation, MDBInputGroup } from "mdbreact";
+import { MDBAnimation, MDBCol, MDBContainer, MDBInput, MDBRow } from "mdbreact";
+import PropTypes from "prop-types";
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { createNewUser } from "../../actions/securityActions";
 class Register extends Component {
   constructor() {
     super();

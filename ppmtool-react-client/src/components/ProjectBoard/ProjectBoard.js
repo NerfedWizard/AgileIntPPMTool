@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Box from '@mui/material/Box';
 import Backlog from "./Backlog";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
@@ -49,16 +50,18 @@ class ProjectBoard extends Component {
         } else {
           return (
             <div
-              className="alert text-center  font-weight-bold whatever"
+              className="alert text-center whatever"
               role="alert"
             >
-              <h4 className="alert-heading scrumYujiMai">
-                Stop! Collaborate And Listen
+              <h4 className="alert scrumRockErrorBig">
+                Stop!
               </h4>
-
-              <p className="mb-0 scrumNunito">
-                You Haven't Created Anything Yet!!
-              </p>
+              <h6 className="mb-0 scrumOffsideError">
+                Collaborate and Listen!
+                <p>
+                  You Haven't Created Anything Yet!!
+                </p>
+              </h6>
               <g className="mb-1 scrumFuzzyBubbles2">
                 Create A Task and See Where This Rabbit Hole Goes...
               </g>

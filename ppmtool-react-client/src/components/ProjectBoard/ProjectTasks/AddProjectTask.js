@@ -13,6 +13,9 @@ import Select from '@mui/material/Select';
 import NativeSelect from '@mui/material/NativeSelect';
 import InputBase from '@mui/material/InputBase';
 import { FormHelperText } from "@mui/material";
+
+
+
 class AddProjectTask extends Component {
   constructor(props) {
     super(props);
@@ -29,7 +32,8 @@ class AddProjectTask extends Component {
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
+    this.handleChangeStatus = this.handleChangeStatus.bind(this);
+    this.handleChangePriority = this.handleChangePriority.bind(this);
   }
   componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
@@ -42,8 +46,11 @@ class AddProjectTask extends Component {
     this.setState({ [e.target.name]: e.target.value });
   }
   //handleChange
-  handleChange(e) {
-    this.setState({ [e.target.value]: e.target.value });
+  handleChangeStatus(e) {
+    this.setState({ [e.target.name]: e.target.value });
+  }
+  handleChangePriority(e) {
+    this.setState({ [e.target.name]: e.target.value });
   }
   //on submit
   onSubmit(e) {
@@ -136,13 +143,13 @@ class AddProjectTask extends Component {
                   </div>
                   <FormControl fullWidth>
                     <Select
-                      labelId="scrum-select-label"
+                      labelId="scrum-priority-label"
                       id="scrum-select"
                       name="priority"
                       value={this.state.priority}
-                      onChange={this.handleChange}
+                      onChange={this.handleChangePriority}
                     >
-                      <MenuItem value={0} style={{ color: "white" }}>
+                      <MenuItem value='' style={{ color: "white" }}>
                         Select Priority
                       </MenuItem>
                       <MenuItem value={1} style={{ color: "firebrick" }}>HIGH</MenuItem>
@@ -153,13 +160,13 @@ class AddProjectTask extends Component {
                   </FormControl>
                   <FormControl fullWidth>
                     <Select
-                      labelId="scrum-select-status"
-                      id="scrum-select"
+                      labelId="scrum-status-label"
+                      id="scrum-status"
                       name="status"
                       value={this.state.status}
-                      onChange={this.handleChange}
+                      onChange={this.handleChangeStatus}
                     >
-                      <MenuItem value=" " style={{ color: "firebrick" }}>
+                      <MenuItem value="" style={{ color: "firebrick" }}>
                         Select Status
                       </MenuItem>
                       <MenuItem value="TO_DO" style={{ color: "GoldenRod" }}>TO DO</MenuItem>

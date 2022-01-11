@@ -1,28 +1,24 @@
-import React, { Component } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import jwt_decode from "jwt-decode";
+import React from "react";
+import { Provider } from "react-redux";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { logout } from "./actions/securityActions";
+import { SET_CURRENT_USER } from "./actions/types";
 import "./App.css";
 import Dashboard from "./components/Dashboard";
 import Header from "./components/Layout/Header";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Landing from "./components/Layout/Landing";
 import AddProject from "./components/Project/AddProject";
-import { Provider } from "react-redux";
-import store from "./store";
 import UpdateProject from "./components/Project/UpdateProject";
 import ProjectBoard from "./components/ProjectBoard/ProjectBoard";
 import AddProjectTask from "./components/ProjectBoard/ProjectTasks/AddProjectTask";
 import UpdateProjectTask from "./components/ProjectBoard/ProjectTasks/UpdateProjectTask";
-import Landing from "./components/Layout/Landing";
-import Register from "./components/UserManagement/Register";
 import Login from "./components/UserManagement/Login";
-// import ToggleColorMode from "./components/Decoration/darkModeToggleSwitch";
-import jwt_decode from "jwt-decode";
-import setJWTToken from "./securityUtils/setJWTToken";
-import { SET_CURRENT_USER } from "./actions/types";
-import { logout } from "./actions/securityActions";
+import Register from "./components/UserManagement/Register";
 import SecuredRoute from "./securityUtils/SecureRoute";
-import { MDBRow, MDBCol, MDBInput, MDBBtn, MDBDatePickerV5, MDBContainer, MDBInputGroup } from "mdbreact";
-
-// import ToggleButton from 'react-bootstrap/ToggleButton'
+import setJWTToken from "./securityUtils/setJWTToken";
+import store from "./store";
 
 const jwtToken = localStorage.jwtToken;
 

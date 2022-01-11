@@ -53,8 +53,8 @@
 }
 .scrumFuzzyBubbles2 {
   font-family: "Fuzzy Bubbles", cursive;
-  font-weight: 700, bold;
-  font-size: 25px;
+  font-weight: 700;
+  font-size: 20px;
   text-shadow: 1px 1px 2px rgb(110, 10, 10), 0 0 25px rgb(195, 73, 185),
     0 0 5px rgb(100, 20, 110);
   color: #bdc6d6;
@@ -167,6 +167,13 @@
     0 0 5px rgb(20, 110, 47);
   color: #ff0303;
 }
+.scrumRockErrorBig {
+  font-family: "Rock Salt", cursive;
+  font-size: 70px;
+  text-shadow: 3px 3px 2px rgb(110, 10, 10), 0 0 25px rgb(73, 195, 189),
+    0 0 5px rgb(20, 110, 47);
+  color: #ff0303;
+}
 
 .scrumMonoton {
   font-family: "Monoton", cursive;
@@ -187,7 +194,7 @@
   text-shadow: 1px 1px 2px rgb(107, 238, 157), 0 0 25px rgb(47, 202, 137),
     0 0 5px rgb(1, 2, 1);
 }
-.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root{
+ .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root{
   font-family:"Offside", cursive !important;
   font-weight:400;
   color:red !important;
@@ -203,8 +210,8 @@ border-bottom-width: 1px;
 border-left-color: limegreen !important;
 border-left-style: groove !important;
 border-left-width: 1px;
-  /* background: rebeccapurple !important; */  
-}
+/* background: rebeccapurple !important;  */
+ }
 .scrumOffside {
   font-family: "Offside", cursive;
   color: #00ffff !important;
@@ -336,7 +343,8 @@ img {
   margin-bottom: -50px;
 }
 .landing-inner {
-  padding-top: 80px;
+  /* position: absolute; */
+  padding-top: 300px;
 }
 .dark-overlay {
   position: relative;
@@ -420,7 +428,7 @@ img {
   color: #b39ddb !important;
 }
 .whatever {
-  color: #5a5a5a9a;
+  color: #5210109a;
 }
 .scrumAnimateRubberBand {
   animation-name: jackInTheBox;

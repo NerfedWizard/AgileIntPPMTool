@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import ProjectTask from "./ProjectTasks/ProjectTask";
-
+import { DragDropContext, DropResult, Draggable, DragDrop, DragDropContextProps } from "react-beautiful-dnd";
 class Backlog extends Component {
+
   render() {
     const { project_tasks_prop } = this.props;
 
@@ -27,7 +28,7 @@ class Backlog extends Component {
     }
 
     return (
-      <div className="container">
+      <div className="container ">
         <div className="row">
           <div className="col-md-4">
             <div className="card text-center mb-2">
