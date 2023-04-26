@@ -39,7 +39,7 @@ if (jwtToken) {
 class App extends React.Component {
   render() {
     return (
-      <div className="dark-overlay">
+      <div className="high-contrast" style={{ animation: "colorChange 5s infinite alternate" }}>
         <Provider store={store}>
           <Router>
             <div className="App">
