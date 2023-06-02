@@ -13,8 +13,6 @@ class Dashboard extends Component {
   }
   render() {
     const { projects } = this.props.project;
-    const { checked } = true;
-    const { setChecked } = true;
     return (
       <div className="projects">
         <MDBContainer>

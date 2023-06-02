@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Box from '@mui/material/Box';
+// import Box from '@mui/material/Box';
 import Backlog from "./Backlog";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { getBacklog } from "../../actions/backlogActions";
-import { DragDropContext } from 'react-beautiful-dnd';
-import { MDBRow, MDBCol, MDBInput, MDBBtn, MDBDatePickerV5, MDBContainer, MDBInputGroup } from "mdbreact";
+// import { DragDropContext } from 'react-beautiful-dnd';
+// import { MDBBtn, MDBDatePickerV5, MDBContainer, MDBInputGroup } from "mdbreact";
 class ProjectBoard extends Component {
   //constructor to handle errors
   constructor() {

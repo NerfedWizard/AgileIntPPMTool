@@ -20,6 +20,7 @@ import SecuredRoute from "./securityUtils/SecureRoute";
 import setJWTToken from "./securityUtils/setJWTToken";
 import store from "./store";
 
+
 const jwtToken = localStorage.jwtToken;
 
 if (jwtToken) {

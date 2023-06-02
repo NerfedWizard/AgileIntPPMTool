@@ -10,10 +10,8 @@ import {
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import NativeSelect from '@mui/material/NativeSelect';
-import InputBase from '@mui/material/InputBase';
 import { FormHelperText } from "@mui/material";
-import InputLabel from '@mui/material/InputLabel';
+
 class UpdateProjectTask extends Component {
   constructor() {
     super();
