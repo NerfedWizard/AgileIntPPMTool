@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@900&family=Roboto:ital,wght@0,900;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&display=swap');
-
+/* @import 'node_modules/dragula/dragula'; */
 @media (min-width: 1200px) {
 }
 
@@ -14,22 +14,71 @@
 	left: 0%;
 	width: 100%;
 	height: 100%;
-	background-color: #252525;
+	background-color: #7b73e4;
 	background: radial-gradient(
 			farthest-corner at top,
-			#27272c 0%,
-			#1f1d1d 4%,
-			#291f1f 12.25%,
-			rgb(32, 29, 29) 22.25%,
-			#000000 50%
+			#4d4d5c 0%,
+			#4e4e55 4%,
+			#6a5f99 12.25%,
+			rgb(55, 43, 105) 22.25%,
+			#182346 50%
 		)
-		top right/75%;
+		top right/200%;
 	justify-content: center;
 	align-items: center;
-	color: rgb(107, 107, 107);
+	color: rgb(12, 67, 168);
 	font-weight: bold;
-	/* animation: colorChange 5s infinite alternate; */
+	animation: colorChange 10s infinite alternate;
 }
+/* dragula-specific example page styles
+.wrapper {
+  display: table;
+}
+.container {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.container:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+/*
+ * note that styling gu-mirror directly is a bad practice because it's too generic.
+ * you're better off giving the draggable elements a unique class and styling that directly!
+.container div,
+.gu-mirror {
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity 0.4s ease-in-out;
+}
+.container div {
+  cursor: move;
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+  margin-bottom: 10px;
+}
+.container div:last-child {
+  margin-bottom: 0;
+}
+.gu-mirror {
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+}
+.container .ex-moved {
+  background-color: #e74c3c;
+}
+.container.ex-over {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.handle {
+  padding: 0 5px;
+  margin-right: 5px;
+  background-color: rgba(0, 0, 0, 0.4);
+  cursor: move;
+} */
 @keyframes colorChange {
 	to {
 		background-position: top left;
@@ -37,10 +86,10 @@
 }
 @keyframes move_eye {
 	from {
-		margin-left: -20%;
+		margin-left: -75%;
 	}
 	to {
-		margin-left: 100%;
+		margin-left: 200%;
 	}
 }
 .scrumFuzzyBubbles {
@@ -111,7 +160,7 @@
 .scrumLabel {
 	font-family: 'Roboto', sans-serif;
 	font-size: 20px;
-	color: Turquoise;
+	color: rgb(117, 255, 241);
 }
 .scrumSubmitBtn {
 	background: #fad8d8;
@@ -130,8 +179,8 @@
 	background-image: radial-gradient(to bottom, #ec4c8fd2, #9e5191, #951313);
 }
 .scrumBtn {
-	background: #fad8d8;
-	background-image: radial-gradient(#221b79, #3638dfc4, #264b8f);
+	background: #34ff99;
+	background-image: radial-gradient(#1f1c4b, #2a2cb8e8, #032a74);
 	-webkit-border-radius: 28;
 	border-radius: 28px;
 }
@@ -142,7 +191,7 @@
 
 .scrumBtn:hover {
 	background: #c4a4d6;
-	background-image: linear-gradient(to bottom, #4b3ba5, #2c2b79, #17173f);
+	background-image: linear-gradient(to bottom, #4b3ba5, #2d2c74, #17173f);
 }
 
 .scrumYujiMai {
@@ -184,15 +233,15 @@
 .scrumCharmon {
 	font-family: 'Charmonman', cursive;
 	font-size: 70px;
-	color: rgba(255, 255, 255, 0.863);
-	text-shadow: 1px 1px 2px rgb(117, 31, 64), 0 0 25px rgb(255, 77, 86),
-		0 0 5px rgb(202, 173, 77);
+	color: rgb(255, 255, 255);
+	text-shadow: 1px 1px 2px rgb(110, 47, 122), 0 0 25px rgb(198, 62, 240),
+		0 0 5px rgb(2, 6, 7);
 }
 .scrumLobster {
 	font-family: 'Lobster Two', cursive;
-	color: #654e8f !important;
+	color: #4c327c !important;
 	text-shadow: 1px 1px 2px rgb(107, 238, 157), 0 0 25px rgb(47, 202, 137),
-		0 0 5px rgb(1, 2, 1);
+		0 0 5px rgb(37, 77, 37);
 }
 .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root {
 	font-family: 'Offside', cursive !important;
@@ -215,6 +264,7 @@
 .scrumOffside {
 	font-family: 'Offside', cursive;
 	color: #00ffff !important;
+	font-weight: bolder;
 }
 .scrumOffsideError {
 	font-family: 'Offside', cursive;
@@ -245,7 +295,7 @@ img {
 }
 
 .navbar {
-	background-color: #202a35be;
+	background-color: #3b536dbe;
 }
 .fa.fa-edit {
 	color: #18a2b9;
@@ -434,6 +484,7 @@ img {
 	animation-name: jackInTheBox;
 	/* animation-duration: infinite; */
 	-webkit-animation-delay: 2s;
+	animation-delay: 0ms;
 }
 .scrumFlash {
 	animation-name: headShake;

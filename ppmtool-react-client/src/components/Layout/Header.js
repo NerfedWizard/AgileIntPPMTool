@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logout } from "../../actions/securityActions";
-import { MDBRow, MDBCol, MDBInput, MDBBtn, MDBDatePickerV5, MDBContainer, MDBInputGroup } from "mdbreact";
+// import { MDBRow, MDBCol, MDBInput, MDBBtn, MDBDatePickerV5, MDBContainer, MDBInputGroup } from "mdbreact";
 
 
 class Header extends Component {
@@ -19,7 +19,7 @@ class Header extends Component {
       <div className="collapse navbar-collapse" id="mobile-nav">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">
-            <Link className="nav-link" to="/dashboard">
+            <Link className="nav-link scrumBioRhyme" to="/dashboard">
               Dashboard
             </Link>
           </li>
@@ -27,14 +27,14 @@ class Header extends Component {
 
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
-            <Link className="nav-link" to="/dashboard">
+            <Link className="nav-link scrumBioRhyme" to="/dashboard">
               <i className="fas fa-user-circle mr-1 scrumSource" />
               {user.fullName}
             </Link>
           </li>
           <li className="nav-item">
             <Link
-              className="nav-link"
+              className="nav-link scrumBioRhyme"
               to="/logout"
               onClick={this.logout.bind(this)}
             >
@@ -49,12 +49,12 @@ class Header extends Component {
       <div className="collapse navbar-collapse" id="mobile-nav">
         <ul className="navbar-nav ml-auto">
           <li className="nav-item">
-            <Link className="nav-link" to="/register">
+            <Link className="nav-link scrumSource" to="/register">
               Sign Up
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/login">
+            <Link className="nav-link scrumSource" to="/login">
               Login
             </Link>
           </li>
@@ -76,7 +76,7 @@ class Header extends Component {
     return (
       <nav className="navbar navbar-expand-sm mb-4">
         <div className="container">
-          <Link className="navbar-brand scrummOffside" to="/">
+          <Link className="navbar-brand scrumRobotoTask" to="/">
             Personal Project Management Tool
           </Link>
           {headerLinks}
