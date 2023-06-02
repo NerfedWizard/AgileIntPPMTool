@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ProjectTask from "./ProjectTasks/ProjectTask";
-import { dragula } from "dragula";
+import Dragula from "dragula";
 
 class Backlog extends Component {
   render() {
@@ -23,15 +23,16 @@ class Backlog extends Component {
       if (tasks[i].props.project_task.status === "DONE") {
         doneItems.push(tasks[i]);
       }
-      // var drake = dragula({
-      //   isContainer: function (el) {
-      //     return el.classList.contains('dragula-container');
-      //   }
-      // });
+    
     }
-
+  //  const dragulaDecorator = (componentBackingInstance) => {
+  //     if (componentBackingInstance) {
+  //       let options = {};
+  //       Dragula([componentBackingInstance], options);
+  //     }
+  //   };
     return (
-      <div className="container ">
+      <div className="container">
         <div className="row">
           <div className="col-md-4">
             <div className="card text-center mb-2">
@@ -39,7 +40,7 @@ class Backlog extends Component {
                 <h3>TO DO</h3>
               </div>
             </div>
-            <div className="container">
+            <div className="container" >
               {todoItems}
             </div>
           </div>
@@ -68,5 +69,4 @@ class Backlog extends Component {
     );
   }
 }
-
 export default Backlog;

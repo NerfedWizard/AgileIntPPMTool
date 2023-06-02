@@ -19,6 +19,10 @@ import Register from "./components/UserManagement/Register";
 import SecuredRoute from "./securityUtils/SecureRoute";
 import setJWTToken from "./securityUtils/setJWTToken";
 import store from "./store";
+// import ToggleColorMode from "././components/Decoration/darkModeToggleSwitch"
+// import { useState } from "react";
+// import "react-toggle/style.css"
+// import Toggle from "react-toggle";
 
 
 const jwtToken = localStorage.jwtToken;
@@ -38,50 +42,49 @@ if (jwtToken) {
   }
 }
 class App extends React.Component {
+
   render() {
     return (
-      <div className="high-contrast">
-        <Provider store={store}>
-          <Router>
-            <div className="App">
-              <Header />
-              {
-                //Public Routes
-              }
-              <Route exact path="/" component={Landing} />
-              <Route exact path="/register" component={Register} />
-              <Route exact path="/login" component={Login} />
-              {
-                //Private Routes
-              }
-              <Switch>
-                <SecuredRoute exact path="/dashboard" component={Dashboard} />
-                <SecuredRoute exact path="/addProject" component={AddProject} />
-                <SecuredRoute
-                  exact
-                  path="/updateProject/:id"
-                  component={UpdateProject}
-                />
-                <SecuredRoute
-                  exact
-                  path="/projectBoard/:id"
-                  component={ProjectBoard}
-                />
-                <SecuredRoute
-                  exact
-                  path="/addProjectTask/:id"
-                  component={AddProjectTask}
-                />
-                <SecuredRoute
-                  exact
-                  path="/updateProjectTask/:backlog_id/:pt_id"
-                  component={UpdateProjectTask}
-                />
-              </Switch>
-            </div>
-          </Router>
-        </Provider>
-      </div>
+      <Provider store={store}>
+        <Router>
+          <div>
+            <Header />
+            {
+              //Public Routes
+            }
+            <Route exact path="/" component={Landing} />
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/login" component={Login} />
+            {
+              //Private Routes
+            }
+            <Switch>
+              <SecuredRoute exact path="/dashboard" component={Dashboard} />
+              <SecuredRoute exact path="/addProject" component={AddProject} />
+              <SecuredRoute
+                exact
+                path="/updateProject/:id"
+                component={UpdateProject}
+              />
+              <SecuredRoute
+                exact
+                path="/projectBoard/:id"
+                component={ProjectBoard}
+              />
+              <SecuredRoute
+                exact
+                path="/addProjectTask/:id"
+                component={AddProjectTask}
+              />
+              <SecuredRoute
+                exact
+                path="/updateProjectTask/:backlog_id/:pt_id"
+                component={UpdateProjectTask}
+              />
+            </Switch>
+          </div>
+        </Router>
+      </Provider>
     );
   }
 }

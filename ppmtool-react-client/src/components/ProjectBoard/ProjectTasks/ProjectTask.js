@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import { deleteProjectTask } from "../../../actions/backlogActions";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-// import { MDBRow, MDBCol, MDBInput, MDBBtn, MDBDatePickerV5, MDBContainer, MDBInputGroup } from "mdbreact";
-// import { DragDropContext, DropResult, Draggable, DragDrop, DragDropContextProps } from "react-beautiful-dnd";
 
 class ProjectTask extends Component {
   onDeleteClick(backlog_id, pt_id) {
@@ -30,10 +28,6 @@ class ProjectTask extends Component {
       priorityClass = "bg-info text-dark";
       priorityString = "LOW";
     }
-    //  function handleOnDrag(result){
-    //   if (!result.destination) return;
-    //    const 
-    //  }
     return (
 
       <div className="card text-white bg-light mb-1">
